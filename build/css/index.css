@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f6fa;
+  position: relative;
+}
+body nav .line {
+  height: 3px;
+  width: 100%;
+  background-color: #29d;
+  animation: move 20s infinite linear;
+}
+@keyframes move {
+  0% {
+    background-color: #29d;
+  }
+  25% {
+    background-color: #d35400;
+  }
+  50% {
+    background-color: #1abc9c;
+  }
+  75% {
+    background-color: #9b59b6;
+  }
+  100% {
+    background-color: #34495e;
+  }
+}
+body nav .main {
+  height: 70px;
+  width: 100%;
+  border: 1px solid red;
+}
+body nav .main .author {
+  width: 145px;
+  height: 59px;
+  border: 2px solid #3498db;
+  margin-top: 5px;
+  margin-left: 350px;
+  font-size: 20px;
+}
+body main {
+  width: 840px;
+  height: 1000px;
+  border: 1px solid red;
+  margin-left: 360px;
+  margin-top: 25px;
+}
+body aside {
+  width: 330px;
+  height: 1000px;
+  border: 1px solid red;
+  position: absolute;
+  right: 350px;
+  top: 95px;
+}
+body footer {
+  width: 100%;
+  height: 210px;
+  border: 1px solid red;
+  margin-top: 20px;
+}

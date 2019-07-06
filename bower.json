@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "description": "",
+  "main": "gulp.js",
+  "authors": [
+    "a240239114 <240239114@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/a240239114/publicBlog",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

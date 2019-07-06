@@ -16,9 +16,9 @@ var app = {
 };
 
 //通过第三方安装的插件，需要拷贝到 devPath prdPath中
-gulp.task('lib',function(){
+gulp.task('bower',function(){
     // 读取这个文件夹下边的所有的文件或者文件夹
-    gulp.src('lib/**/*')
+    gulp.src('bower_components/**/*')
     //读取完整后进行操作  西安拷贝到整合目录 并重命名，在拷贝到生产目录并重命名
     .pipe(gulp.dest(app.devPath + 'vendor'))
     .pipe(gulp.dest(app.prdPath + 'vendor'))
@@ -91,12 +91,12 @@ gulp.task('watch',function(){
     gulp.watch(app.srcPath + 'style/**/*.less', ['less']);
     //监听image
     gulp.watch(app.srcPath + 'image/**/*', ['image']);
-    //监听lib
-    gulp.watch('lib/**/*', ['lib']);
+    //监听bower_components
+    gulp.watch('bower_components/**/*', ['bower']);
 })
 
 //总的方法
-gulp.task('build', ['lib','image', 'script', 'less', 'json', 'html','watch']);
+gulp.task('build', ['bower','image', 'script', 'less', 'json', 'html','watch']);
 
 
 
@@ -114,7 +114,7 @@ gulp.task('serve', ['build'], function () {
     //自动打开浏览器
     open('http://localhost:1234');
     //我们希望更改了文件，就自动编译，并且打包等然后打开浏览器
-    // gulp.watch('bower_components/**/*' , ['lib']);
+    // gulp.watch('bower_components/**/*' , ['bower_components']);
     //监听 script 下边的 js 文件，并执行 script 方法   
     //这样文件变更了就会自动构建
     gulp.watch(app.srcPath + 'script/**/*.js', ['script']);
@@ -126,8 +126,8 @@ gulp.task('serve', ['build'], function () {
     gulp.watch(app.srcPath + 'style/**/*.less', ['less']);
     //监听image
     gulp.watch(app.srcPath + 'image/**/*', ['image']);
-    //监听lib
-    gulp.watch('lib/**/*', ['lib']);
+    //监听bower_components
+    gulp.watch('bower_components/**/*', ['bower']);
 });
 
 

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../../lib/icon_font/iconfont.css">
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="vendor/font-icon/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>你好,世界</title>
 </head>
 
@@ -15,36 +15,214 @@
     <nav>
         <!-- 动态变化的线 -->
         <div class="line"></div>
+
+        <!-- 主体 -->
         <div class="main">
             <div class="author">
-                <span class="iconfont .icon-tuya_huabanfuben"></span>
-                <div class="name"></div>
+                <div class="logo">
+                    <!-- <img src="https://www.huanggr.cn/wp-content/themes/boke/images/xfg.png"> -->
+                </div>
+                <div class="name">
+                    雄哥前端
+                </div>
             </div>
+
+            <div class="introduce">
+                <div class="container">
+                    <p>web前端开发博客</p>
+                    <p>专注web前端发展</p>
+                </div>
+            </div>
+
+            <ul class="navigation">
+                <li><a href=""><span>首页</span><span>首页</span></a></li>
+                <li><a href=""><span>前端特效</span><span>前端特效</span></a></li>
+                <li><a href=""><span>H5C3</span><span>H5C3</span></a></li>
+                <li><a href=""><span>JS教程</span><span>JS教程</span></a></li>
+                <li><a href=""><span>Vue-cli</span><span>Vue-cli</span></a></li>
+                <li><a href=""><span>ES6</span><span>ES6</span></a></li>
+                <li><a href=""><span>BUG</span><span>BUG</span></a></li>
+                <li><a href=""><span>关于博客</span><span>关于博客</span></a></li>
+                <li><a href=""><span>音乐</span><span>音乐</span></a></li>
+            </ul>
+
+            <div class="search">
+                <a href=""><span class="iconfont icon--fangdajing"></span></a>
+            </div>
+
         </div>
     </nav>
 
+
     <main>
-        <!-- 焦点 看情况显示-->
-        <div class="topic"></div>
-        main
-        <!-- 分页 -->
-        <div class="paganation"></div>
+        <div class="left">
+            <!-- 焦点 看情况显示-->
+            <div class="topic"></div>
+            main
+            <!-- 分页 -->
+            <div class="paganation"></div>
+        </div>
+
+        <!-- 侧边栏  -->
+        <aside>
+            <div class="item blogIntroduce">
+                <div class="container">
+                    <div class="top">关于博客</div>
+                    <p>国瑞个人博客: https://www.huanggr.cn/，我们关注Web前端开发技术，web前端开发,移动前端开发，前端资讯，同时分享前端资源和工具等，期待你的参与,
+                        <a href="">了解更多..</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="item qq">
+                <div class="top">
+                    <p><span class="iconfont icon-emizhifeiji"></span>
+                        本站唯一qq群</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bottom">
+                    <div class="twoCode">
+                        <img src="image/twoCode.png" alt="">
+                    </div>
+                    <p>本群为学习探讨群，主要和前端相关，欢迎广大前端（抱有学习目的均可）爱好者加入！广告请勿添加！</p>
+                </div>
+            </div>
+
+            <div class="item update">
+                <div class="top">
+                    <p><span class="iconfont icon-emizhifeiji"></span>
+                        最近更新</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bottom">
+                    <div class="item1">
+                        <div class="pic">
+                            <img src="./image/default.jpg" alt="">
+                        </div>
+                        <div class="description">
+                            <a href="">推荐一款接口测试小插件</a>
+                            <p>2019年07月04日</p>
+                        </div>
+                    </div>
+                    <div class="item1">
+                        <div class="pic">
+                            <img src="./image/default.jpg" alt="">
+                        </div>
+                        <div class="description">
+                            <a href="">推荐一款接口测试小插件</a>
+                            <p>2019年07月04日</p>
+                        </div>
+                    </div>
+                    <div class="item1">
+                        <div class="pic">
+                            <img src="./image/default.jpg" alt="">
+                        </div>
+                        <div class="description">
+                            <a href="">推荐一款接口测试小插件</a>
+                            <p>2019年07月04日</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item version">
+                <div class="top">
+                    <p><span class="iconfont icon-jiangzhang"></span>
+                        升级版本</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bottom">
+                    <div class="info">
+                        <p>web前端开发博客，基于vue脚手架制作的前端博客正在制作中，尽情期待，目前示例的代码位于</p>
+                        <a href="" style="font-size:20px;">此处</a>
+                    </div>
+                </div>
+                <div class="desc">最新版本（尽请期待）-web前端开发博客</div>
+            </div>
+            <div class="item article">
+                <div class="top">
+                    <p><span class="iconfont icon-suiji"></span>
+                        随机文章</p>
+                    <div class="line"></div>
+                </div>
+                <ul>
+                    <li>
+                        <div class="sort">1</div>
+                        <p>你喜欢武汉吗</p>
+                    </li>
+
+                    <li>
+                        <div class="sort">2</div>
+                        <p>你喜欢武汉吗</p>
+                    </li>
+
+                    <li>
+                        <div class="sort">3</div>
+                        <p>你喜欢武汉吗</p>
+                    </li>
+
+                    <li>
+                        <div class="sort">4</div>
+                        <p>你喜欢武汉吗</p>
+                    </li>
+
+                    <li>
+                        <div class="sort">5</div>
+                        <p>你喜欢武汉吗</p>
+                    </li>
+    
+                </ul>
+
+            </div>
+            <div class="item articleCategory">
+                <div class="top">
+                    <p><span class="iconfont icon-fenlei1"></span>
+                        文章分类</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="item cloud">
+                <div class="top">
+                    <p><span class="iconfont icon-fenlei"></span>
+                        标签云</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="item comments">
+                <div class="top">
+                    <p><span class="iconfont icon-liuyan"></span>
+                        精彩评论</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="item server">
+                <div class="top">
+                    <p><span class="iconfont icon-jiangzhang
+                        "></span>
+                        本站主要提供服务</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="item friendLink">
+                <div class="top">
+                    <p><span class="iconfont icon-icon_xinyong_xianxing_jijin-
+                            "></span>
+                        友情链接</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="item statistical">
+                <div class="top">
+                    <p><span class="iconfont icon-tongji
+                                "></span>
+                        站点统计</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </aside>
+
     </main>
-
-
-    <!-- 侧边栏  -->
-    <aside>
-        <div class="blogIntroduce">博客简介</div>
-        <div class="blogIntroduce">qq群</div>
-        <div class="blogIntroduce">最新更新</div>
-        <div class="blogIntroduce">随机文章</div>
-        <div class="blogIntroduce">文章分类</div>
-        <div class="blogIntroduce">标签云</div>
-        <div class="blogIntroduce">精彩评论</div>
-        <div class="blogIntroduce">本站主要提供服务</div>
-        <div class="blogIntroduce">友情链接</div>
-        <div class="blogIntroduce">站点统计</div>
-    </aside>
 
     <!-- 页脚 -->
     <footer></footer>

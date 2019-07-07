@@ -7,7 +7,7 @@
 * a {
   text-decoration: none;
 }
-@media only screen and (min-width: 920px) {
+@media (min-width: 300px) and (max-width: 770px) {
   body {
     width: 100%;
     height: 100vh;
@@ -76,6 +76,7 @@
     width: 20px;
   }
   body nav .main .container .introduce {
+    display: none;
     width: 150px;
     height: 36px;
     border-left: 1px solid #bbb;
@@ -751,7 +752,7 @@
     text-decoration: underline;
   }
 }
-@media only screen and (min-width: 920px) {
+@media (min-width: 770px) and (max-width: 1200px) {
   body {
     width: 100%;
     height: 100vh;
@@ -790,7 +791,7 @@
     width: 100%;
   }
   body nav .main .container {
-    width: 920px;
+    width: 770px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -820,6 +821,7 @@
     width: 20px;
   }
   body nav .main .container .introduce {
+    display: none;
     width: 150px;
     height: 36px;
     border-left: 1px solid #bbb;

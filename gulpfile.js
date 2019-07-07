@@ -20,6 +20,7 @@ gulp.task('bower',function(){
     // 读取这个文件夹下边的所有的文件或者文件夹
     gulp.src('bower_components/**/*')
     //读取完整后进行操作  西安拷贝到整合目录 并重命名，在拷贝到生产目录并重命名
+    .pipe(gulp.dest(app.srcPath + 'vendor'))
     .pipe(gulp.dest(app.devPath + 'vendor'))
     .pipe(gulp.dest(app.prdPath + 'vendor'))
     .pipe($.connect.reload());  //文件更改后自动变异 并执行启动服务重新打开浏览器
@@ -55,7 +56,7 @@ gulp.task('less', function () {
 // 拷贝 js 文件  将所有的源文件中的js 文件整合成index.js 然后拷贝过去
 gulp.task('script', function () {
     gulp.src(app.srcPath + 'script/**/*.js')
-        .pipe($.concat('index.js'))
+        // .pipe($.concat('index.js'))  不需要合并
         .pipe(gulp.dest(app.devPath + 'js'))
         .pipe($.uglify())
         .pipe(gulp.dest(app.prdPath + 'js'))

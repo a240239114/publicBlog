@@ -1,0 +1,1 @@
+require.config({paths:{jquery:"../vendor/jquery/dist/jquery",pagination:"../vendor/pagination/jquery.pagination",index:"index"},shim:{pagination:{deps:["jquery"]}}});

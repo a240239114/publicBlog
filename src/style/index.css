@@ -7,18 +7,48 @@
 * a {
   text-decoration: none;
 }
-@media (min-width: 300px) and (max-width: 770px) {
-  body {
-    width: 100%;
+@media (max-width: 770px) {
+  .total {
+    display: flex;
+    width: 100vw;
+  }
+  .total .aside {
+    width: 0;
     height: 100vh;
+    background: url('../image/aside.jpg') repeat-y;
+    transition: all 1s;
+  }
+  .total .aside ul {
+    width: 100%;
+    height: 100%;
+    padding: 80px 15px;
+    color: white;
+  }
+  .total .aside ul li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid gray;
+    text-indent: 1em;
+  }
+  .total .aside ul li .iconfont {
+    margin-right: 20px;
+  }
+  .total .body {
+    width: 100vw;
     background-color: #eaebed;
     position: relative;
     overflow: scroll;
   }
-  body nav {
-    box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
+  .total .body nav {
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+    letter-spacing: 2px;
   }
-  body nav .line {
+  .total .body nav .line {
+    display: none;
     height: 3px;
     width: 100%;
     background-color: #29d;
@@ -41,17 +71,26 @@
       background-color: #34495e;
     }
   }
-  body nav .main {
+  .total .body nav .main {
     height: 70px;
     width: 100%;
   }
-  body nav .main .container {
+  .total .body nav .main .icon-fenlei {
+    color: white;
+    position: relative;
+    right: 120px;
+    top: -2px;
+    font-size: 20px;
+  }
+  .total .body nav .main .container {
     width: 920px;
     height: 100%;
     margin: 0 auto;
     display: flex;
+    display: none;
   }
-  body nav .main .container .author {
+  .total .body nav .main .container .author {
+    display: none;
     width: 150px;
     height: 59px;
     border: 2px solid #48dbfb;
@@ -59,23 +98,23 @@
     align-self: center;
     display: flex;
   }
-  body nav .main .container .author .logo {
+  .total .body nav .main .container .author .logo {
     width: 45px;
     height: 60px;
     background: url('https://www.huanggr.cn/wp-content/themes/boke/images/xfg.png') -10px -2px no-repeat;
     background-size: 350px 175px;
     overflow: hidden;
   }
-  body nav .main .container .author .name {
+  .total .body nav .main .container .author .name {
     line-height: 59px;
     font-weight: bold;
     letter-spacing: 6px;
     color: #3498db;
   }
-  body nav .main .container .space {
+  .total .body nav .main .container .space {
     width: 20px;
   }
-  body nav .main .container .introduce {
+  .total .body nav .main .container .introduce {
     display: none;
     width: 150px;
     height: 36px;
@@ -83,7 +122,7 @@
     position: relative;
     align-self: center;
   }
-  body nav .main .container .introduce .container {
+  .total .body nav .main .container .introduce .container {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -91,26 +130,27 @@
     padding-left: 20px;
     transform: translate(-50%, -50%);
   }
-  body nav .main .container .introduce .container p {
+  .total .body nav .main .container .introduce .container p {
     width: 58px;
     font-size: 12px;
     color: #bbb;
     transition: color 1.2s;
   }
-  body nav .main .container .introduce .container p:hover {
+  .total .body nav .main .container .introduce .container p:hover {
     color: black;
   }
-  body nav .main .container ul {
+  .total .body nav .main .container ul {
+    display: none;
     width: 600px;
     height: 100%;
     display: flex;
     font-size: 16px;
   }
-  body nav .main .container ul li {
+  .total .body nav .main .container ul li {
     flex: 1;
     position: relative;
   }
-  body nav .main .container ul li a {
+  .total .body nav .main .container ul li a {
     display: block;
     height: 25px;
     position: absolute;
@@ -124,7 +164,7 @@
     transform-origin: center center 0px;
     transition: transform 0.8s;
   }
-  body nav .main .container ul li a span {
+  .total .body nav .main .container ul li a span {
     display: block;
     height: 25px;
     width: 100%;
@@ -133,18 +173,18 @@
     color: #F8EFBA;
     text-align: center;
   }
-  body nav .main .container ul li a span:nth-child(1) {
+  .total .body nav .main .container ul li a span:nth-child(1) {
     transform: translateZ(12.5px);
     background-color: #1abc9c;
   }
-  body nav .main .container ul li a span:nth-child(2) {
+  .total .body nav .main .container ul li a span:nth-child(2) {
     transform: translateY(-12.5px) rotateX(90deg);
     background-color: #1B9CFC;
   }
-  body nav .main .container ul li a:hover {
+  .total .body nav .main .container ul li a:hover {
     transform: rotate3d(1, 0, 0, -90deg);
   }
-  body nav .main .container ul li:nth-child(2n) a {
+  .total .body nav .main .container ul li:nth-child(2n) a {
     display: block;
     height: 25px;
     position: absolute;
@@ -158,7 +198,7 @@
     transform-origin: center center 0px;
     transition: transform 0.8s;
   }
-  body nav .main .container ul li:nth-child(2n) a span {
+  .total .body nav .main .container ul li:nth-child(2n) a span {
     display: block;
     height: 25px;
     width: 67px;
@@ -167,60 +207,60 @@
     color: #F8EFBA;
     text-align: center;
   }
-  body nav .main .container ul li:nth-child(2n) a span:nth-child(1) {
+  .total .body nav .main .container ul li:nth-child(2n) a span:nth-child(1) {
     transform: translateZ(12.5px);
     background-color: #FEA47F;
   }
-  body nav .main .container ul li:nth-child(2n) a span:nth-child(2) {
+  .total .body nav .main .container ul li:nth-child(2n) a span:nth-child(2) {
     transform: translateY(-12.5px) rotateX(90deg);
     background-color: #55E6C1;
   }
-  body nav .main .container ul li:nth-child(2n) a:hover {
+  .total .body nav .main .container ul li:nth-child(2n) a:hover {
     transform: rotate3d(1, 0, 0, -90deg);
   }
-  body nav .main .container ul li.space {
+  .total .body nav .main .container ul li.space {
     flex: 1;
   }
-  body nav .search {
+  .total .body nav .search {
     position: absolute;
-    right: 30px;
-    top: 28px;
+    right: 50px;
+    top: 0px;
     transition: color 1s;
     align-self: center;
   }
-  body nav .search:hover a {
-    color: #29d;
+  .total .body nav .search:hover a {
+    color: white;
   }
-  body main {
+  .total .body main {
     zoom: 1;
     width: 100%;
     margin: 0 auto;
   }
-  body main::after {
+  .total .body main::after {
     content: '';
     display: block;
     clear: both;
   }
-  body main .left {
+  .total .body main .left {
     float: left;
     width: 100%;
     margin-top: 25px;
     background-color: white;
     padding: 20px;
   }
-  body main .left .knowledgeList {
+  .total .body main .left .knowledgeList {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  body main .left .knowledgeList li {
-    width: 45%;
+  .total .body main .left .knowledgeList li {
+    width: 100%;
     margin-bottom: 25px;
     background-color: #ffffff;
     position: relative;
   }
-  body main .left .knowledgeList li .img {
+  .total .body main .left .knowledgeList li .img {
     width: 290px;
     height: 200px;
     background: url('../image/touxiang.jpeg');
@@ -229,7 +269,7 @@
     margin: 0 auto;
     margin-bottom: 10px;
   }
-  body main .left .knowledgeList li .desc .tittle span:nth-child(1) .icon1 {
+  .total .body main .left .knowledgeList li .desc .tittle span:nth-child(1) .icon1 {
     color: white;
     background-color: #1890ff;
     display: inline-block;
@@ -237,32 +277,32 @@
     padding: 5px 10px;
     border-radius: 3px;
   }
-  body main .left .knowledgeList li .desc .tittle span:nth-child(1) .iconfont {
+  .total .body main .left .knowledgeList li .desc .tittle span:nth-child(1) .iconfont {
     color: #1890ff;
     position: relative;
     left: -10px;
   }
-  body main .left .knowledgeList li .desc .tittle .important {
+  .total .body main .left .knowledgeList li .desc .tittle .important {
     color: black;
     font-weight: bold;
     font-size: 16px;
   }
-  body main .left .knowledgeList li .desc .info {
+  .total .body main .left .knowledgeList li .desc .info {
     margin-top: 10px;
     color: #aaa;
     line-height: 30px;
   }
-  body main .left .knowledgeList li .desc .dateAndweather {
+  .total .body main .left .knowledgeList li .desc .dateAndweather {
     display: flex;
     justify-content: space-around;
   }
-  body main .left .knowledgeList li .desc .dateAndweather .item5:nth-child(4) {
+  .total .body main .left .knowledgeList li .desc .dateAndweather .item5:nth-child(4) {
     display: none;
   }
-  body main .left .knowledgeList li .desc a {
+  .total .body main .left .knowledgeList li .desc a {
     display: none;
   }
-  body main .left .knowledgeList li .line {
+  .total .body main .left .knowledgeList li .line {
     height: 1px;
     width: 0;
     background-color: #1890ff;
@@ -271,28 +311,28 @@
     z-index: 1;
     transition: all 0.5s ease-in;
   }
-  body main .left .knowledgeList li:hover .line {
+  .total .body main .left .knowledgeList li:hover .line {
     width: 100%;
   }
-  body main .left .setPageDiv {
+  .total .body main .left .setPageDiv {
     margin-top: 20px;
   }
-  body main aside {
+  .total .body main aside {
     float: left;
     width: 100%;
     margin-top: 20px;
   }
-  body main aside .item {
+  .total .body main aside .item {
     width: 100%;
     margin-bottom: 20px;
     border: 1px solid #eaeaea;
     background-color: white;
     border-radius: 6px;
   }
-  body main aside .item .container {
+  .total .body main aside .item .container {
     padding: 0 15px;
   }
-  body main aside .item .container .top {
+  .total .body main aside .item .container .top {
     width: 85px;
     height: 27px;
     background-color: #1890ff;
@@ -302,150 +342,150 @@
     text-align: center;
     font-size: 14px;
   }
-  body main aside .item .container p {
+  .total .body main aside .item .container p {
     padding-top: 8px;
     font-size: 14px;
     line-height: 24px;
   }
-  body main aside .item .container p a {
+  .total .body main aside .item .container p a {
     color: #1890ff;
   }
-  body main aside .qq {
+  .total .body main aside .qq {
     height: 375px;
   }
-  body main aside .qq .top {
+  .total .body main aside .qq .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .qq .top p {
+  .total .body main aside .qq .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .qq .top .line {
+  .total .body main aside .qq .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .qq .bottom {
+  .total .body main aside .qq .bottom {
     height: 330px;
     padding: 10px;
   }
-  body main aside .qq .bottom .twoCode {
+  .total .body main aside .qq .bottom .twoCode {
     height: 230px;
     width: 230px;
     margin: 0 auto;
   }
-  body main aside .qq .bottom .twoCode img {
+  .total .body main aside .qq .bottom .twoCode img {
     height: 230px;
     width: 230px;
   }
-  body main aside .qq .bottom p {
+  .total .body main aside .qq .bottom p {
     font-size: 14px;
     line-height: 28px;
   }
-  body main aside .update .top {
+  .total .body main aside .update .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .update .top p {
+  .total .body main aside .update .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .update .top .line {
+  .total .body main aside .update .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .update .bottom {
+  .total .body main aside .update .bottom {
     padding: 15px;
   }
-  body main aside .update .bottom .item1 {
+  .total .body main aside .update .bottom .item1 {
     display: flex;
     width: 100%;
     height: 70px;
     margin-bottom: 20px;
   }
-  body main aside .update .bottom .item1 .pic {
+  .total .body main aside .update .bottom .item1 .pic {
     flex: 1;
   }
-  body main aside .update .bottom .item1 .pic img {
+  .total .body main aside .update .bottom .item1 .pic img {
     height: 70px;
     width: 100px;
   }
-  body main aside .update .bottom .item1 .description {
+  .total .body main aside .update .bottom .item1 .description {
     flex: 2;
     padding-left: 10px;
     color: #666;
   }
-  body main aside .update .bottom .item1 .description a {
+  .total .body main aside .update .bottom .item1 .description a {
     font-size: 14px;
     line-height: 20px;
     color: #666;
   }
-  body main aside .update .bottom .item1 .description a:hover {
+  .total .body main aside .update .bottom .item1 .description a:hover {
     color: #3498db;
     text-decoration: underline;
   }
-  body main aside .update .bottom .item1 .description p {
+  .total .body main aside .update .bottom .item1 .description p {
     margin-top: 20px;
     font-size: 14px;
   }
-  body main aside .version .top {
+  .total .body main aside .version .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .version .top p {
+  .total .body main aside .version .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .version .top .line {
+  .total .body main aside .version .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .version .bottom {
+  .total .body main aside .version .bottom {
     padding: 15px;
     border-bottom: 1px solid #e9eaed;
     font-size: 14px;
     line-height: 25px;
   }
-  body main aside .version .desc {
+  .total .body main aside .version .desc {
     height: 30px;
     font-size: 16px;
     line-height: 39px;
   }
-  body main aside .article .top {
+  .total .body main aside .article .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .article .top p {
+  .total .body main aside .article .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .article .top .line {
+  .total .body main aside .article .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .article ul {
+  .total .body main aside .article ul {
     width: 100%;
     padding: 10px;
   }
-  body main aside .article ul li {
+  .total .body main aside .article ul li {
     width: 100%;
     height: 20px;
     margin-bottom: 5px;
     display: flex;
   }
-  body main aside .article ul li .sort {
+  .total .body main aside .article ul li .sort {
     width: 20px;
     background-color: #95afc0;
     line-height: 20px;
@@ -454,45 +494,45 @@
     color: white;
     border-radius: 2px;
   }
-  body main aside .article ul li p {
+  .total .body main aside .article ul li p {
     flex: 1;
     color: black;
     padding-left: 10px;
     line-height: 20px;
     font-size: 15px;
   }
-  body main aside .article ul li:nth-child(1) .sort {
+  .total .body main aside .article ul li:nth-child(1) .sort {
     background-color: #ffbe76;
   }
-  body main aside .article ul li:nth-child(2) .sort {
+  .total .body main aside .article ul li:nth-child(2) .sort {
     background-color: #1abc9c;
   }
-  body main aside .article ul li:nth-child(3) .sort {
+  .total .body main aside .article ul li:nth-child(3) .sort {
     background-color: #eb4d4b;
   }
-  body main aside .articleCategory .top {
+  .total .body main aside .articleCategory .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .articleCategory .top p {
+  .total .body main aside .articleCategory .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .articleCategory .top .line {
+  .total .body main aside .articleCategory .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .articleCategory .bottom {
+  .total .body main aside .articleCategory .bottom {
     width: 100%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  body main aside .articleCategory .bottom .item3 {
+  .total .body main aside .articleCategory .bottom .item3 {
     width: 30%;
     height: 30px;
     font-size: 14px;
@@ -502,59 +542,59 @@
     margin-bottom: 5px;
     transition: all 1.2s;
   }
-  body main aside .articleCategory .bottom .item3:hover {
+  .total .body main aside .articleCategory .bottom .item3:hover {
     background-color: #1B9CFC;
   }
-  body main aside .articleCategory .bottom .item3:hover a {
+  .total .body main aside .articleCategory .bottom .item3:hover a {
     text-decoration: underline;
   }
-  body main aside .articleCategory .bottom .item3 a {
+  .total .body main aside .articleCategory .bottom .item3 a {
     color: gray;
   }
-  body main aside .articleCategory .bottom .item3:nth-child(6) {
+  .total .body main aside .articleCategory .bottom .item3:nth-child(6) {
     visibility: hidden;
   }
-  body main aside .cloud .top {
+  .total .body main aside .cloud .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .cloud .top p {
+  .total .body main aside .cloud .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .cloud .top .line {
+  .total .body main aside .cloud .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .cloud .bottom {
+  .total .body main aside .cloud .bottom {
     padding: 10px;
   }
-  body main aside .comments .top {
+  .total .body main aside .comments .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .top p {
+  .total .body main aside .comments .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .top .line {
+  .total .body main aside .comments .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .comments .bottom {
+  .total .body main aside .comments .bottom {
     padding: 10px;
   }
-  body main aside .comments .bottom .item4 {
+  .total .body main aside .comments .bottom .item4 {
     padding: 5px 0;
     display: flex;
   }
-  body main aside .comments .bottom .item4 .pic {
+  .total .body main aside .comments .bottom .item4 .pic {
     height: 60px;
     width: 60px;
     border-radius: 60px;
@@ -562,7 +602,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
   }
-  body main aside .comments .bottom .item4 .desc {
+  .total .body main aside .comments .bottom .item4 .desc {
     flex: 1;
     padding-left: 20px;
     color: gray;
@@ -570,44 +610,44 @@
     line-height: 25px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .bottom .item4 .desc a {
+  .total .body main aside .comments .bottom .item4 .desc a {
     color: gray;
     transition: all 1s;
   }
-  body main aside .comments .bottom .item4 .desc a:hover {
+  .total .body main aside .comments .bottom .item4 .desc a:hover {
     text-decoration: underline;
   }
-  body main aside .comments .server .top {
+  .total .body main aside .comments .server .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .server .top p {
+  .total .body main aside .comments .server .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .server .top .line {
+  .total .body main aside .comments .server .top .line {
     width: 80px;
     height: 4px;
     background-color: #1890ff;
   }
-  body main aside .comments .friendLink .top {
+  .total .body main aside .comments .friendLink .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .friendLink .top p {
+  .total .body main aside .comments .friendLink .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .friendLink .top .line {
+  .total .body main aside .comments .friendLink .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .comments .friendLink .bottom {
+  .total .body main aside .comments .friendLink .bottom {
     color: red;
     width: 100%;
     padding: 10px;
@@ -615,71 +655,71 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  body main aside .comments .friendLink .bottom .link {
+  .total .body main aside .comments .friendLink .bottom .link {
     height: 30px;
     width: 40%;
     background-color: #1890ff;
   }
-  body main aside .comments .statistical .top {
+  .total .body main aside .comments .statistical .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .statistical .top p {
+  .total .body main aside .comments .statistical .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .statistical .top .line {
+  .total .body main aside .comments .statistical .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .server .top {
+  .total .body main aside .server .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .server .top p {
+  .total .body main aside .server .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .server .top .line {
+  .total .body main aside .server .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .server .bottom {
+  .total .body main aside .server .bottom {
     padding: 10px;
     font-size: 14px;
     line-height: 35px;
     color: gray;
     border-bottom: 1px solid #eee;
   }
-  body main aside .friendLink .top {
+  .total .body main aside .friendLink .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .friendLink .top p {
+  .total .body main aside .friendLink .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .friendLink .top .line {
+  .total .body main aside .friendLink .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .friendLink .bottom {
+  .total .body main aside .friendLink .bottom {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
     justify-content: space-around;
   }
-  body main aside .friendLink .bottom .link {
+  .total .body main aside .friendLink .bottom .link {
     width: 40%;
     height: 40px;
     margin-bottom: 5px;
@@ -687,36 +727,36 @@
     line-height: 40px;
     transition: all 1s;
   }
-  body main aside .friendLink .bottom .link a {
+  .total .body main aside .friendLink .bottom .link a {
     color: gray;
   }
-  body main aside .friendLink .bottom .link:hover {
+  .total .body main aside .friendLink .bottom .link:hover {
     background-color: #1B9CFC;
   }
-  body main aside .friendLink .bottom .link:hover a {
+  .total .body main aside .friendLink .bottom .link:hover a {
     text-decoration: underline;
   }
-  body main aside .statistical .top {
+  .total .body main aside .statistical .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .statistical .top p {
+  .total .body main aside .statistical .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .statistical .top .line {
+  .total .body main aside .statistical .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .statistical .bottom {
+  .total .body main aside .statistical .bottom {
     padding: 5px 20px 10px;
     display: flex;
     flex-wrap: wrap;
   }
-  body main aside .statistical .bottom span {
+  .total .body main aside .statistical .bottom span {
     width: 50%;
     height: 30px;
     font-size: 14px;
@@ -724,7 +764,7 @@
     line-height: 30px;
     color: gray;
   }
-  body footer {
+  .total .body footer {
     width: 100%;
     margin-top: 20px;
     background: url(../image/footer.png);
@@ -734,25 +774,34 @@
     padding-top: 50px;
     color: #636e72;
   }
-  body footer .container {
+  .total .body footer .container {
     line-height: 30px;
   }
-  body footer .container a {
+  .total .body footer .container a {
     color: #636e72;
   }
-  body footer .container p:nth-child(2) {
+  .total .body footer .container p:nth-child(2) {
     color: #28d0e9;
   }
-  body footer .container a {
+  .total .body footer .container a {
     color: #636e72;
     transition: all 1s;
   }
-  body footer .container a:hover {
+  .total .body footer .container a:hover {
     color: #28d0e9;
     text-decoration: underline;
   }
 }
 @media (min-width: 770px) and (max-width: 1200px) {
+  .total .aside {
+    display: none;
+  }
+  .total .body nav .main .icon-fenlei {
+    display: none;
+  }
+  .total .body nav .main .info11111 {
+    display: none;
+  }
   body {
     width: 100%;
     height: 100vh;
@@ -1502,18 +1551,21 @@
   }
 }
 @media only screen and (min-width: 1200px) {
-  body {
+  .total .aside {
+    display: none;
+  }
+  .total .body {
     width: 100%;
     height: 100vh;
     background-color: #eaebed;
     position: relative;
     overflow: scroll;
   }
-  body nav {
+  .total .body nav {
     box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
     position: relative;
   }
-  body nav .line {
+  .total .body nav .line {
     height: 3px;
     width: 100%;
     background-color: #29d;
@@ -1536,17 +1588,23 @@
       background-color: #34495e;
     }
   }
-  body nav .main {
+  .total .body nav .main {
     height: 70px;
     width: 100%;
   }
-  body nav .main .container {
+  .total .body nav .main .icon-fenlei {
+    display: none;
+  }
+  .total .body nav .main .info11111 {
+    display: none;
+  }
+  .total .body nav .main .container {
     width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: flex;
   }
-  body nav .main .container .author {
+  .total .body nav .main .container .author {
     width: 12.5%;
     height: 59px;
     border: 2px solid #48dbfb;
@@ -1554,20 +1612,20 @@
     align-self: center;
     display: flex;
   }
-  body nav .main .container .author .logo {
+  .total .body nav .main .container .author .logo {
     width: 45px;
     height: 60px;
     background: url('https://www.huanggr.cn/wp-content/themes/boke/images/xfg.png') -10px -2px no-repeat;
     background-size: 350px 175px;
     overflow: hidden;
   }
-  body nav .main .container .author .name {
+  .total .body nav .main .container .author .name {
     line-height: 59px;
     font-weight: bold;
     letter-spacing: 6px;
     color: #3498db;
   }
-  body nav .main .container .introduce {
+  .total .body nav .main .container .introduce {
     width: 140px;
     height: 36px;
     margin-left: 20px;
@@ -1575,7 +1633,7 @@
     position: relative;
     align-self: center;
   }
-  body nav .main .container .introduce .container {
+  .total .body nav .main .container .introduce .container {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -1583,25 +1641,25 @@
     padding-left: 20px;
     transform: translate(-50%, -50%);
   }
-  body nav .main .container .introduce .container p {
+  .total .body nav .main .container .introduce .container p {
     font-size: 14px;
     color: #bbb;
     transition: color 1.2s;
   }
-  body nav .main .container .introduce .container p:hover {
+  .total .body nav .main .container .introduce .container p:hover {
     color: black;
   }
-  body nav .main .container ul {
+  .total .body nav .main .container ul {
     height: 100%;
     display: flex;
     padding-left: 195px;
     font-size: 16px;
   }
-  body nav .main .container ul li {
+  .total .body nav .main .container ul li {
     width: 67px;
     position: relative;
   }
-  body nav .main .container ul li a {
+  .total .body nav .main .container ul li a {
     display: block;
     height: 25px;
     position: absolute;
@@ -1615,7 +1673,7 @@
     transform-origin: center center 0px;
     transition: transform 0.8s;
   }
-  body nav .main .container ul li a span {
+  .total .body nav .main .container ul li a span {
     display: block;
     height: 25px;
     width: 67px;
@@ -1624,18 +1682,18 @@
     color: #F8EFBA;
     text-align: center;
   }
-  body nav .main .container ul li a span:nth-child(1) {
+  .total .body nav .main .container ul li a span:nth-child(1) {
     transform: translateZ(12.5px);
     background-color: #1abc9c;
   }
-  body nav .main .container ul li a span:nth-child(2) {
+  .total .body nav .main .container ul li a span:nth-child(2) {
     transform: translateY(-12.5px) rotateX(90deg);
     background-color: #1B9CFC;
   }
-  body nav .main .container ul li a:hover {
+  .total .body nav .main .container ul li a:hover {
     transform: rotate3d(1, 0, 0, -90deg);
   }
-  body nav .main .container ul li:nth-child(2n) a {
+  .total .body nav .main .container ul li:nth-child(2n) a {
     display: block;
     height: 25px;
     position: absolute;
@@ -1649,7 +1707,7 @@
     transform-origin: center center 0px;
     transition: transform 0.8s;
   }
-  body nav .main .container ul li:nth-child(2n) a span {
+  .total .body nav .main .container ul li:nth-child(2n) a span {
     display: block;
     height: 25px;
     width: 67px;
@@ -1658,51 +1716,51 @@
     color: #F8EFBA;
     text-align: center;
   }
-  body nav .main .container ul li:nth-child(2n) a span:nth-child(1) {
+  .total .body nav .main .container ul li:nth-child(2n) a span:nth-child(1) {
     transform: translateZ(12.5px);
     background-color: #FEA47F;
   }
-  body nav .main .container ul li:nth-child(2n) a span:nth-child(2) {
+  .total .body nav .main .container ul li:nth-child(2n) a span:nth-child(2) {
     transform: translateY(-12.5px) rotateX(90deg);
     background-color: #55E6C1;
   }
-  body nav .main .container ul li:nth-child(2n) a:hover {
+  .total .body nav .main .container ul li:nth-child(2n) a:hover {
     transform: rotate3d(1, 0, 0, -90deg);
   }
-  body nav .main .container ul li.space {
+  .total .body nav .main .container ul li.space {
     flex: 1;
   }
-  body nav .search {
+  .total .body nav .search {
     position: absolute;
     right: 50px;
     top: 28px;
     transition: color 1s;
     align-self: center;
   }
-  body nav .search:hover a {
+  .total .body nav .search:hover a {
     color: #29d;
   }
-  body main {
+  .total .body main {
     zoom: 1;
     width: 1200px;
     margin: 0 auto;
   }
-  body main::after {
+  .total .body main::after {
     content: '';
     display: block;
     clear: both;
   }
-  body main .left {
+  .total .body main .left {
     float: left;
     width: 840px;
     margin-top: 25px;
     background-color: #eaebed;
   }
-  body main .left .knowledgeList {
+  .total .body main .left .knowledgeList {
     width: 100%;
     position: relative;
   }
-  body main .left .knowledgeList li {
+  .total .body main .left .knowledgeList li {
     width: 100%;
     height: 190px;
     display: flex;
@@ -1710,23 +1768,23 @@
     background-color: white;
     margin-bottom: 10px;
   }
-  body main .left .knowledgeList li .img {
+  .total .body main .left .knowledgeList li .img {
     flex: 1;
     height: 150px;
     background: url('../image/footer.jpg') repeat-y;
     background-size: 100%;
     border-radius: 3px;
   }
-  body main .left .knowledgeList li .desc {
+  .total .body main .left .knowledgeList li .desc {
     flex: 3;
     padding-left: 20px;
     position: relative;
   }
-  body main .left .knowledgeList li .desc .tittle {
+  .total .body main .left .knowledgeList li .desc .tittle {
     height: 25px;
     line-height: 25px;
   }
-  body main .left .knowledgeList li .desc .tittle .icon1 {
+  .total .body main .left .knowledgeList li .desc .tittle .icon1 {
     padding: 0 10px;
     display: inline-block;
     background-color: #1890ff;
@@ -1736,34 +1794,34 @@
     text-align: center;
     border-radius: 2px;
   }
-  body main .left .knowledgeList li .desc .tittle .iconfont {
+  .total .body main .left .knowledgeList li .desc .tittle .iconfont {
     color: #1890ff;
     position: relative;
     left: -11px;
   }
-  body main .left .knowledgeList li .desc .tittle .important {
+  .total .body main .left .knowledgeList li .desc .tittle .important {
     display: inline-block;
     font-weight: bold;
     font-size: 20px;
     position: relative;
     top: 3px;
   }
-  body main .left .knowledgeList li .desc .info {
+  .total .body main .left .knowledgeList li .desc .info {
     margin-top: 20px;
     font-size: 14px;
     line-height: 25px;
   }
-  body main .left .knowledgeList li .desc .dateAndweather {
+  .total .body main .left .knowledgeList li .desc .dateAndweather {
     margin-top: 5px;
     display: flex;
   }
-  body main .left .knowledgeList li .desc .dateAndweather .item5 {
+  .total .body main .left .knowledgeList li .desc .dateAndweather .item5 {
     display: block;
     font-size: 14px;
     color: #f2be45;
     margin-right: 20px;
   }
-  body main .left .knowledgeList li .desc a {
+  .total .body main .left .knowledgeList li .desc a {
     color: #aaa;
     font-size: 14px;
     position: absolute;
@@ -1771,11 +1829,11 @@
     right: 5px;
     line-height: 14px;
   }
-  body main .left .knowledgeList li .desc a span {
+  .total .body main .left .knowledgeList li .desc a span {
     background-color: gray;
     border-radius: 10px;
   }
-  body main .left .knowledgeList li .line {
+  .total .body main .left .knowledgeList li .line {
     background-color: #1890ff;
     position: absolute;
     bottom: -1px;
@@ -1784,29 +1842,29 @@
     width: 0;
     transition: all 0.5s ease-in;
   }
-  body main .left .knowledgeList li:hover .line {
+  .total .body main .left .knowledgeList li:hover .line {
     width: 100%;
   }
-  body main .left .setPageDiv {
+  .total .body main .left .setPageDiv {
     margin-top: 20px;
   }
-  body main aside {
+  .total .body main aside {
     float: left;
     width: 330px;
     margin-top: 20px;
     margin-left: 20px;
   }
-  body main aside .item {
+  .total .body main aside .item {
     width: 340px;
     margin-bottom: 20px;
     border: 1px solid #eaeaea;
     background-color: white;
     border-radius: 6px;
   }
-  body main aside .item .container {
+  .total .body main aside .item .container {
     padding: 0 15px;
   }
-  body main aside .item .container .top {
+  .total .body main aside .item .container .top {
     width: 85px;
     height: 27px;
     background-color: #1890ff;
@@ -1816,150 +1874,150 @@
     text-align: center;
     font-size: 14px;
   }
-  body main aside .item .container p {
+  .total .body main aside .item .container p {
     padding-top: 8px;
     font-size: 14px;
     line-height: 24px;
   }
-  body main aside .item .container p a {
+  .total .body main aside .item .container p a {
     color: #1890ff;
   }
-  body main aside .qq {
+  .total .body main aside .qq {
     height: 375px;
   }
-  body main aside .qq .top {
+  .total .body main aside .qq .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .qq .top p {
+  .total .body main aside .qq .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .qq .top .line {
+  .total .body main aside .qq .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .qq .bottom {
+  .total .body main aside .qq .bottom {
     height: 330px;
     padding: 10px;
   }
-  body main aside .qq .bottom .twoCode {
+  .total .body main aside .qq .bottom .twoCode {
     height: 230px;
     width: 230px;
     margin: 0 auto;
   }
-  body main aside .qq .bottom .twoCode img {
+  .total .body main aside .qq .bottom .twoCode img {
     height: 230px;
     width: 230px;
   }
-  body main aside .qq .bottom p {
+  .total .body main aside .qq .bottom p {
     font-size: 14px;
     line-height: 28px;
   }
-  body main aside .update .top {
+  .total .body main aside .update .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .update .top p {
+  .total .body main aside .update .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .update .top .line {
+  .total .body main aside .update .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .update .bottom {
+  .total .body main aside .update .bottom {
     padding: 15px;
   }
-  body main aside .update .bottom .item1 {
+  .total .body main aside .update .bottom .item1 {
     display: flex;
     width: 100%;
     height: 70px;
     margin-bottom: 20px;
   }
-  body main aside .update .bottom .item1 .pic {
+  .total .body main aside .update .bottom .item1 .pic {
     flex: 1;
   }
-  body main aside .update .bottom .item1 .pic img {
+  .total .body main aside .update .bottom .item1 .pic img {
     height: 70px;
     width: 100px;
   }
-  body main aside .update .bottom .item1 .description {
+  .total .body main aside .update .bottom .item1 .description {
     flex: 2;
     padding-left: 10px;
     color: #666;
   }
-  body main aside .update .bottom .item1 .description a {
+  .total .body main aside .update .bottom .item1 .description a {
     font-size: 14px;
     line-height: 20px;
     color: #666;
   }
-  body main aside .update .bottom .item1 .description a:hover {
+  .total .body main aside .update .bottom .item1 .description a:hover {
     color: #3498db;
     text-decoration: underline;
   }
-  body main aside .update .bottom .item1 .description p {
+  .total .body main aside .update .bottom .item1 .description p {
     margin-top: 20px;
     font-size: 14px;
   }
-  body main aside .version .top {
+  .total .body main aside .version .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .version .top p {
+  .total .body main aside .version .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .version .top .line {
+  .total .body main aside .version .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .version .bottom {
+  .total .body main aside .version .bottom {
     padding: 15px;
     border-bottom: 1px solid #e9eaed;
     font-size: 14px;
     line-height: 25px;
   }
-  body main aside .version .desc {
+  .total .body main aside .version .desc {
     height: 30px;
     font-size: 16px;
     line-height: 39px;
   }
-  body main aside .article .top {
+  .total .body main aside .article .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .article .top p {
+  .total .body main aside .article .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .article .top .line {
+  .total .body main aside .article .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .article ul {
+  .total .body main aside .article ul {
     width: 100%;
     padding: 10px;
   }
-  body main aside .article ul li {
+  .total .body main aside .article ul li {
     width: 100%;
     height: 20px;
     margin-bottom: 5px;
     display: flex;
   }
-  body main aside .article ul li .sort {
+  .total .body main aside .article ul li .sort {
     width: 20px;
     background-color: #95afc0;
     line-height: 20px;
@@ -1968,45 +2026,45 @@
     color: white;
     border-radius: 2px;
   }
-  body main aside .article ul li p {
+  .total .body main aside .article ul li p {
     flex: 1;
     color: black;
     padding-left: 10px;
     line-height: 20px;
     font-size: 15px;
   }
-  body main aside .article ul li:nth-child(1) .sort {
+  .total .body main aside .article ul li:nth-child(1) .sort {
     background-color: #ffbe76;
   }
-  body main aside .article ul li:nth-child(2) .sort {
+  .total .body main aside .article ul li:nth-child(2) .sort {
     background-color: #1abc9c;
   }
-  body main aside .article ul li:nth-child(3) .sort {
+  .total .body main aside .article ul li:nth-child(3) .sort {
     background-color: #eb4d4b;
   }
-  body main aside .articleCategory .top {
+  .total .body main aside .articleCategory .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .articleCategory .top p {
+  .total .body main aside .articleCategory .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .articleCategory .top .line {
+  .total .body main aside .articleCategory .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .articleCategory .bottom {
+  .total .body main aside .articleCategory .bottom {
     width: 100%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  body main aside .articleCategory .bottom .item3 {
+  .total .body main aside .articleCategory .bottom .item3 {
     width: 30%;
     height: 30px;
     font-size: 14px;
@@ -2016,59 +2074,59 @@
     margin-bottom: 5px;
     transition: all 1.2s;
   }
-  body main aside .articleCategory .bottom .item3:hover {
+  .total .body main aside .articleCategory .bottom .item3:hover {
     background-color: #1B9CFC;
   }
-  body main aside .articleCategory .bottom .item3:hover a {
+  .total .body main aside .articleCategory .bottom .item3:hover a {
     text-decoration: underline;
   }
-  body main aside .articleCategory .bottom .item3 a {
+  .total .body main aside .articleCategory .bottom .item3 a {
     color: gray;
   }
-  body main aside .articleCategory .bottom .item3:nth-child(6) {
+  .total .body main aside .articleCategory .bottom .item3:nth-child(6) {
     visibility: hidden;
   }
-  body main aside .cloud .top {
+  .total .body main aside .cloud .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .cloud .top p {
+  .total .body main aside .cloud .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .cloud .top .line {
+  .total .body main aside .cloud .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .cloud .bottom {
+  .total .body main aside .cloud .bottom {
     padding: 10px;
   }
-  body main aside .comments .top {
+  .total .body main aside .comments .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .top p {
+  .total .body main aside .comments .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .top .line {
+  .total .body main aside .comments .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .comments .bottom {
+  .total .body main aside .comments .bottom {
     padding: 10px;
   }
-  body main aside .comments .bottom .item4 {
+  .total .body main aside .comments .bottom .item4 {
     padding: 5px 0;
     display: flex;
   }
-  body main aside .comments .bottom .item4 .pic {
+  .total .body main aside .comments .bottom .item4 .pic {
     height: 60px;
     width: 60px;
     border-radius: 60px;
@@ -2076,7 +2134,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
   }
-  body main aside .comments .bottom .item4 .desc {
+  .total .body main aside .comments .bottom .item4 .desc {
     flex: 1;
     padding-left: 20px;
     color: gray;
@@ -2084,44 +2142,44 @@
     line-height: 25px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .bottom .item4 .desc a {
+  .total .body main aside .comments .bottom .item4 .desc a {
     color: gray;
     transition: all 1s;
   }
-  body main aside .comments .bottom .item4 .desc a:hover {
+  .total .body main aside .comments .bottom .item4 .desc a:hover {
     text-decoration: underline;
   }
-  body main aside .comments .server .top {
+  .total .body main aside .comments .server .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .server .top p {
+  .total .body main aside .comments .server .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .server .top .line {
+  .total .body main aside .comments .server .top .line {
     width: 80px;
     height: 4px;
     background-color: #1890ff;
   }
-  body main aside .comments .friendLink .top {
+  .total .body main aside .comments .friendLink .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .friendLink .top p {
+  .total .body main aside .comments .friendLink .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .friendLink .top .line {
+  .total .body main aside .comments .friendLink .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .comments .friendLink .bottom {
+  .total .body main aside .comments .friendLink .bottom {
     color: red;
     width: 100%;
     padding: 10px;
@@ -2129,71 +2187,71 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  body main aside .comments .friendLink .bottom .link {
+  .total .body main aside .comments .friendLink .bottom .link {
     height: 30px;
     width: 40%;
     background-color: #1890ff;
   }
-  body main aside .comments .statistical .top {
+  .total .body main aside .comments .statistical .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .comments .statistical .top p {
+  .total .body main aside .comments .statistical .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .comments .statistical .top .line {
+  .total .body main aside .comments .statistical .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .server .top {
+  .total .body main aside .server .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .server .top p {
+  .total .body main aside .server .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .server .top .line {
+  .total .body main aside .server .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .server .bottom {
+  .total .body main aside .server .bottom {
     padding: 10px;
     font-size: 14px;
     line-height: 35px;
     color: gray;
     border-bottom: 1px solid #eee;
   }
-  body main aside .friendLink .top {
+  .total .body main aside .friendLink .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .friendLink .top p {
+  .total .body main aside .friendLink .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .friendLink .top .line {
+  .total .body main aside .friendLink .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .friendLink .bottom {
+  .total .body main aside .friendLink .bottom {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
     justify-content: space-around;
   }
-  body main aside .friendLink .bottom .link {
+  .total .body main aside .friendLink .bottom .link {
     width: 40%;
     height: 40px;
     margin-bottom: 5px;
@@ -2201,36 +2259,36 @@
     line-height: 40px;
     transition: all 1s;
   }
-  body main aside .friendLink .bottom .link a {
+  .total .body main aside .friendLink .bottom .link a {
     color: gray;
   }
-  body main aside .friendLink .bottom .link:hover {
+  .total .body main aside .friendLink .bottom .link:hover {
     background-color: #1B9CFC;
   }
-  body main aside .friendLink .bottom .link:hover a {
+  .total .body main aside .friendLink .bottom .link:hover a {
     text-decoration: underline;
   }
-  body main aside .statistical .top {
+  .total .body main aside .statistical .top {
     width: 340px;
     height: 42px;
     border-bottom: 1px solid #e9eaed;
   }
-  body main aside .statistical .top p {
+  .total .body main aside .statistical .top p {
     height: 40px;
     padding-left: 20px;
     line-height: 40px;
   }
-  body main aside .statistical .top .line {
+  .total .body main aside .statistical .top .line {
     width: 100px;
     height: 2px;
     background-color: #1890ff;
   }
-  body main aside .statistical .bottom {
+  .total .body main aside .statistical .bottom {
     padding: 5px 20px 10px;
     display: flex;
     flex-wrap: wrap;
   }
-  body main aside .statistical .bottom span {
+  .total .body main aside .statistical .bottom span {
     width: 50%;
     height: 30px;
     font-size: 14px;
@@ -2238,7 +2296,7 @@
     line-height: 30px;
     color: gray;
   }
-  body footer {
+  .total .body footer {
     width: 100%;
     margin-top: 20px;
     background: url(../image/footer.png);
@@ -2248,20 +2306,20 @@
     padding-top: 50px;
     color: #636e72;
   }
-  body footer .container {
+  .total .body footer .container {
     line-height: 30px;
   }
-  body footer .container a {
+  .total .body footer .container a {
     color: #636e72;
   }
-  body footer .container p:nth-child(2) {
+  .total .body footer .container p:nth-child(2) {
     color: #28d0e9;
   }
-  body footer .container a {
+  .total .body footer .container a {
     color: #636e72;
     transition: all 1s;
   }
-  body footer .container a:hover {
+  .total .body footer .container a:hover {
     color: #28d0e9;
     text-decoration: underline;
   }

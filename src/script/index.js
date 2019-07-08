@@ -15,4 +15,13 @@ define([
         nextContent: "下页",
         callback: function (api) {}
     });
+
+
+    //770以下的适配
+
+
+    //770-1200的适配
+
+
+    //1200以上的适配
 });

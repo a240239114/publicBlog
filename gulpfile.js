@@ -29,7 +29,17 @@ gulp.task('bower',function(){
 
 //将 html 拷贝到 devPath prdPath中
 gulp.task('html', function () {
+    //子级的文件名和文件都不变,等同于复制
     gulp.src(app.srcPath + '**/*.html')
+        .pipe(gulp.dest(app.devPath))
+        .pipe(gulp.dest(app.prdPath))
+        .pipe($.connect.reload());
+});
+
+
+//将 php 拷贝到 devPath prdPath中
+gulp.task('php', function () {
+    gulp.src(app.srcPath + '*.php')
         .pipe(gulp.dest(app.devPath))
         .pipe(gulp.dest(app.prdPath))
         .pipe($.connect.reload());
@@ -94,10 +104,12 @@ gulp.task('watch',function(){
     gulp.watch(app.srcPath + 'image/**/*', ['image']);
     //监听bower_components
     gulp.watch('bower_components/**/*', ['bower']);
+    //监听php
+    gulp.watch(app.srcPath + '*.php', ['php']);
 })
 
 //总的方法
-gulp.task('build', ['bower','image', 'script', 'less', 'json', 'html','watch']);
+gulp.task('build', ['bower','image', 'script', 'less', 'json', 'html','php','watch']);
 
 
 

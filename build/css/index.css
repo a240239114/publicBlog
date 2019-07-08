@@ -268,6 +268,10 @@
     border-radius: 5px;
     margin: 0 auto;
     margin-bottom: 10px;
+    transition: all 2s;
+  }
+  .total .body main .left .knowledgeList li .img:hover {
+    background-size: 348px 240px;
   }
   .total .body main .left .knowledgeList li .desc .tittle span:nth-child(1) .icon1 {
     color: white;
@@ -1023,6 +1027,10 @@
     margin: 0 auto;
     margin-bottom: 10px;
     margin-top: 10px;
+    transition: all 2s;
+  }
+  body main .left .knowledgeList li .img:hover {
+    background-size: 348px 240px;
   }
   body main .left .knowledgeList li .desc .tittle span:nth-child(1) .icon1 {
     color: white;
@@ -1758,7 +1766,6 @@
   }
   .total .body main .left .knowledgeList {
     width: 100%;
-    position: relative;
   }
   .total .body main .left .knowledgeList li {
     width: 100%;
@@ -1767,13 +1774,19 @@
     padding: 20px 15px;
     background-color: white;
     margin-bottom: 10px;
+    position: relative;
   }
   .total .body main .left .knowledgeList li .img {
     flex: 1;
     height: 150px;
     background: url('../image/footer.jpg') repeat-y;
-    background-size: 100%;
+    background-size: 190px 155px;
     border-radius: 3px;
+    transition: background-size 2s;
+    transform-origin: right top;
+  }
+  .total .body main .left .knowledgeList li .img:hover {
+    background-size: 348px 240px;
   }
   .total .body main .left .knowledgeList li .desc {
     flex: 3;

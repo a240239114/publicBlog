@@ -19,6 +19,34 @@ define([
 
     //770以下的适配
 
+    $('.total').on('click', function () {
+        // alert('哈师大');
+        $('.aside').animate({
+            width: 0
+        }, 2,'linear',function(){
+            // $('.aside>ul').hide();
+        });
+
+        $('.total').animate({
+            width: '100vw'
+        }, 2,'linear');
+
+
+        // return false   
+    })
+
+    $('.icon-fenlei').on('click', function () {
+        // alert('哈师大');
+        $('.aside').animate({
+            width: '40vw'
+        }, 2,'linear');
+
+        $('.total').animate({
+            width: '140vw'
+        },2,'linear');
+
+        return false  
+    })
 
     //770-1200的适配
 

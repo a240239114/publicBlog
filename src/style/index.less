@@ -15,18 +15,21 @@
 
 
 @media (max-width:770px) {
-
+  // @aside-width: 0;
   .total {
-
-
+    // zoom: 1;
     display: flex;
     width  : 140vw;
+    transform: translateX(-40vw);
+    transition: all 1s;
 
-    .aside {// 770以下的侧边栏
-      width     : 40vw;
-      height    : 100vh;
-      background: url('../image/aside.jpg') repeat-y;
-      transition: all 1s;
+    // 770以下的侧边栏
+    .aside {
+      width              : 40vw;
+      height             : 100vh;
+      background         : url('../image/aside.jpg') repeat-y;
+      // float           : left;
+      transition         : all 1s;
 
       ul {
         width  : 100%;
@@ -45,12 +48,9 @@
           }
         }
       }
-
-
     }
 
-
-    .body {//主体部分
+    .body {
       width           : 100vw;
       background-color: #eaebed;
       position        : relative;
@@ -369,15 +369,6 @@
                 border-radius  : 5px;
                 margin         : 0 auto;
                 margin-bottom  : 10px;
-                transition     : all 2s;
-
-                // transform-origin: top top;
-                &                  :hover {
-                  background-size: 348px 240px;
-                  background-size: transform:scale(1.2);
-                  // transform   :scale(1.2);
-                  // transform   : rotateZ(20deg)
-                }
               }
 
               .desc {
@@ -1104,13 +1095,9 @@
       }
 
     }
-
-
-  
-   }
   }
 }
-}
+
 
 
 

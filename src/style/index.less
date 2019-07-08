@@ -1113,11 +1113,6 @@
   }
 }
 
-
-
-
-
-
 @media (min-width:770px) and (max-width:1200px) {
 
   .total {
@@ -2180,13 +2175,11 @@
   }
 }
 
-
-
 @media only screen and (min-width:1200px) {
 
+  
 
-
-
+  //默认主页
   .total {
     .aside {
       display: none;
@@ -3257,6 +3250,86 @@
     }
   }
 
+ //博客主人信息
+ main{
+   width: 1150px;
+   padding:20px;
+   .nameAndPic{
+     color:white;
+     font-weight: bold;
+      .background{
+        width: 100%;
+        height: 350px;
+        background: url('../image/rains.jpg');
+        background-size: 1150px 500px;
+        position: relative;
+
+        .container{
+          width: 230px;
+          height: 270px;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+          text-align: center;
+          img{
+            height: 130px;
+            width: 130px;
+            border-radius: 50%; 
+          }  
+          p{
+            margin-top:20px;
+            color:white;
+            font-size:20px;
+            .icon-nanxing_{
+              color:#1B9CFC;
+            }
+            .icon--huangguan{
+              color:yellow;
+            }
+            .icon-vip{
+              color:red;
+            }
+            span{
+              display: inline-block;
+              margin-right: 10px;
+            }
+          } 
+          
+          p:nth-child(3){
+            font-size: 14px;
+          }
+
+          .stars{
+            width: 80px;
+            height: 40px;
+            background-color:#f0932b;
+            line-height: 40px;
+            border-radius: 5px;
+            // margin-top:10px;
+            margin: 10px auto;
+          }
+        }
+
+
+        .num{
+          width: 320px;
+          height: 27px;
+          position: absolute;
+          bottom: 0px;
+          background-color: white;
+          color:black;
+          line-height: 27px;
+          span{
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+
+
+      }
+   }
+ }
 
 
 }

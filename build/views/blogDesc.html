@@ -5,16 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="vendor/font-icon/iconfont.css">
-    <link rel="stylesheet" href="vendor/pagination/pagination.css">
-    <link rel="stylesheet" href="css/index.css">
+    <?php include('./views/public/style.html');?>
     <!-- 测试 -->
-
-    <script src="vendor/requirejs/require.js"></script>
-    <script src="./js/config.js"></script>
-    <script>
-        require(['../js/index']);
-    </script>
     <title>你好,世界</title>
 </head>
 
@@ -32,18 +24,62 @@
             <?php include('./views/public/head.html');?>
 
 
-            <!-- 中间 --> 
+            <!-- 中间 -->
             <main>
-                
+                <div class="nameAndPic">
+                    <div class="background">
+                        <div class="container">
+                            <img src="image/touxiang.jpeg" alt="">
+                            <p>Admin
+                                <span class="iconfont icon-nanxing_"></span>
+                                <span class="iconfont icon--huangguan"></span>
+                                <span class="iconfont icon-vip"></span>
+                            </p>
+                            <p>管理员</p>
 
+                            <div class="stars">
+                                <span></span>
+                                关注
+                            </div>
+
+                        </div>
+
+                        <div class="num">
+                            <span>人气:99999+</span>
+                            <span>粉丝:999</span>
+                            <span>关注:999</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="desc">站长简介</div>
+                <div class="personInfo">
+                    <span>姓名:管敬雄</span>
+                    <span>民族:汉族</span>
+                    <span>籍贯:武汉</span>
+                    <span>专业:电子商务</span>
+                    <span>职业:前端工程师</span>
+                    <p>自我说明:</p>
+                    <p>欢迎来到前端大家庭!本人前端小萌新,喜欢专研</p>
+                    <p>职业生涯:</p>
+                    <p>待续.............</p>
+                </div>
+                <div>
+                    博客介绍
+                </div>
+                <div>
+                    待续.....................
+                </div>
             </main>
             <!-- 页脚 -->
             <?php include('./views/public/foot.html');?>
 
         </div>
-
-
     </div>
+    <?php include('./views/public/script.html');?>
+    <script>
+        require(['../js/index']);
+    </script>
 </body>
 
 </html>

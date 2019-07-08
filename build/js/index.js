@@ -20,15 +20,22 @@ define([
     });
 
 
+    var flag = false;
     //770以下的适配
-    $(".icon-fenlei").on('click',function(){
-        $(".total").css("transform","translate(0)")
+    $(".icon-fenlei").on('click', function () {
+        $(".total").css("transform", "translate(0)")
+        flag = true;
+        console.log(flag);
+        if (flag) {
+            console.log('2222');
+            $(".total").on('click', function () {
+                console.log('11111');
+                $(".total").css("transform", "translate(-40vw)");
+            })
+        }
         return false;
     })
 
-    $(".total").on('click',function(){
-        $(".total").css("transform","translate(-40vw)");
-    })
 
 
     //770-1200的适配

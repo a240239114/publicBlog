@@ -801,6 +801,50 @@
     color: #28d0e9;
     text-decoration: underline;
   }
+  .blogDescMain {
+    width: 100%;
+    background-color: white;
+  }
+  .blogDescMain .nameAndPic {
+    display: none;
+  }
+  .blogDescMain .desc {
+    height: 40px;
+    border-left: 3px solid #1B9CFC;
+    border-bottom: 1px solid #1B9CFC;
+    font-size: 18px;
+    line-height: 40px;
+    text-indent: 2em;
+    margin-top: 20px;
+  }
+  .blogDescMain .personInfo {
+    padding: 20px;
+  }
+  .blogDescMain .personInfo span {
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .blogDescMain .personInfo p {
+    margin-bottom: 20px;
+  }
+  .blogDescMain .personInfo p:nth-child(2n+1) {
+    text-indent: 2em;
+  }
+  .blogDescMain .blogDesc {
+    border-left: 3px solid #1B9CFC;
+    border-bottom: 1px solid #1B9CFC;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 2em;
+  }
+  .blogDescMain .bottom {
+    height: 70px;
+  }
+  .blogDescMain .bottom p {
+    text-indent: 3em;
+    margin-top: 20px;
+  }
 }
 @media (min-width: 770px) and (max-width: 1200px) {
   .total .aside {
@@ -1565,6 +1609,117 @@
   body footer .container a:hover {
     color: #28d0e9;
     text-decoration: underline;
+  }
+  .blogDescMain {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+  }
+  .blogDescMain .nameAndPic {
+    color: white;
+    font-weight: bold;
+  }
+  .blogDescMain .nameAndPic .background {
+    width: 100%;
+    height: 350px;
+    background: url('../image/rains.jpg');
+    background-size: 1150px 500px;
+    position: relative;
+  }
+  .blogDescMain .nameAndPic .background .container {
+    width: 230px;
+    height: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .blogDescMain .nameAndPic .background .container img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+  }
+  .blogDescMain .nameAndPic .background .container p {
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+  }
+  .blogDescMain .nameAndPic .background .container p .icon-nanxing_ {
+    color: #1B9CFC;
+  }
+  .blogDescMain .nameAndPic .background .container p .icon--huangguan {
+    color: yellow;
+  }
+  .blogDescMain .nameAndPic .background .container p .icon-vip {
+    color: red;
+  }
+  .blogDescMain .nameAndPic .background .container p span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .blogDescMain .nameAndPic .background .container p:nth-child(3) {
+    font-size: 14px;
+  }
+  .blogDescMain .nameAndPic .background .container .stars {
+    width: 80px;
+    height: 40px;
+    background-color: #f0932b;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 10px auto;
+  }
+  .blogDescMain .nameAndPic .background .num {
+    width: 320px;
+    height: 27px;
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    color: black;
+    line-height: 27px;
+    border-radius: 5px;
+  }
+  .blogDescMain .nameAndPic .background .num span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .blogDescMain .desc {
+    height: 40px;
+    border-left: 3px solid #1B9CFC;
+    border-bottom: 1px solid #1B9CFC;
+    font-size: 18px;
+    line-height: 40px;
+    text-indent: 2em;
+    margin-top: 20px;
+  }
+  .blogDescMain .personInfo {
+    padding: 20px;
+  }
+  .blogDescMain .personInfo span {
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .blogDescMain .personInfo p {
+    margin-bottom: 20px;
+  }
+  .blogDescMain .personInfo p:nth-child(2n+1) {
+    text-indent: 2em;
+  }
+  .blogDescMain .blogDesc {
+    border-left: 3px solid #1B9CFC;
+    border-bottom: 1px solid #1B9CFC;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 2em;
+  }
+  .blogDescMain .bottom {
+    height: 70px;
+  }
+  .blogDescMain .bottom p {
+    text-indent: 3em;
+    margin-top: 20px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -2350,22 +2505,23 @@
     color: #28d0e9;
     text-decoration: underline;
   }
-  main {
+  .blogDescMain {
     width: 1150px;
     padding: 20px;
+    background-color: white;
   }
-  main .nameAndPic {
+  .blogDescMain .nameAndPic {
     color: white;
     font-weight: bold;
   }
-  main .nameAndPic .background {
+  .blogDescMain .nameAndPic .background {
     width: 100%;
     height: 350px;
     background: url('../image/rains.jpg');
     background-size: 1150px 500px;
     position: relative;
   }
-  main .nameAndPic .background .container {
+  .blogDescMain .nameAndPic .background .container {
     width: 230px;
     height: 270px;
     position: absolute;
@@ -2374,41 +2530,42 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
-  main .nameAndPic .background .container img {
+  .blogDescMain .nameAndPic .background .container img {
     height: 130px;
     width: 130px;
     border-radius: 50%;
   }
-  main .nameAndPic .background .container p {
+  .blogDescMain .nameAndPic .background .container p {
     margin-top: 20px;
     color: white;
     font-size: 20px;
   }
-  main .nameAndPic .background .container p .icon-nanxing_ {
+  .blogDescMain .nameAndPic .background .container p .icon-nanxing_ {
     color: #1B9CFC;
   }
-  main .nameAndPic .background .container p .icon--huangguan {
+  .blogDescMain .nameAndPic .background .container p .icon--huangguan {
     color: yellow;
   }
-  main .nameAndPic .background .container p .icon-vip {
+  .blogDescMain .nameAndPic .background .container p .icon-vip {
     color: red;
   }
-  main .nameAndPic .background .container p span {
+  .blogDescMain .nameAndPic .background .container p span {
     display: inline-block;
     margin-right: 10px;
   }
-  main .nameAndPic .background .container p:nth-child(3) {
+  .blogDescMain .nameAndPic .background .container p:nth-child(3) {
     font-size: 14px;
   }
-  main .nameAndPic .background .container .stars {
+  .blogDescMain .nameAndPic .background .container .stars {
     width: 80px;
     height: 40px;
     background-color: #f0932b;
     line-height: 40px;
     border-radius: 5px;
+    font-size: 14px;
     margin: 10px auto;
   }
-  main .nameAndPic .background .num {
+  .blogDescMain .nameAndPic .background .num {
     width: 320px;
     height: 27px;
     position: absolute;
@@ -2416,9 +2573,47 @@
     background-color: white;
     color: black;
     line-height: 27px;
+    border-radius: 5px;
   }
-  main .nameAndPic .background .num span {
+  .blogDescMain .nameAndPic .background .num span {
     display: inline-block;
     margin-right: 10px;
+  }
+  .blogDescMain .desc {
+    height: 40px;
+    border-left: 3px solid #1B9CFC;
+    border-bottom: 1px solid #1B9CFC;
+    font-size: 18px;
+    line-height: 40px;
+    text-indent: 2em;
+    margin-top: 20px;
+  }
+  .blogDescMain .personInfo {
+    padding: 20px;
+  }
+  .blogDescMain .personInfo span {
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .blogDescMain .personInfo p {
+    margin-bottom: 20px;
+  }
+  .blogDescMain .personInfo p:nth-child(2n+1) {
+    text-indent: 2em;
+  }
+  .blogDescMain .blogDesc {
+    border-left: 3px solid #1B9CFC;
+    border-bottom: 1px solid #1B9CFC;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 2em;
+  }
+  .blogDescMain .bottom {
+    height: 70px;
+  }
+  .blogDescMain .bottom p {
+    text-indent: 3em;
+    margin-top: 20px;
   }
 }

@@ -5,16 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="vendor/font-icon/iconfont.css">
-    <link rel="stylesheet" href="vendor/pagination/pagination.css">
-    <link rel="stylesheet" href="css/index.css">
+    <?php include('./views/public/style.html');?>
     <!-- 测试 -->
-
-    <script src="vendor/requirejs/require.js"></script>
-    <script src="./js/config.js"></script>
-    <script>
-        require(['../js/index']);
-    </script>
     <title>你好,世界</title>
 </head>
 
@@ -28,7 +20,6 @@
         <div class="body">
 
             <!-- 导航栏 -->
-            <!-- <?php include('./public/head.html');?>    -->
             <?php include('./views/public/head.html');?>
 
 
@@ -36,7 +27,130 @@
             <main>
                 <!-- 左边 -->
                 <div class="left">
+                    <div class="tittle">
+                        <h1> ECharts常用代码及说明整理 </h1>
+                        <div>
+                            <span>
+                                <span></span>
+                                2019年03月08日
+                            </span>
+                            <span>
+                                <span></span>
+                                作者:雄哥个人前端
+                            </span>
+                            <span>
+                                <span></span>
+                                463次浏览
+                            </span>
+                        </div>
+                    </div>
 
+                    <div class="mainContainenr">
+                        <div class="tittle">
+                            在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可，大家也可以在</div>
+                        <ul>
+                            <li>
+                                <div class="step">1.为echarts对象加载数据</div>
+                                <div class="descTop"></div>
+                                <img src="" alt="">
+                                <div class="wordpress"></div>
+                                <div class="descBottom"></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="share">
+                        <p>点击快速分享:</p>
+                        <div class="icon">
+                            <a href=""><span></span></a>
+                            <a href=""><span></span></a>
+                            <a href=""><span></span></a>
+                            <a href=""><span></span></a>
+                            <a href=""><span></span></a>
+                            <a href=""><span></span></a>
+                        </div>
+
+                        <p> 以上就是国瑞前端个人博客带来的是《ECharts常用代码及说明整理》，感谢您的观看！</p>
+                        <p>如果没有特殊的说明，本文即为国瑞前端博客原创(www.huanggr.cn)，欢迎读者转载并保留本站版权！
+                            <a href="https://www.huanggr.cn/1325.html">https://www.huanggr.cn/1325.html</a>
+                        </p>
+                        <p>「专业前端博客，如果觉得我的文章对您有用，请帮助本站成长」</p>
+                        <div class="botton">
+                            <div class="zan">
+                                <span></span>
+                                赞(10)
+                            </div>
+                            <div class="dashang">
+                                <span></span>
+                                打赏
+                            </div>
+                        </div>
+
+                        <div class="biaoqian">
+                            <span></span>
+                            <span>标签:</span>
+                            <span>Echarts</span>
+                            <span>Vue</span>
+                        </div>
+                    </div>
+
+                    <div class="relatedArticles">
+                        <p>
+                            <span>上一篇：</span>
+                            <a href="https://www.huanggr.cn/1336.html" rel="prev">vue程序化的事件监听器</a>
+                        </p>
+                        <p>
+                            <span>下一篇：</span><a href="https://www.huanggr.cn/1357.html"
+                                rel="next">使用Node搭建一个简单的Http服务器</a>
+                        </p>
+                        <span>相关文章:</span> 
+                        <ul class="article">
+                             <li>
+                                 <img src="" alt="">
+                                 <div class="tittle"></div>
+                             </li>
+                        </ul>
+
+                    </div>
+
+                    
+                    <div class="comments">
+                            <p>共有
+                                <span>2</span>
+                                条评论
+                            </p>
+   
+                            <form action="">
+                                <textarea name="" id="" cols="30" rows="10" placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..."></textarea>
+                                <div class="message">
+                                    <input type="text" placeholder="昵称[必填]">
+                                    <input type="text" placeholder="邮箱[必填]">
+                                    <input type="text" placeholder="网址[可不填]">
+                                    <input type="submit" value="发表评论">
+                                </div>
+                                <ul class="commentsList">
+                                    <li>
+                                        <p>
+                                            <div class="head">
+                                                    <img src="" alt="">
+                                                    <span>雄哥</span>
+                                                    <span>皇冠</span>
+                                                    <span>windows7</span>
+                                                    <span>|</span>
+                                                    <span>Firefox61.0</span>
+                                            </div>
+
+                                            <div class="foot">
+                                                <span>2019-03-28 17:35</span>
+                                                <span>转发</span>
+                                                <span>回复</span>
+                                            </div> 
+                                        </p>
+                                        <p>我是打酱油的</p>
+                                    </li>
+                                </ul>
+                            </form>
+                       </div>
                 </div>
 
                 <!-- 侧边栏  -->
@@ -51,6 +165,11 @@
 
 
     </div>
+
+    <?php include('./views/public/script.html');?>
+    <script>
+        require(['../js/index']);
+    </script>
 </body>
 
 </html>

@@ -1296,14 +1296,14 @@
         }
 
         .important {
-          width           : 800px;
-          height          : 30px;
-          background-color: #aaa;
-          margin          : 20px auto;
-          transition      : all 0.5s;
-          line-height     : 30px;
+          width              : 800px;
+          height             : 30px;
+          background-color   : #aaa;
+          margin             : 20px auto;
+          transition         : all 0.5s;
+          line-height        : 30px;
           // text-align      : center;
-          font-size       : 15px;
+          font-size          : 15px;
 
           &:hover {
             background-color: #1890ff;
@@ -1350,18 +1350,19 @@
             transition      : all 1s;
 
             .twoCodeMoney {
-              display         : none;
-              // visibility   : hidden;
-              width           : 320px;
-              height          : 370px;
-              border-radius   : 7px;
-              background-color: #3498db;
-              transition      : all 1s;
-              text-align      : center;
-              position        : absolute;
-              top             : -378px;
-              right           : -105px;
-              text-align      : center;
+              width            : 320px;
+              height           : 0;
+              border-radius    : 7px;
+              background-color : #3498db;
+              transition       : all 1s;
+              text-align       : center;
+              position         : absolute;
+              top              : -396px;
+              right            : -105px;
+              text-align       : center;
+              overflow         : hidden;
+              // padding-bottom:10px;
+              margin-bottom    : 10px;
 
               .turkey {
                 display    : inline-block;
@@ -1398,33 +1399,43 @@
                 }
               }
 
-              .line {
+              .white {
+                background-color: white;
+                z-index         : 1;
+                width           : 100%;
+                height          : 13px;
                 position        : absolute;
                 bottom          : 0px;
-                width           : 100%;
-                height          : 2%;
-                background-color: #666;
-                // position     : relative;
-                text-align      : center;
-                border-radius   : 3px;
 
-                .iconfont {
-                  position       : absolute;
-                  top            : -10px;
-                  color          : #666;
-                  // transform   : rotateY(40deg);
-                  transform-style: preserve-3d;
-                  transform      : rotateZ(810deg);
+                .line {
+                  width            : 100%;
+                  height           : 10px;
+                  background-color : #666;
+                  // padding-bottom: 3px;
+                  text-align       : center;
+                  border-radius    : 0px 0px 5px 5px;
+                  overflow         : visible;
+                  margin-bottom    : 3px;
+
+                  .iconfont {
+                    position       : absolute;
+                    top            : -10px;
+                    color          : #666;
+                    transform-style: preserve-3d;
+                    transform      : rotateZ(810deg);
+                  }
                 }
               }
+
             }
+
 
             .iconfont {
               color: white;
             }
 
             &:hover .twoCodeMoney {
-              display: block;
+              height: 380px;
             }
 
           }
@@ -1471,12 +1482,27 @@
           justify-content: space-around;
 
           li {
-            width: 22%;
+            width     : 22%;
+            // height : 120px;
+            position  : relative;
+            transition: all 3s;
 
-            img {
+            .active {
+              width   : 100%;
+              height  : 0px;
+              position: absolute;
+              top     : 0;
+            }
+
+            .background {
               // border-radius: 5px;
-              width           : 180px;
+              width           : 100%;
               height          : 120px;
+              font-size       : 14px;
+            }
+
+            &:hover .active {
+              height: 35px;
             }
 
             font-size: 14px;
@@ -2800,7 +2826,7 @@
 
   //知识点详细页面
   .blogListMain {
-    width              : 100%;
+    width              : 770px;
     // background-color: white;
     // padding         :0 15px;
     zoom               : 1;
@@ -2975,18 +3001,19 @@
             transition      : all 1s;
 
             .twoCodeMoney {
-              display         : none;
-              // visibility   : hidden;
-              width           : 320px;
-              height          : 370px;
-              border-radius   : 7px;
-              background-color: #3498db;
-              transition      : all 1s;
-              text-align      : center;
-              position        : absolute;
-              top             : -378px;
-              right           : -105px;
-              text-align      : center;
+              width            : 320px;
+              height           : 0;
+              border-radius    : 7px;
+              background-color : #3498db;
+              transition       : all 1s;
+              text-align       : center;
+              position         : absolute;
+              top              : -396px;
+              right            : -105px;
+              text-align       : center;
+              overflow         : hidden;
+              // padding-bottom:10px;
+              margin-bottom    : 10px;
 
               .turkey {
                 display    : inline-block;
@@ -3023,33 +3050,43 @@
                 }
               }
 
-              .line {
+              .white {
+                background-color: white;
+                z-index         : 1;
+                width           : 100%;
+                height          : 13px;
                 position        : absolute;
                 bottom          : 0px;
-                width           : 100%;
-                height          : 2%;
-                background-color: #666;
-                // position     : relative;
-                text-align      : center;
-                border-radius   : 3px;
 
-                .iconfont {
-                  position       : absolute;
-                  top            : -10px;
-                  color          : #666;
-                  // transform   : rotateY(40deg);
-                  transform-style: preserve-3d;
-                  transform      : rotateZ(810deg);
+                .line {
+                  width            : 100%;
+                  height           : 10px;
+                  background-color : #666;
+                  // padding-bottom: 3px;
+                  text-align       : center;
+                  border-radius    : 0px 0px 5px 5px;
+                  overflow         : visible;
+                  margin-bottom    : 3px;
+
+                  .iconfont {
+                    position       : absolute;
+                    top            : -10px;
+                    color          : #666;
+                    transform-style: preserve-3d;
+                    transform      : rotateZ(810deg);
+                  }
                 }
               }
+
             }
+
 
             .iconfont {
               color: white;
             }
 
             &:hover .twoCodeMoney {
-              display: block;
+              height: 380px;
             }
 
           }
@@ -3095,13 +3132,40 @@
           flex-wrap      : wrap;
           justify-content: space-around;
 
-          li {
-            width: 22%;
+          // li {
+          //   width: 22%;
 
-            img {
+          //   img {
+          //     // border-radius: 5px;
+          //     width           : 100%;
+          //     height          : 66%;
+          //   }
+
+          //   font-size: 14px;
+          // }
+          
+          li {
+            width     : 22%;
+            // height : 120px;
+            position  : relative;
+            transition: all 3s;
+
+            .active {
+              width   : 100%;
+              height  : 0px;
+              position: absolute;
+              top     : 0;
+            }
+
+            .background {
               // border-radius: 5px;
-              width           : 180px;
+              width           : 100%;
               height          : 120px;
+              font-size       : 14px;
+            }
+
+            &:hover .active {
+              height: 35px;
             }
 
             font-size: 14px;
@@ -4614,18 +4678,19 @@
             transition      : all 1s;
 
             .twoCodeMoney {
-              display         : none;
-              // visibility   : hidden;
-              width           : 320px;
-              height          : 370px;
-              border-radius   : 7px;
-              background-color: #3498db;
-              transition      : all 1s;
-              text-align      : center;
-              position        : absolute;
-              top             : -378px;
-              right           : -105px;
-              text-align      : center;
+              width            : 320px;
+              height           : 0;
+              border-radius    : 7px;
+              background-color : #3498db;
+              transition       : all 1s;
+              text-align       : center;
+              position         : absolute;
+              top              : -396px;
+              right            : -105px;
+              text-align       : center;
+              overflow         : hidden;
+              // padding-bottom:10px;
+              margin-bottom    : 10px;
 
               .turkey {
                 display    : inline-block;
@@ -4662,33 +4727,43 @@
                 }
               }
 
-              .line {
+              .white {
+                background-color: white;
+                z-index         : 1;
+                width           : 100%;
+                height          : 13px;
                 position        : absolute;
                 bottom          : 0px;
-                width           : 100%;
-                height          : 2%;
-                background-color: #666;
-                // position     : relative;
-                text-align      : center;
-                border-radius   : 3px;
 
-                .iconfont {
-                  position       : absolute;
-                  top            : -10px;
-                  color          : #666;
-                  // transform   : rotateY(40deg);
-                  transform-style: preserve-3d;
-                  transform      : rotateZ(810deg);
+                .line {
+                  width            : 100%;
+                  height           : 10px;
+                  background-color : #666;
+                  // padding-bottom: 3px;
+                  text-align       : center;
+                  border-radius    : 0px 0px 5px 5px;
+                  overflow         : visible;
+                  margin-bottom    : 3px;
+
+                  .iconfont {
+                    position       : absolute;
+                    top            : -10px;
+                    color          : #666;
+                    transform-style: preserve-3d;
+                    transform      : rotateZ(810deg);
+                  }
                 }
               }
+
             }
+
 
             .iconfont {
               color: white;
             }
 
             &:hover .twoCodeMoney {
-              display: block;
+              height: 380px;
             }
 
           }
@@ -4734,13 +4809,41 @@
           flex-wrap      : wrap;
           justify-content: space-around;
 
-          li {
-            width: 22%;
+          // li {
+          //   width: 22%;
 
-            img {
+          //   img {
+          //     // border-radius: 5px;
+          //     width           : 180px;
+          //     height          : 120px;
+          //   }
+
+          //   font-size: 14px;
+          // }
+
+
+          li {
+            width     : 22%;
+            // height : 120px;
+            position  : relative;
+            transition: all 3s;
+
+            .active {
+              width   : 100%;
+              height  : 0px;
+              position: absolute;
+              top     : 0;
+            }
+
+            .background {
               // border-radius: 5px;
-              width           : 180px;
+              width           : 100%;
               height          : 120px;
+              font-size       : 14px;
+            }
+
+            &:hover .active {
+              height: 35px;
             }
 
             font-size: 14px;

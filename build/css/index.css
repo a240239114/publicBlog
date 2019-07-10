@@ -984,16 +984,17 @@
     transition: all 1s;
   }
   .blogListMain .left1 .share .bottom .dashang .twoCodeMoney {
-    display: none;
     width: 320px;
-    height: 370px;
+    height: 0;
     border-radius: 7px;
     background-color: #3498db;
     transition: all 1s;
     position: absolute;
-    top: -378px;
+    top: -396px;
     right: -105px;
     text-align: center;
+    overflow: hidden;
+    margin-bottom: 10px;
   }
   .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .turkey {
     display: inline-block;
@@ -1022,16 +1023,24 @@
     color: white;
     text-align: center;
   }
-  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .line {
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white {
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    height: 13px;
     position: absolute;
     bottom: 0px;
+  }
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white .line {
     width: 100%;
-    height: 2%;
+    height: 10px;
     background-color: #666;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 0px 0px 5px 5px;
+    overflow: visible;
+    margin-bottom: 3px;
   }
-  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .line .iconfont {
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white .line .iconfont {
     position: absolute;
     top: -10px;
     color: #666;
@@ -1042,7 +1051,7 @@
     color: white;
   }
   .blogListMain .left1 .share .bottom .dashang:hover .twoCodeMoney {
-    display: block;
+    height: 380px;
   }
   .blogListMain .left1 .share .biaoqian {
     padding-left: 20px;
@@ -1073,11 +1082,23 @@
   }
   .blogListMain .left1 .relatedArticles .article li {
     width: 22%;
+    position: relative;
+    transition: all 3s;
     font-size: 14px;
   }
-  .blogListMain .left1 .relatedArticles .article li img {
-    width: 180px;
+  .blogListMain .left1 .relatedArticles .article li .active {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    top: 0;
+  }
+  .blogListMain .left1 .relatedArticles .article li .background {
+    width: 100%;
     height: 120px;
+    font-size: 14px;
+  }
+  .blogListMain .left1 .relatedArticles .article li:hover .active {
+    height: 35px;
   }
   .blogListMain .left1 .comments .tittle1 {
     height: 30px;
@@ -2035,7 +2056,7 @@
     margin-top: 20px;
   }
   .blogListMain {
-    width: 100%;
+    width: 770px;
     zoom: 1;
   }
   .blogListMain::after {
@@ -2173,16 +2194,17 @@
     transition: all 1s;
   }
   .blogListMain .left1 .share .bottom .dashang .twoCodeMoney {
-    display: none;
     width: 320px;
-    height: 370px;
+    height: 0;
     border-radius: 7px;
     background-color: #3498db;
     transition: all 1s;
     position: absolute;
-    top: -378px;
+    top: -396px;
     right: -105px;
     text-align: center;
+    overflow: hidden;
+    margin-bottom: 10px;
   }
   .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .turkey {
     display: inline-block;
@@ -2211,16 +2233,24 @@
     color: white;
     text-align: center;
   }
-  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .line {
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white {
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    height: 13px;
     position: absolute;
     bottom: 0px;
+  }
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white .line {
     width: 100%;
-    height: 2%;
+    height: 10px;
     background-color: #666;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 0px 0px 5px 5px;
+    overflow: visible;
+    margin-bottom: 3px;
   }
-  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .line .iconfont {
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white .line .iconfont {
     position: absolute;
     top: -10px;
     color: #666;
@@ -2231,7 +2261,7 @@
     color: white;
   }
   .blogListMain .left1 .share .bottom .dashang:hover .twoCodeMoney {
-    display: block;
+    height: 380px;
   }
   .blogListMain .left1 .share .biaoqian {
     padding-left: 20px;
@@ -2262,11 +2292,23 @@
   }
   .blogListMain .left1 .relatedArticles .article li {
     width: 22%;
+    position: relative;
+    transition: all 3s;
     font-size: 14px;
   }
-  .blogListMain .left1 .relatedArticles .article li img {
-    width: 180px;
+  .blogListMain .left1 .relatedArticles .article li .active {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    top: 0;
+  }
+  .blogListMain .left1 .relatedArticles .article li .background {
+    width: 100%;
     height: 120px;
+    font-size: 14px;
+  }
+  .blogListMain .left1 .relatedArticles .article li:hover .active {
+    height: 35px;
   }
   .blogListMain .left1 .comments .tittle1 {
     height: 30px;
@@ -3381,16 +3423,17 @@
     transition: all 1s;
   }
   .blogListMain .left1 .share .bottom .dashang .twoCodeMoney {
-    display: none;
     width: 320px;
-    height: 370px;
+    height: 0;
     border-radius: 7px;
     background-color: #3498db;
     transition: all 1s;
     position: absolute;
-    top: -378px;
+    top: -396px;
     right: -105px;
     text-align: center;
+    overflow: hidden;
+    margin-bottom: 10px;
   }
   .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .turkey {
     display: inline-block;
@@ -3419,16 +3462,24 @@
     color: white;
     text-align: center;
   }
-  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .line {
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white {
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    height: 13px;
     position: absolute;
     bottom: 0px;
+  }
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white .line {
     width: 100%;
-    height: 2%;
+    height: 10px;
     background-color: #666;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 0px 0px 5px 5px;
+    overflow: visible;
+    margin-bottom: 3px;
   }
-  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .line .iconfont {
+  .blogListMain .left1 .share .bottom .dashang .twoCodeMoney .white .line .iconfont {
     position: absolute;
     top: -10px;
     color: #666;
@@ -3439,7 +3490,7 @@
     color: white;
   }
   .blogListMain .left1 .share .bottom .dashang:hover .twoCodeMoney {
-    display: block;
+    height: 380px;
   }
   .blogListMain .left1 .share .biaoqian {
     padding-left: 20px;
@@ -3470,11 +3521,23 @@
   }
   .blogListMain .left1 .relatedArticles .article li {
     width: 22%;
+    position: relative;
+    transition: all 3s;
     font-size: 14px;
   }
-  .blogListMain .left1 .relatedArticles .article li img {
-    width: 180px;
+  .blogListMain .left1 .relatedArticles .article li .active {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    top: 0;
+  }
+  .blogListMain .left1 .relatedArticles .article li .background {
+    width: 100%;
     height: 120px;
+    font-size: 14px;
+  }
+  .blogListMain .left1 .relatedArticles .article li:hover .active {
+    height: 35px;
   }
   .blogListMain .left1 .comments .tittle1 {
     height: 30px;

@@ -5213,7 +5213,7 @@
   .blogNotesMain {
     // width           : 1500px;
     // background-color: red;
-    zoom: 1;
+    zoom               : 1;
 
     //清除浮动的影响
     &::after {
@@ -5222,25 +5222,159 @@
       clear  : both;
     }
 
+    //表格提交区域
     .left3 {
-       margin-top:20px;
-         float:left;
-         width:840px;
-         .form-horizontal{
-           width: 840px;
-           .form-group{
-             display: flex;            
-            label{
-               flex:1;  
-               font-weight: bold;
-               line-height: 30px;
-               font-size:23px;     
+      margin-top: 20px;
+      float     : left;
+      width     : 840px;
+
+
+      .listSubmit {
+        background   : linear-gradient(#3498db 20%, #2980b9 80%);
+        border-radius: 5px;
+
+        .listSubmitTittle {
+          color           : #e84118;
+          font-weight     : bold;
+          font-size       : 30px;
+          text-align      : center;
+          line-height     : 50px;
+          background-color: rgba(0, 0, 0, 0.7);
+          letter-spacing  : 20px;
+          border-radius   : 5px 5px 0 0;
+        }
+
+        .form-horizontal {
+          width      : 840px;
+          // position: relative;
+
+
+          .form-group {
+            display   : flex;
+            margin-top: 20px;
+
+            label {
+              flex       : 1;
+              font-weight: bold;
+              line-height: 30px;
+              font-size  : 23px;
+              text-align : end;
+              color      : white;
             }
-            div{
-               flex:8;     
+
+            div {
+              flex: 8;
+
+              input::placeholder {
+                color     : #aaa;
+                text-align: start;
+              }
+
+              input {
+                text-align: start;
+              }
             }
-           }
-         }
+
+
+          }
+
+          button {
+            // align-self: center;
+            position     : relative;
+            left         : 78%;
+          }
+        }
+
+
+      }
+
+      .infoSubmit {
+        background   : linear-gradient(#3498db 20%, #2980b9 80%);
+        margin-top   : 20px;
+        border-radius: 5px;
+
+        .listSubmitTittle {
+          color           : #e84118;
+          font-weight     : bold;
+          font-size       : 30px;
+          text-align      : center;
+          line-height     : 50px;
+          background-color: rgba(0, 0, 0, 0.7);
+          letter-spacing  : 20px;
+          border-radius   : 5px 5px 0 0;
+        }
+
+        .form-horizontal {
+          width      : 840px;
+          // position: relative;
+          overflow: hidden;
+
+
+          .form-group {
+            display   : flex;
+            margin-top: 20px;
+
+            label {
+              flex       : 1;
+              font-weight: bold;
+              line-height: 30px;
+              font-size  : 23px;
+              text-align : end;
+              color      : white;
+            }
+
+            div {
+              flex: 8;
+
+              input::placeholder {
+                color     : #aaa;
+                text-align: start;
+              }
+
+              input {
+                text-align: start;
+              }
+            }
+
+
+          }
+
+
+          .steps {
+            width     : 500%;
+            //  height:465px;
+            transform : translate(0);
+            overflow  : hidden;
+            transition: all 1s;
+
+            li {
+              width     : 840px;
+              //  height: 465px;
+              float     : left;
+
+              .stepsTittle {
+                color              : green;
+                font-weight        : bold;
+                font-size          : 30px;
+                text-align         : center;
+                line-height        : 50px;
+                background-color   : #ffeaa7;
+                // letter-spacing  : 20px;
+                border-radius      : 5px 5px 0 0;
+              }
+            }
+          }
+
+          button {
+            // align-self: center;
+            position     : relative;
+            left         : 78%;
+          }
+        }
+
+
+      }
+
     }
   }
 }

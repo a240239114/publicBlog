@@ -1,0 +1,1 @@
+define(["jquery"],function(o){o(".form-horizontal button:contains('下一步')").toArray().forEach(function(n,t){o(n).on("click",function(){var n=840*-(t+1);return console.log(n),n<-3360?o(".steps").css("transform","translate(0)"):o(".steps").css("transform","translate("+n+"px)"),!1})})});

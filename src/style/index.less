@@ -1665,10 +1665,189 @@
     }
 
   }
+
+
+  //Notes页面
+  .blogNotesMain {
+    // width           : 1500px;
+    // background-color: red;
+    margin             : 0 auto;
+    zoom               : 1;
+    width              : 100%;
+
+    //清除浮动的影响
+    &::after {
+      content: '';
+      display: block;
+      clear  : both;
+    }
+
+    //表格提交区域
+    .left3 {
+      margin: 20px auto;
+      float : left;
+      width : 100%;
+
+
+      .listSubmit {
+        background   : linear-gradient(#3498db 20%, #2980b9 80%);
+        border-radius: 5px;
+
+        .listSubmitTittle {
+          color           : #e84118;
+          font-weight     : bold;
+          font-size       : 30px;
+          text-align      : center;
+          line-height     : 50px;
+          background-color: rgba(0, 0, 0, 0.7);
+          letter-spacing  : 20px;
+          border-radius   : 5px 5px 0 0;
+        }
+
+        .form-horizontal {
+          width      : 100%;
+          // position: relative;
+
+
+          .form-group {
+            display   : flex;
+            margin-top: 20px;
+
+            label {
+              flex       : 1;
+              font-weight: bold;
+              line-height: 30px;
+              font-size  : 23px;
+              text-align : end;
+              color      : white;
+            }
+
+            div {
+              flex: 8;
+
+              input::placeholder {
+                color     : #aaa;
+                text-align: start;
+              }
+
+              input {
+                text-align: start;
+              }
+            }
+
+
+          }
+
+          button {
+            // align-self: center;
+            position     : relative;
+            left         : 78%;
+          }
+        }
+
+
+      }
+
+      .infoSubmit {
+        background   : linear-gradient(#3498db 20%, #2980b9 80%);
+        margin-top   : 20px;
+        border-radius: 5px;
+        overflow     : hidden;
+
+        .listSubmitTittle {
+          color           : #e84118;
+          font-weight     : bold;
+          font-size       : 30px;
+          text-align      : center;
+          line-height     : 50px;
+          background-color: rgba(0, 0, 0, 0.7);
+          letter-spacing  : 20px;
+          border-radius   : 5px 5px 0 0;
+        }
+
+        .form-horizontal {
+          width      : 100%;
+          // position: relative;
+          overflow   : hidden;
+
+
+          .form-group {
+            display   : flex;
+            margin-top: 20px;
+
+            label {
+              flex       : 1;
+              font-weight: bold;
+              line-height: 30px;
+              font-size  : 23px;
+              text-align : end;
+              color      : white;
+            }
+
+            div {
+              flex: 8;
+
+              input::placeholder {
+                color     : #aaa;
+                text-align: start;
+              }
+
+              input {
+                text-align: start;
+              }
+            }
+
+
+          }
+
+
+          .btn-success {
+            position: relative;
+            left    : 78%;
+            // color:red;
+          }
+        }
+
+
+        .steps {
+          margin-top: 20px;
+          width     : 500%;
+          //  height:465px;
+          transform : translate(0);
+          overflow  : hidden;
+          transition: all 1s;
+
+          li {
+            width     : 20%;
+            //  height: 465px;
+            float     : left;
+
+            .stepsTittle {
+              color              : green;
+              font-weight        : bold;
+              font-size          : 30px;
+              text-align         : center;
+              line-height        : 50px;
+              background-color   : #ffeaa7;
+              // letter-spacing  : 20px;
+              border-radius      : 5px 5px 0 0;
+            }
+
+          }
+        }
+
+
+
+      }
+
+    }
+  }
+
 }
 
 @media (min-width:770px) and (max-width:1200px) {
 
+  //默认主页
   .total {
     .aside {
       display: none;
@@ -3417,6 +3596,360 @@
     }
 
   }
+
+
+    //Notes页面
+    .blogNotesMain {
+      // width           : 1500px;
+      // background-color: red;
+      margin             : 0 auto;
+      zoom               : 1;
+      width              : 100%;
+  
+      //清除浮动的影响
+      &::after {
+        content: '';
+        display: block;
+        clear  : both;
+      }
+  
+      //表格提交区域
+      .left3 {
+        margin: 20px auto;
+        float : left;
+        width : 100%;
+  
+  
+        .listSubmit {
+          background   : linear-gradient(#3498db 20%, #2980b9 80%);
+          border-radius: 5px;
+  
+          .listSubmitTittle {
+            color           : #e84118;
+            font-weight     : bold;
+            font-size       : 30px;
+            text-align      : center;
+            line-height     : 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            letter-spacing  : 20px;
+            border-radius   : 5px 5px 0 0;
+          }
+  
+          .form-horizontal {
+            width      : 100%;
+            // position: relative;
+  
+  
+            .form-group {
+              display   : flex;
+              margin-top: 20px;
+  
+              label {
+                flex       : 1;
+                font-weight: bold;
+                line-height: 30px;
+                font-size  : 23px;
+                text-align : end;
+                color      : white;
+              }
+  
+              div {
+                flex: 8;
+  
+                input::placeholder {
+                  color     : #aaa;
+                  text-align: start;
+                }
+  
+                input {
+                  text-align: start;
+                }
+              }
+  
+  
+            }
+  
+            button {
+              // align-self: center;
+              position     : relative;
+              left         : 78%;
+            }
+          }
+  
+  
+        }
+  
+        .infoSubmit {
+          background   : linear-gradient(#3498db 20%, #2980b9 80%);
+          margin-top   : 20px;
+          border-radius: 5px;
+          overflow     : hidden;
+  
+          .listSubmitTittle {
+            color           : #e84118;
+            font-weight     : bold;
+            font-size       : 30px;
+            text-align      : center;
+            line-height     : 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            letter-spacing  : 20px;
+            border-radius   : 5px 5px 0 0;
+          }
+  
+          .form-horizontal {
+            width      : 100%;
+            // position: relative;
+            overflow   : hidden;
+  
+  
+            .form-group {
+              display   : flex;
+              margin-top: 20px;
+  
+              label {
+                flex       : 1;
+                font-weight: bold;
+                line-height: 30px;
+                font-size  : 23px;
+                text-align : end;
+                color      : white;
+              }
+  
+              div {
+                flex: 8;
+  
+                input::placeholder {
+                  color     : #aaa;
+                  text-align: start;
+                }
+  
+                input {
+                  text-align: start;
+                }
+              }
+  
+  
+            }
+  
+  
+            .btn-success {
+              position: relative;
+              left    : 78%;
+              // color:red;
+            }
+          }
+  
+  
+          .steps {
+            margin-top: 20px;
+            width     : 500%;
+            //  height:465px;
+            transform : translate(0);
+            overflow  : hidden;
+            transition: all 1s;
+  
+            li {
+              width     : 20%;
+              //  height: 465px;
+              float     : left;
+  
+              .stepsTittle {
+                color              : green;
+                font-weight        : bold;
+                font-size          : 30px;
+                text-align         : center;
+                line-height        : 50px;
+                background-color   : #ffeaa7;
+                // letter-spacing  : 20px;
+                border-radius      : 5px 5px 0 0;
+              }
+  
+            }
+          }
+  
+  
+  
+        }
+  
+      }
+    }
+  
+
+  // //Notes页面
+  // .blogNotesMain {
+  //   // width           : 1500px;
+  //   // background-color: red;
+  //   margin             : 0 auto;
+  //   zoom               : 1;
+  //   width              : 100%;
+
+  //   //清除浮动的影响
+  //   &::after {
+  //     content: '';
+  //     display: block;
+  //     clear  : both;
+  //   }
+
+  //   //表格提交区域
+  //   .left3 {
+  //     margin: 20px auto;
+  //     float : left;
+  //     width : 840px;
+
+
+  //     .listSubmit {
+  //       background   : linear-gradient(#3498db 20%, #2980b9 80%);
+  //       border-radius: 5px;
+
+  //       .listSubmitTittle {
+  //         color           : #e84118;
+  //         font-weight     : bold;
+  //         font-size       : 30px;
+  //         text-align      : center;
+  //         line-height     : 50px;
+  //         background-color: rgba(0, 0, 0, 0.7);
+  //         letter-spacing  : 20px;
+  //         border-radius   : 5px 5px 0 0;
+  //       }
+
+  //       .form-horizontal {
+  //         width      : 840px;
+  //         // position: relative;
+
+
+  //         .form-group {
+  //           display   : flex;
+  //           margin-top: 20px;
+
+  //           label {
+  //             flex       : 1;
+  //             font-weight: bold;
+  //             line-height: 30px;
+  //             font-size  : 23px;
+  //             text-align : end;
+  //             color      : white;
+  //           }
+
+  //           div {
+  //             flex: 8;
+
+  //             input::placeholder {
+  //               color     : #aaa;
+  //               text-align: start;
+  //             }
+
+  //             input {
+  //               text-align: start;
+  //             }
+  //           }
+
+
+  //         }
+
+  //         button {
+  //           // align-self: center;
+  //           position     : relative;
+  //           left         : 78%;
+  //         }
+  //       }
+
+
+  //     }
+
+  //     .infoSubmit {
+  //       background   : linear-gradient(#3498db 20%, #2980b9 80%);
+  //       margin-top   : 20px;
+  //       border-radius: 5px;
+  //       overflow     : hidden;
+
+  //       .listSubmitTittle {
+  //         color           : #e84118;
+  //         font-weight     : bold;
+  //         font-size       : 30px;
+  //         text-align      : center;
+  //         line-height     : 50px;
+  //         background-color: rgba(0, 0, 0, 0.7);
+  //         letter-spacing  : 20px;
+  //         border-radius   : 5px 5px 0 0;
+  //       }
+
+  //       .form-horizontal {
+  //         width      : 840px;
+  //         // position: relative;
+  //         overflow   : hidden;
+
+
+  //         .form-group {
+  //           display   : flex;
+  //           margin-top: 20px;
+
+  //           label {
+  //             flex       : 1;
+  //             font-weight: bold;
+  //             line-height: 30px;
+  //             font-size  : 23px;
+  //             text-align : end;
+  //             color      : white;
+  //           }
+
+  //           div {
+  //             flex: 8;
+
+  //             input::placeholder {
+  //               color     : #aaa;
+  //               text-align: start;
+  //             }
+
+  //             input {
+  //               text-align: start;
+  //             }
+  //           }
+
+
+  //         }
+
+
+  //         .btn-success {
+  //           position: relative;
+  //           left    : 78%;
+  //           // color:red;
+  //         }
+  //       }
+
+
+  //       .steps {
+  //         margin-top: 20px;
+  //         width     : 500%;
+  //         //  height:465px;
+  //         transform : translate(0);
+  //         overflow  : hidden;
+  //         transition: all 1s;
+
+  //         li {
+  //           width     : 840px;
+  //           //  height: 465px;
+  //           float     : left;
+
+  //           .stepsTittle {
+  //             color              : green;
+  //             font-weight        : bold;
+  //             font-size          : 30px;
+  //             text-align         : center;
+  //             line-height        : 50px;
+  //             background-color   : #ffeaa7;
+  //             // letter-spacing  : 20px;
+  //             border-radius      : 5px 5px 0 0;
+  //           }
+  //         }
+  //       }
+
+
+
+  //     }
+
+  //   }
+  // }
+
 
 
 }
@@ -5292,6 +5825,7 @@
         background   : linear-gradient(#3498db 20%, #2980b9 80%);
         margin-top   : 20px;
         border-radius: 5px;
+        overflow     : hidden;
 
         .listSubmitTittle {
           color           : #e84118;
@@ -5307,7 +5841,7 @@
         .form-horizontal {
           width      : 840px;
           // position: relative;
-          overflow: hidden;
+          overflow   : hidden;
 
 
           .form-group {
@@ -5340,37 +5874,40 @@
           }
 
 
-          .steps {
-            width     : 500%;
-            //  height:465px;
-            transform : translate(0);
-            overflow  : hidden;
-            transition: all 1s;
-
-            li {
-              width     : 840px;
-              //  height: 465px;
-              float     : left;
-
-              .stepsTittle {
-                color              : green;
-                font-weight        : bold;
-                font-size          : 30px;
-                text-align         : center;
-                line-height        : 50px;
-                background-color   : #ffeaa7;
-                // letter-spacing  : 20px;
-                border-radius      : 5px 5px 0 0;
-              }
-            }
-          }
-
-          button {
-            // align-self: center;
-            position     : relative;
-            left         : 78%;
+          .btn-success {
+            position: relative;
+            left    : 78%;
+            // color:red;
           }
         }
+
+
+        .steps {
+          margin-top: 20px;
+          width     : 500%;
+          //  height:465px;
+          transform : translate(0);
+          overflow  : hidden;
+          transition: all 1s;
+
+          li {
+            width     : 840px;
+            //  height: 465px;
+            float     : left;
+
+            .stepsTittle {
+              color              : green;
+              font-weight        : bold;
+              font-size          : 30px;
+              text-align         : center;
+              line-height        : 50px;
+              background-color   : #ffeaa7;
+              // letter-spacing  : 20px;
+              border-radius      : 5px 5px 0 0;
+            }
+          }
+        }
+
 
 
       }

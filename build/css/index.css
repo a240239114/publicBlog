@@ -1215,6 +1215,130 @@
   .blogListMain aside {
     width: 100%;
   }
+  .blogNotesMain {
+    margin: 0 auto;
+    zoom: 1;
+    width: 100%;
+  }
+  .blogNotesMain::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .blogNotesMain .left3 {
+    margin: 20px auto;
+    float: left;
+    width: 100%;
+  }
+  .blogNotesMain .left3 .listSubmit {
+    background: linear-gradient(#3498db 20%, #2980b9 80%);
+    border-radius: 5px;
+  }
+  .blogNotesMain .left3 .listSubmit .listSubmitTittle {
+    color: #e84118;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 20px;
+    border-radius: 5px 5px 0 0;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal {
+    width: 100%;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group {
+    display: flex;
+    margin-top: 20px;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group label {
+    flex: 1;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 23px;
+    text-align: end;
+    color: white;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div {
+    flex: 8;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input::placeholder {
+    color: #aaa;
+    text-align: start;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input {
+    text-align: start;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal button {
+    position: relative;
+    left: 78%;
+  }
+  .blogNotesMain .left3 .infoSubmit {
+    background: linear-gradient(#3498db 20%, #2980b9 80%);
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .blogNotesMain .left3 .infoSubmit .listSubmitTittle {
+    color: #e84118;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 20px;
+    border-radius: 5px 5px 0 0;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal {
+    width: 100%;
+    overflow: hidden;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group {
+    display: flex;
+    margin-top: 20px;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group label {
+    flex: 1;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 23px;
+    text-align: end;
+    color: white;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div {
+    flex: 8;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input::placeholder {
+    color: #aaa;
+    text-align: start;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input {
+    text-align: start;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .btn-success {
+    position: relative;
+    left: 78%;
+  }
+  .blogNotesMain .left3 .infoSubmit .steps {
+    margin-top: 20px;
+    width: 500%;
+    transform: translate(0);
+    overflow: hidden;
+    transition: all 1s;
+  }
+  .blogNotesMain .left3 .infoSubmit .steps li {
+    width: 20%;
+    float: left;
+  }
+  .blogNotesMain .left3 .infoSubmit .steps li .stepsTittle {
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #ffeaa7;
+    border-radius: 5px 5px 0 0;
+  }
 }
 @media (min-width: 770px) and (max-width: 1200px) {
   .total .aside {
@@ -2495,6 +2619,130 @@
   }
   .blogListMain aside {
     width: 100%;
+  }
+  .blogNotesMain {
+    margin: 0 auto;
+    zoom: 1;
+    width: 100%;
+  }
+  .blogNotesMain::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .blogNotesMain .left3 {
+    margin: 20px auto;
+    float: left;
+    width: 100%;
+  }
+  .blogNotesMain .left3 .listSubmit {
+    background: linear-gradient(#3498db 20%, #2980b9 80%);
+    border-radius: 5px;
+  }
+  .blogNotesMain .left3 .listSubmit .listSubmitTittle {
+    color: #e84118;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 20px;
+    border-radius: 5px 5px 0 0;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal {
+    width: 100%;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group {
+    display: flex;
+    margin-top: 20px;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group label {
+    flex: 1;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 23px;
+    text-align: end;
+    color: white;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div {
+    flex: 8;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input::placeholder {
+    color: #aaa;
+    text-align: start;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input {
+    text-align: start;
+  }
+  .blogNotesMain .left3 .listSubmit .form-horizontal button {
+    position: relative;
+    left: 78%;
+  }
+  .blogNotesMain .left3 .infoSubmit {
+    background: linear-gradient(#3498db 20%, #2980b9 80%);
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .blogNotesMain .left3 .infoSubmit .listSubmitTittle {
+    color: #e84118;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 20px;
+    border-radius: 5px 5px 0 0;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal {
+    width: 100%;
+    overflow: hidden;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group {
+    display: flex;
+    margin-top: 20px;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group label {
+    flex: 1;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 23px;
+    text-align: end;
+    color: white;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div {
+    flex: 8;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input::placeholder {
+    color: #aaa;
+    text-align: start;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input {
+    text-align: start;
+  }
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .btn-success {
+    position: relative;
+    left: 78%;
+  }
+  .blogNotesMain .left3 .infoSubmit .steps {
+    margin-top: 20px;
+    width: 500%;
+    transform: translate(0);
+    overflow: hidden;
+    transition: all 1s;
+  }
+  .blogNotesMain .left3 .infoSubmit .steps li {
+    width: 20%;
+    float: left;
+  }
+  .blogNotesMain .left3 .infoSubmit .steps li .stepsTittle {
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #ffeaa7;
+    border-radius: 5px 5px 0 0;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -3880,6 +4128,7 @@
     background: linear-gradient(#3498db 20%, #2980b9 80%);
     margin-top: 20px;
     border-radius: 5px;
+    overflow: hidden;
   }
   .blogNotesMain .left3 .infoSubmit .listSubmitTittle {
     color: #e84118;
@@ -3917,17 +4166,22 @@
   .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input {
     text-align: start;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .steps {
+  .blogNotesMain .left3 .infoSubmit .form-horizontal .btn-success {
+    position: relative;
+    left: 78%;
+  }
+  .blogNotesMain .left3 .infoSubmit .steps {
+    margin-top: 20px;
     width: 500%;
     transform: translate(0);
     overflow: hidden;
     transition: all 1s;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .steps li {
+  .blogNotesMain .left3 .infoSubmit .steps li {
     width: 840px;
     float: left;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .steps li .stepsTittle {
+  .blogNotesMain .left3 .infoSubmit .steps li .stepsTittle {
     color: green;
     font-weight: bold;
     font-size: 30px;
@@ -3935,9 +4189,5 @@
     line-height: 50px;
     background-color: #ffeaa7;
     border-radius: 5px 5px 0 0;
-  }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal button {
-    position: relative;
-    left: 78%;
   }
 }

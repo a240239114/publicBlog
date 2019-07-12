@@ -45,6 +45,7 @@
           line-height  : 40px;
           border-bottom: 1px solid gray;
           text-indent  : 1em;
+          color        : white;
 
           .iconfont {
             margin-right: 20px;
@@ -137,7 +138,7 @@
               width     : 150px;
               height    : 59px;
               border    : 2px solid #48dbfb;
-              font-size : 18px;
+              font-size : 16px;
               align-self: center;
               display   : flex;
 
@@ -325,6 +326,50 @@
             a {
               color: white;
             }
+          }
+        }
+      }
+
+      //收索区域
+      .row {
+        display         : none;
+        height          : 100px;
+        width           : 100%;
+        background-color: white;
+        position        : absolute;
+        top             : 75px;
+        z-index         : 9;
+        color           : #aaa;
+
+        // position: relative;
+        .input-group {
+          position : absolute;
+          top      : 50%;
+          left     : 50%;
+          transform: translate(0, -50%);
+
+          button {
+            background-color: #1890ff;
+            color           : white;
+          }
+
+          input::-webkit-input-placeholder {
+            color: red;
+          }
+
+          input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: red;
+          }
+
+          input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: red;
+          }
+
+          input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: red;
           }
         }
       }
@@ -1697,19 +1742,23 @@
 
 
         .container {
-          width  : @base-width;
-          height : 100%;
-          margin : 0 auto;
-          display: flex;
+          width     : 100%;
+          height    : 100%;
+          // margin : 0 auto;
+          display   : flex;
+          padding   : 0;
+          // margin : 0;
 
 
           .author {
-            width     : 150px;
+            width     : 0;
             height    : 59px;
             border    : 2px solid #48dbfb;
-            font-size : 18px;
+            overflow  : hidden;
+            font-size : 15px;
             align-self: center;
             display   : flex;
+            display   : none;
 
             .logo {
               width          : 45px;
@@ -1728,46 +1777,87 @@
           }
 
           .space {
-            width: 20px;
+            width: 0;
           }
 
           .introduce {
-            display        : none;
-            width          : 150px;
-            height         : 36px;
-            // margin-left : 20px;
-            // padding-left: 20px;
-            border-left    : 1px solid #bbb;
-            position       : relative;
-            align-self     : center;
+            width            : 130px;
+            // flex          :1;
+            height           : 36px;
+            // margin-left   : 20px;
+            // border-left   : 1px solid #bbb;
+            position         : relative;
+            align-self       : center;
+            position         : relative;
+            transition       : height 3s;
+
+            &:hover .notes {
+              height: 324px;
+            }
 
             .container {
-              width       : 100%;
-              position    : absolute;
-              top         : 50%;
-              left        : 50%;
-              padding-left: 20px;
-              transform   : translate(-50%, -50%);
+              width           : 130px;
+              position        : absolute;
+              top             : 50%;
+              left            : 50%;
+              // margin-left  : 20px;
+              padding-left    : 32%;
+              transform       : translate(-50%, -50%);
+              background-color: #05c46b;
+              border-radius   : 3px;
+              color           : #ffc048;
+              font-weight     : bold;
+              line-height     : 36px;
+              text-align      : end;
+            }
 
-              p {
-                width    : 58px;
-                font-size: 12px;
-                color    : #bbb;
-                //  /transition CSS 属性是 transition-property，
-                //                         transition-duration，
-                //                         transition-timing-function 
-                //                         transition-delay 的一个简写属性。
-                transition: color 1.2s;
-              }
+            .notes {
+              position : absolute;
+              top      : 36px;
+              width    : 130px;
+              overflow : hidden;
+              padding  : 0;
+              margin   : 0;
+              display  : flex;
+              flex-wrap: wrap;
+              height   : 0;
 
-              p:hover {
-                color: black;
+
+              // height  : 324px;
+              // overflow: hidden;
+              li {
+                padding         : 0;
+                margin          : 0;
+                display         : inline-block;
+                z-index         : 100;
+                background-color: #485460;
+                width           : 100%;
+                height          : 36px;
+                line-height     : 36px;
+                text-align      : center;
+                border-bottom   : 2px solid #05c46b;
+                transition      : all 2s;
+
+                &:hover {
+                  background-color: greenyellow;
+                }
+
+                a {
+                  color          : white;
+                  text-decoration: none;
+                }
               }
             }
+
           }
 
-          ul {
-            width         : 600px;
+          .space1 {
+            flex     : 1;
+            max-width: 200px;
+          }
+
+          .navigation {
+            width         : 560px;
             height        : 100%;
             display       : flex;
             // margin-left: 16.6%;
@@ -1892,6 +1982,50 @@
           a {
             color: #29d;
           }
+        }
+      }
+    }
+
+    //收索区域
+    .row {
+      display         : none;
+      height          : 100px;
+      width           : 100%;
+      background-color: white;
+      position        : absolute;
+      top             : 75px;
+      z-index         : 9;
+      color           : #aaa;
+
+      // position: relative;
+      .input-group {
+        position : absolute;
+        top      : 50%;
+        left     : 50%;
+        transform: translate(0, -50%);
+
+        button {
+          background-color: #1890ff;
+          color           : white;
+        }
+
+        input::-webkit-input-placeholder {
+          color: red;
+        }
+
+        input::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: red;
+        }
+
+        input:-moz-placeholder {
+          /* Mozilla Firefox 4 to 18 */
+          color: red;
+        }
+
+        input:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: red;
         }
       }
     }
@@ -3143,7 +3277,7 @@
 
           //   font-size: 14px;
           // }
-          
+
           li {
             width     : 22%;
             // height : 120px;
@@ -3367,7 +3501,7 @@
               width     : 12.5%;
               height    : 59px;
               border    : 2px solid #48dbfb;
-              font-size : 18px;
+              font-size : 16px;
               align-self: center;
               display   : flex;
 
@@ -3387,45 +3521,12 @@
               }
             }
 
-            .introduce {
-              width      : 140px;
-              // flex    :1;
-              height     : 36px;
-              margin-left: 20px;
-              border-left: 1px solid #bbb;
-              position   : relative;
-              align-self : center;
+            .navigation {
 
-              .container {
-                width       : 100%;
-                position    : absolute;
-                top         : 50%;
-                left        : 50%;
-                padding-left: 20px;
-                transform   : translate(-50%, -50%);
-
-                p {
-                  font-size: 14px;
-                  color    : #bbb;
-                  //  /transition CSS 属性是 transition-property，
-                  //                         transition-duration，
-                  //                         transition-timing-function 
-                  //                         transition-delay 的一个简写属性。
-                  transition: color 1.2s;
-                }
-
-                p:hover {
-                  color: black;
-                }
-              }
-            }
-
-            ul {
-
-              height      : 100%;
-              display     : flex;
-              padding-left: 195px;
-              font-size   : 16px;
+              height         : 100%;
+              display        : flex;
+              // padding-left: 195px;
+              font-size      : 16px;
 
               li {
                 width   : 67px;
@@ -3531,6 +3632,81 @@
 
             }
 
+            .space1 {
+              flex     : 1;
+              max-width: 180px;
+            }
+
+            .introduce {
+              width         : 140px;
+              // flex       :1;
+              height        : 36px;
+              margin-left   : 20px;
+              // border-left: 1px solid #bbb;
+              position      : relative;
+              align-self    : center;
+              position      : relative;
+              transition    : height 3s;
+
+              &:hover .notes {
+                height: 324px;
+              }
+
+              .container {
+                width           : 100%;
+                position        : absolute;
+                top             : 50%;
+                left            : 50%;
+                // margin-left  : 20px;
+                padding-left    : 32%;
+                transform       : translate(-50%, -50%);
+                background-color: #05c46b;
+                border-radius   : 3px;
+                color           : #ffc048;
+                font-weight     : bold;
+                line-height     : 36px;
+                text-align      : end;
+              }
+
+              .notes {
+                position : absolute;
+                top      : 36px;
+                width    : 140px;
+                overflow : hidden;
+                padding  : 0;
+                margin   : 0;
+                display  : flex;
+                flex-wrap: wrap;
+                height   : 0;
+
+
+                // height  : 324px;
+                // overflow: hidden;
+                li {
+                  display         : inline-block;
+                  z-index         : 100;
+                  background-color: #485460;
+                  width           : 140px;
+                  height          : 36px;
+                  line-height     : 36px;
+                  text-align      : center;
+                  border-bottom   : 2px solid #05c46b;
+                  transition      : all 2s;
+
+                  &:hover {
+                    background-color: greenyellow;
+                  }
+
+                  a {
+                    color          : white;
+                    text-decoration: none;
+                  }
+                }
+              }
+
+            }
+
+
 
 
           }
@@ -3548,6 +3724,51 @@
             a {
               color: #29d;
             }
+          }
+        }
+      }
+
+
+      //收索区域
+      .row {
+        display         : none;
+        height          : 100px;
+        width           : 100%;
+        background-color: white;
+        position        : absolute;
+        top             : 75px;
+        z-index         : 9;
+        color           : #aaa;
+
+        // position: relative;
+        .input-group {
+          position : absolute;
+          top      : 50%;
+          left     : 50%;
+          transform: translate(0, -50%);
+
+          button {
+            background-color: #1890ff;
+            color           : white;
+          }
+
+          input::-webkit-input-placeholder {
+            color: red;
+          }
+
+          input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: red;
+          }
+
+          input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: red;
+          }
+
+          input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: red;
           }
         }
       }
@@ -3756,6 +3977,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -3767,6 +3989,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -3798,6 +4022,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -3809,6 +4034,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -3867,6 +4094,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -3878,6 +4106,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -3900,6 +4130,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -3911,6 +4142,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -3976,6 +4209,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -3987,6 +4221,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -4035,6 +4271,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -4046,6 +4283,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -4061,6 +4300,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -4072,6 +4312,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -4202,6 +4444,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -4213,6 +4456,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -4230,6 +4475,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -4241,6 +4487,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -4280,6 +4528,7 @@
               width        : 340px;
               height       : 42px;
               border-bottom: 1px solid #e9eaed;
+              position     : relative;
 
               p {
                 height      : 40px;
@@ -4291,6 +4540,8 @@
                 width           : 100px;
                 height          : 2px;
                 background-color: #1890ff;
+                position        : absolute;
+                bottom          : 0px;
               }
             }
 
@@ -4957,4 +5208,39 @@
     }
   }
 
+
+  //Notes页面
+  .blogNotesMain {
+    // width           : 1500px;
+    // background-color: red;
+    zoom: 1;
+
+    //清除浮动的影响
+    &::after {
+      content: '';
+      display: block;
+      clear  : both;
+    }
+
+    .left3 {
+       margin-top:20px;
+         float:left;
+         width:840px;
+         .form-horizontal{
+           width: 840px;
+           .form-group{
+             display: flex;            
+            label{
+               flex:1;  
+               font-weight: bold;
+               line-height: 30px;
+               font-size:23px;     
+            }
+            div{
+               flex:8;     
+            }
+           }
+         }
+    }
+  }
 }

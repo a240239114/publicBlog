@@ -38,10 +38,11 @@
                         <form class="form-horizontal listSubmit">
 
                             <div class="form-group">
-                                <label for="keywords" class="col-sm-2 control-label">keywords</label>
+                                <label for="keywords" class="col-sm-2 control-label" >keywords</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="keywords" name="keywords"
-                                        placeholder="keywords">
+                                        placeholder="keywords"
+                                        >
                                 </div>
                             </div>
 
@@ -49,7 +50,8 @@
                                 <label for="showImg" class="col-sm-2 control-label">showImg</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="showImg" name="showImg"
-                                        placeholder="showImg">
+                                          
+                                                placeholder="showImg" value="">
                                 </div>
                             </div>
 
@@ -57,7 +59,8 @@
                                 <label for="tittle" class="col-sm-2 control-label">tittle</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="tittle" name="tittle"
-                                        placeholder="tittle">
+                                        placeholder="tittle"
+                                       >
                                 </div>
                             </div>
 
@@ -66,7 +69,8 @@
                                 <label for="content" class="col-sm-2 control-label">content</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="content" name="content"
-                                        placeholder="content">
+                                        placeholder="content"
+                                       >
                                 </div>
                             </div>
 
@@ -75,7 +79,8 @@
                                 <label for="date" class="col-sm-2 control-label">date</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="date" name="date"
-                                        placeholder="date">
+                                        placeholder="date"
+                                        >
                                 </div>
                             </div>
 
@@ -83,7 +88,8 @@
                                 <label for="temperature" class="col-sm-2 control-label">temperature</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="temperature" name="temperature"
-                                        placeholder="temperature">
+                                        placeholder="temperature"
+                                        >
                                 </div>
                             </div>
 
@@ -91,12 +97,13 @@
                                 <label for="surport" class="col-sm-2 control-label">surport</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="surport" name="surport"
-                                        placeholder="surport">
+                                        placeholder="surport"
+                                        >
                                 </div>
                             </div>
 
 
-                            <button type="submit" class="btn btn-success pull-right">提交到数据库</button>
+                            <button type="submit" class="btn btn-success pull-right" id="listSubmit" value="提交到数据库">提交到数据库</button>
 
                         </form>
                     </div>
@@ -155,7 +162,7 @@
                                            placeholder="looked">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success pull-right">提交数据到数据库</button>
+                            <button type="submit"  id="infoSubmit" class="btn btn-success pull-right">提交数据到数据库</button>
                         </form>
 
                     </div>
@@ -580,7 +587,7 @@
     </div>
     <?php include('./views/public/script.html');?>
     <script>
-        require(['../js/blogNotes']);
+        require(['blogNotes']);
     </script>
 </body>
 

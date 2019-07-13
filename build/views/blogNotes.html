@@ -8,6 +8,11 @@
     <?php include('./views/public/style.html');?>
     <!-- 测试 -->
     <title>你好,世界</title>
+    <style>
+        label.error {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,53 +38,60 @@
                         <form class="form-horizontal listSubmit">
 
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">keywords</label>
+                                <label for="keywords" class="col-sm-2 control-label">keywords</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="keywords">
+                                    <input type="text" class="form-control" id="keywords" name="keywords"
+                                        placeholder="keywords">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">showImg</label>
+                                <label for="showImg" class="col-sm-2 control-label">showImg</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="showImg">
+                                    <input type="text" class="form-control" id="showImg" name="showImg"
+                                        placeholder="showImg">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">tittle</label>
+                                <label for="tittle" class="col-sm-2 control-label">tittle</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="tittle">
+                                    <input type="text" class="form-control" id="tittle" name="tittle"
+                                        placeholder="tittle">
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">content</label>
+                                <label for="content" class="col-sm-2 control-label">content</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="content">
+                                    <input type="text" class="form-control" id="content" name="content"
+                                        placeholder="content">
                                 </div>
                             </div>
 
                             <div class="form-group">
 
-                                <label for="inputPassword3" class="col-sm-2 control-label">date</label>
+                                <label for="date" class="col-sm-2 control-label">date</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="date">
+                                    <input type="text" class="form-control" id="date" name="date"
+                                        placeholder="date">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">temperature</label>
+                                <label for="temperature" class="col-sm-2 control-label">temperature</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="temperature">
+                                    <input type="text" class="form-control" id="temperature" name="temperature"
+                                        placeholder="temperature">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">surport</label>
+                                <label for="surport" class="col-sm-2 control-label">surport</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="surport">
+                                    <input type="text" class="form-control" id="surport" name="surport"
+                                        placeholder="surport">
                                 </div>
                             </div>
 
@@ -100,327 +112,462 @@
                         <form class="form-horizontal infoSubmit">
 
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">keywords</label>
+                                <label for="keywords" class="col-sm-2 control-label">keywords</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="keywords">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="keywords"
+                                           name="keywords" 
+                                           placeholder="keywords">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">tittle</label>
+                                <label for="tittle" class="col-sm-2 control-label">tittle</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="tittle">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="tittle"
+                                           name="tittle"
+                                           placeholder="tittle">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">date</label>
+                                <label for="date" class="col-sm-2 control-label">date</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="date">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="date"
+                                           name="date" 
+                                           placeholder="date">
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">looked</label>
+                                <label for="looked" class="col-sm-2 control-label">looked</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="looked">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="looked"
+                                           name="looked"
+                                           placeholder="looked">
                                 </div>
                             </div>
-
                             <button type="submit" class="btn btn-success pull-right">提交数据到数据库</button>
                         </form>
 
-
-                        <!-- steps -->
-                        <ul class="steps">
-                            <li>
-                                <div class="stepsTittle">
-                                    step1
-                                </div>
-
-
-                                <form class="form-horizontal step1">
-
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label">step</label>
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail3" placeholder="step">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">tittle</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="tittle">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descTop</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descTop">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">img</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="img">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-
-                                        <label for="inputPassword3" class="col-sm-2 control-label">wordpress</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="wordpress">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descBottom</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descBottom">
-                                        </div>
-                                    </div>
-
-                                    <button class="btn btn-success pull-right">下一步</button>
-
-                                </form>
-                            </li>
-
-                            <li>
-                                <div class="stepsTittle" style="background-color: aqua;">
-                                    step2
-                                </div>
-
-
-                                <form class="form-horizontal step2">
-
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label">step</label>
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail3" placeholder="step">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">tittle</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="tittle">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descTop</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descTop">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">img</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="img">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-
-                                        <label for="inputPassword3" class="col-sm-2 control-label">wordpress</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="wordpress">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descBottom</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descBottom">
-                                        </div>
-                                    </div>
-
-                                    <button class="btn btn-success pull-right">下一步</button>
-
-                                </form>
-                            </li>
-
-                            <li>
-                                <div class="stepsTittle" style="background-color: black;">
-                                    step3
-                                </div>
-
-
-                                <form class="form-horizontal step3">
-
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label">step</label>
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail3" placeholder="step">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">tittle</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="tittle">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descTop</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descTop">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">img</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="img">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-
-                                        <label for="inputPassword3" class="col-sm-2 control-label">wordpress</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="wordpress">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descBottom</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descBottom">
-                                        </div>
-                                    </div>
-
-                                    <button class="btn btn-success pull-right">下一步</button>
-
-                                </form>
-                            </li>
-
-                            <li>
-                                <div class="stepsTittle" style="background-color: #e74c3c;">
-                                    step4
-                                </div>
-
-
-                                <form class="form-horizontal step4">
-
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label">step</label>
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail3" placeholder="step">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">tittle</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="tittle">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descTop</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descTop">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">img</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="img">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-
-                                        <label for="inputPassword3" class="col-sm-2 control-label">wordpress</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="wordpress">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descBottom</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descBottom">
-                                        </div>
-                                    </div>
-
-                                    <button class="btn btn-success pull-right">下一步</button>
-
-                                </form>
-                            </li>
-
-                            <li>
-                                <div class="stepsTittle" style="background-color: #3c40c6">
-                                    step5
-                                </div>
-
-
-                                <form class="form-horizontal step5">
-
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label">step</label>
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail3" placeholder="step">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">tittle</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="tittle">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descTop</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descTop">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">img</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="img">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-
-                                        <label for="inputPassword3" class="col-sm-2 control-label">wordpress</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="wordpress">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-2 control-label">descBottom</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="descBottom">
-                                        </div>
-                                    </div>
-
-                                    <button class="btn btn-success pull-right">下一步</button>
-
-                                </form>
-                            </li>
-                        </ul>
-
                     </div>
+
+                    <!-- steps -->
+                    <ul class="steps">
+                        <li>
+                            <div class="stepsTittle">
+                                step1
+                            </div>
+
+
+                            <form class="form-horizontal step1">
+
+                                <div class="form-group">
+                                    <label for="step" class="col-sm-2 control-label">step</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="step"
+                                               name="step" 
+                                               placeholder="step">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tittle" class="col-sm-2 control-label">tittle</label>
+                                    <div class="col-sm-10">
+                                        <input type="text"
+                                               class="form-control" 
+                                               id="tittle"
+                                               name="tittle"
+                                               placeholder="tittle">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descTop" class="col-sm-2 control-label">descTop</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descTop"
+                                               name="descTop"
+                                               placeholder="descTop">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="img" class="col-sm-2 control-label">img</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="img"
+                                               name="img"
+                                               placeholder="img">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="wordpress" class="col-sm-2 control-label">wordpress</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="wordpress"
+                                               name="wordpress"
+                                               placeholder="wordpress">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descBottom" class="col-sm-2 control-label">descBottom</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descBottom"
+                                               name="descBottom"
+                                               placeholder="descBottom">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success pull-right">下一步</button>
+
+                            </form>
+                        </li>
+
+                        <li>
+                            <div class="stepsTittle">
+                                step2
+                            </div>
+
+
+                            <form class="form-horizontal step2">
+
+                                <div class="form-group">
+                                    <label for="step" class="col-sm-2 control-label">step</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="step"
+                                               name="step" 
+                                               placeholder="step">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tittle" class="col-sm-2 control-label">tittle</label>
+                                    <div class="col-sm-10">
+                                        <input type="text"
+                                               class="form-control" 
+                                               id="tittle"
+                                               name="tittle"
+                                               placeholder="tittle">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descTop" class="col-sm-2 control-label">descTop</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descTop"
+                                               name="descTop"
+                                               placeholder="descTop">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="img" class="col-sm-2 control-label">img</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="img"
+                                               name="img"
+                                               placeholder="img">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="wordpress" class="col-sm-2 control-label">wordpress</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="wordpress"
+                                               name="wordpress"
+                                               placeholder="wordpress">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descBottom" class="col-sm-2 control-label">descBottom</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descBottom"
+                                               name="descBottom"
+                                               placeholder="descBottom">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success pull-right">下一步</button>
+
+                            </form>
+                        </li>
+                        
+                        <li>
+                            <div class="stepsTittle">
+                                step3
+                            </div>
+
+
+                            <form class="form-horizontal step3">
+
+                                <div class="form-group">
+                                    <label for="step" class="col-sm-2 control-label">step</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="step"
+                                               name="step" 
+                                               placeholder="step">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tittle" class="col-sm-2 control-label">tittle</label>
+                                    <div class="col-sm-10">
+                                        <input type="text"
+                                               class="form-control" 
+                                               id="tittle"
+                                               name="tittle"
+                                               placeholder="tittle">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descTop" class="col-sm-2 control-label">descTop</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descTop"
+                                               name="descTop"
+                                               placeholder="descTop">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="img" class="col-sm-2 control-label">img</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="img"
+                                               name="img"
+                                               placeholder="img">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="wordpress" class="col-sm-2 control-label">wordpress</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="wordpress"
+                                               name="wordpress"
+                                               placeholder="wordpress">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descBottom" class="col-sm-2 control-label">descBottom</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descBottom"
+                                               name="descBottom"
+                                               placeholder="descBottom">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success pull-right">下一步</button>
+
+                            </form>
+                        </li>
+
+                        <li>
+                            <div class="stepsTittle">
+                                step4
+                            </div>
+
+
+                            <form class="form-horizontal step4">
+
+                                <div class="form-group">
+                                    <label for="step" class="col-sm-2 control-label">step</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="step"
+                                               name="step" 
+                                               placeholder="step">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tittle" class="col-sm-2 control-label">tittle</label>
+                                    <div class="col-sm-10">
+                                        <input type="text"
+                                               class="form-control" 
+                                               id="tittle"
+                                               name="tittle"
+                                               placeholder="tittle">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descTop" class="col-sm-2 control-label">descTop</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descTop"
+                                               name="descTop"
+                                               placeholder="descTop">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="img" class="col-sm-2 control-label">img</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="img"
+                                               name="img"
+                                               placeholder="img">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="wordpress" class="col-sm-2 control-label">wordpress</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="wordpress"
+                                               name="wordpress"
+                                               placeholder="wordpress">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descBottom" class="col-sm-2 control-label">descBottom</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descBottom"
+                                               name="descBottom"
+                                               placeholder="descBottom">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success pull-right">下一步</button>
+
+                            </form>
+                        </li>
+
+
+                        <li>
+                            <div class="stepsTittle">
+                                step5
+                            </div>
+
+
+                            <form class="form-horizontal step5">
+
+                                <div class="form-group">
+                                    <label for="step" class="col-sm-2 control-label">step</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="step"
+                                               name="step" 
+                                               placeholder="step">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tittle" class="col-sm-2 control-label">tittle</label>
+                                    <div class="col-sm-10">
+                                        <input type="text"
+                                               class="form-control" 
+                                               id="tittle"
+                                               name="tittle"
+                                               placeholder="tittle">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descTop" class="col-sm-2 control-label">descTop</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descTop"
+                                               name="descTop"
+                                               placeholder="descTop">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="img" class="col-sm-2 control-label">img</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="img"
+                                               name="img"
+                                               placeholder="img">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="wordpress" class="col-sm-2 control-label">wordpress</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="wordpress"
+                                               name="wordpress"
+                                               placeholder="wordpress">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descBottom" class="col-sm-2 control-label">descBottom</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="descBottom"
+                                               name="descBottom"
+                                               placeholder="descBottom">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success pull-right">下一步</button>
+
+                            </form>
+                        </li>
+                    </ul>
 
 
                 </div>

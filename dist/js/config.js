@@ -1,1 +1,1 @@
-require.config({paths:{jquery:"../vendor/jquery/dist/jquery",pagination:"../vendor/pagination/jquery.pagination",index:"index"},shim:{pagination:{deps:["jquery"]}}});
+require.config({paths:{jquery:"../vendor/jquery/dist/jquery",pagination:"../vendor/pagination/jquery.pagination",validate:"../vendor/jquery-validation/dist/jquery.validate",index:"index"},shim:{pagination:{deps:["jquery"]},validate:{deps:["jquery"]}}});

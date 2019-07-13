@@ -4,6 +4,7 @@ require.config({
         //第三方插件
         jquery: '../vendor/jquery/dist/jquery',
         pagination: '../vendor/pagination/jquery.pagination',
+        validate:'../vendor/jquery-validation/dist/jquery.validate',
 
 
         //本地js文件
@@ -13,6 +14,9 @@ require.config({
     shim: { //设置依赖关系
         pagination: {
             deps: ['jquery']
+        },
+        validate:{
+            deps:['jquery']
         }
     }
 });

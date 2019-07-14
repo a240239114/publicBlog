@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var open = require('open');
 var livereload = require('gulp-livereload');
+var gutil = require('gulp-util');
 
 //定义目录路径
 var app = {
@@ -69,6 +70,9 @@ gulp.task('script', function () {
         // .pipe($.concat('index.js'))  不需要合并
         .pipe(gulp.dest(app.devPath + 'js'))
         .pipe($.uglify())
+        .on('error', function(err) {
+            gutil.log(gutil.colors.red('[Error]'), err.toString());
+        })
         .pipe(gulp.dest(app.prdPath + 'js'))
         .pipe($.connect.reload());
 });
@@ -117,7 +121,7 @@ gulp.task('build', ['bower','image', 'script', 'less', 'json', 'html','php','wat
 gulp.task('serve', ['build'], function () {
     $.connect.server({
         //服务起来的入口,开发
-        root: [app.devPath],
+        root: [app.prdPath],
         //文件更改后自动刷新页面
         livereload: true,
         //端口号

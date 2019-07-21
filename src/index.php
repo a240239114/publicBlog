@@ -1,5 +1,5 @@
 <?php
-  //如果用户只输入域名，默认配置路径到网站主页
+  //如果用户只输入域名，默认配置路径到网站主页    test
   //$path = "/views/index";
   header('Content-Type: text/html; charset=utf-8');  
 

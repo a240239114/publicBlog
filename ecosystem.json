@@ -2,7 +2,7 @@
     "apps":[
         {
             "name":"publicBlog",
-            "scripts":"./bin/www",
+            "script":"./bin/www",
              "env":{
                  "COMMON_VARIABLE":"true"
              },
@@ -13,14 +13,14 @@
     ],
     "deploy":{
         "production":{
-            "user":"root",
+            "user":"ubuntu",
             "host":["49.234.203.202"],
             "port":"22",
             "ref":"origin/master",
             "repo":"git@github.com:a240239114/publicBlog.git",
-            "path":"/www/publicBlog/production",
+            "path":"../../var/www/publicBlog/production",
             "ssh_options":"StrictHostKeyChecking=no",
-            "post-deploy":"cnpm install && grunt build && pm2 startOrRestart ecosystem.json --env production",
+            "post-deploy":"cnpm install && pm2 startOrRestart ecosystem.json --env production",
             "env":{
                 "NODE_ENV":"production"
             }

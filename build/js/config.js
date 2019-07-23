@@ -14,7 +14,8 @@ require.config({
         index:'js/index',
         blogNotes:'js/blogNotes',
         blogInfo:'js/blogInfo',
-        common:'js/common'
+        common:'js/common',
+        blogDescNotesListInfocommon:'js/blogDescNotesListInfocommon'
     },
 
     shim: { //设置依赖关系

@@ -1,1 +1,1 @@
-define(["jquery"],function(e){console.log("22222")});
+define(["jquery"],function(o){o(".search").on("click",function(){console.log("1111111"),o(".row").css({display:"block"})});var n=!1;o(".icon-fenlei").on("click",function(){return o(".total1").css("transform","translate(0)"),n=!0,console.log(n),n&&(console.log("2222"),o(".total1").on("click",function(){console.log("11111"),o(".total1").css("transform","translate(-40vw)")})),!1}),o(document).ajaxStart(function(){o(".ball").css({display:"block"})}),o(document).ajaxStop(function(){o(".ball").css({display:"none"})})});

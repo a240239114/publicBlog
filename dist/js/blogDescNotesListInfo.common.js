@@ -1,0 +1,1 @@
+define(["jquery","dependency"],function(n,k){"use strict";n(".aside li").each(function(k,o){console.log(o),n(o).on("click",function(){console.log(n(this).attr("data-where")),console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");var k=n(this).attr("data-where"),e=n(this).attr("data-whereinfo");window.location.href="index?"+k+"&"+e,console.log(o)})})});

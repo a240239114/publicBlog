@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="total">
+    <div class="total1">
 
         <!--770以下的 侧边栏 -->
         <?php include('./views/public/phoneAside.html');?>
@@ -177,10 +177,10 @@
                                 <li>
                                     <div class="mainxx">
                                         <div class="head">
-                                            <img src="../image/touxiang.jpeg"
-                                                style="height: 30px;width:30px;border-radius: 50%;" alt="">
-                                            <span>雄哥</span>
-                                            <span class="iconfont icon--huangguan"></span>
+                                            <img src="../image/touxiang.jpeg" style="height: 30px;width:30px;border-radius: 50%;" alt="">
+                                            <span class="name">雄哥</span>
+                                            <!-- <span class="iconfont icon--huangguan"></span> -->
+                                            <span class="huangguan"></span>
                                             <span class="zhuti">windows7</span>
                                             <span>|</span>
                                             <span class="zhuti">Firefox61.0</span>
@@ -214,6 +214,7 @@
     <?php include('./views/public/script.html');?>
     <script>
         require(['blogInfo']);
+        require(['blogDescNotesListInfocommon']);
     </script>
 </body>
 

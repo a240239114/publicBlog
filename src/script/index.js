@@ -115,10 +115,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         loadPages();
     }
 
-    //第一次加载页面的时候显示第一页
-    LoadPages('allList');
-
-    //给a添加点击事件,加载不同的数据
+    //给770px以上的头部导航的a添加点击事件,加载不同的数据
     $(".navigation a").each(function (index, item) {
         $(item).on("click", function () {
             var whereList = $(item).attr("data-where");
@@ -126,6 +123,18 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             console.log(whereinfo);
             console.log(whereList);
             $('.screen').css("transform", "translate(-50%)");
+            LoadPages(whereList, whereinfo);
+        })
+    })
+
+    //给770px以下左侧导航的li添加点击事件加载数据
+    $(".aside li").each(function (index, item) {
+        $(item).on("click", function () {
+            var whereList = $(item).attr("data-where");
+            var whereinfo = $(item).attr("data-whereinfo");
+            console.log(whereinfo);
+            console.log(whereList);
+            // $('.screen').css("transform", "translate(-50%)");
             // window.location.pathname = "none";
             // window.location.serach = "";
             LoadPages(whereList, whereinfo);
@@ -139,16 +148,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         // $(".bewater").css({"width":0});
     })
 
-    if (window.location.search) {//blogNotes页面跳转过来加载分页区域,则无需bewater
-        // $(".bewater").css({"width":0});
-        $(".screen").css({"transform":"translate(-50%)"})
-        var where = decodeURIComponent(window.location.search).slice(1, 8);
-        var whereInfo = decodeURIComponent(window.location.search).slice(9, 16);
-        // console.log(where,whereInfo);
-        LoadPages(where, whereInfo);
-    }
-
-    //770以下的适配
+    //770以下的适配,点击分类按钮
     var flag = false;
     $(".icon-fenlei").on('click', function () {
         $(".youxiao").css("transform", "translate(0)")
@@ -163,7 +163,39 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         }
         return false;
     })
-    //770-1200的适配
-    //1200以上的适配
+
+
+
+    //页面加载事件
+    //第一次加载页面的时候显示第一页
+    LoadPages('allList');
+
+    //blogNotes页面跳转过来加载分页区域,则无需bewater,根据search加载数据
+    if (window.location.search) {
+        // $(".bewater").css({"width":0});
+        console.log("search");
+        $(".screen").css({
+            "transform": "translate(-50%)"
+        })
+        var where = decodeURIComponent(window.location.search).slice(1, 8);
+        var whereInfo = decodeURIComponent(window.location.search).slice(9, 16);
+        // console.log(where,whereInfo);
+        // $(".total").css({"transform":"translate(43vw)"}) 
+        LoadPages(where, whereInfo);
+    }
+
+
+    if(document.body.clientWidth <= 770 && window.location.search){
+        // window.location.reload();
+        $(".screen").css({"transform":"translate(0vw)"})
+    }
+
+
+    //视口发生变化就执行
+    $(window).resize(function() {
+        window.location.reload();
+    });
+
+
 
 });

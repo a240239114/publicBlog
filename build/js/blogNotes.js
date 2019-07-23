@@ -3,19 +3,6 @@ define([
     'validate',
     'jqueryform'
 ], function ($, validate, jqueryform) {
-    //点击li跳转到主页
-    $(".navigation a").each(function (index, item) {
-        // console.log(index,item);
-
-        $(item).on("click",function(){
-            console.log($(this).attr("data-where"));
-            var where = $(this).attr("data-where");
-            var whereinfo = $(this).attr("data-whereinfo");
-            window.location.href = "index?"+where+"&"+whereinfo;
-            console.log(item);
-            // $(".screen").css({"transform":"translate(-50%)"})
-        })
-    })
 
     //发起请求就执行,li之间的间距变小
     $(document).ajaxStart(function () {

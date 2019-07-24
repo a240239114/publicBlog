@@ -152,6 +152,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     var flag = false;
     $(".icon-fenlei").on('click', function () {
         $(".youxiao").css("transform", "translate(0)")
+        document.body.style.position='fixed';
         flag = true;
         console.log(flag);
         if (flag) {
@@ -159,6 +160,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             $(".youxiao").on('click', function () {
                 console.log('11111');
                 $(".youxiao").css("transform", "translate(-40vw)");
+                document.body.style.position='initial';
             })
         }
         return false;

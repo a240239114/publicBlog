@@ -15,6 +15,7 @@
 
 
 @media (max-width:770px) {
+
   /* 动态小球 */
   .ball {
     height: 38px;
@@ -100,7 +101,7 @@
       opacity: 0;
     }
   }
-  
+
   //公共样式
   .body {
     width: 100vw;
@@ -1447,6 +1448,8 @@
               text-indent: 3em;
               margin-top: 10px;
               margin-bottom: 10px;
+              background-color: #00cec9;
+              border-radius: 5px;
             }
 
             img {
@@ -1458,6 +1461,8 @@
             .descBottom {
               text-indent: 3em;
               margin-top: 10px;
+              background-color: #fd79a8;
+              border-radius: 5px;
             }
           }
         }
@@ -1832,7 +1837,7 @@
                     -webkit-font-smoothing: antialiased;
                     margin-left: 10px;
                     -moz-osx-font-smoothing: grayscale;
-                }
+                  }
                 }
               }
 
@@ -2141,94 +2146,13 @@
 
 @media (min-width:770px) and (max-width:1200px) {
 
-    /* 动态小球 */
-    .ball {
-      height: 38px;
-      width: 38px;
-      /* background-color: red; */
-      position: absolute;
-      display: none;
-      // display:hidden;
-      left: 50%;
-      top: 50%;
-      // transform: translate(-50%,-50%);
-      margin-left: -19px;
-      margin-top: -19px;
-      border-radius: 50%;
-      animation: moveTo 6s infinite;
-    }
-  
-    .ball:nth-child(2) {
-      animation-delay: 150ms;
-    }
-  
-    .ball:nth-child(3) {
-      animation-delay: 250ms;
-    }
-  
-    .ball:nth-child(4) {
-      animation-delay: 350ms;
-    }
-  
-    .ball:nth-child(5) {
-      animation-delay: 450ms;
-    }
-  
-    .ball::after {
-      content: "";
-      height: 5px;
-      width: 5px;
-      background-color: chocolate;
-      position: absolute;
-      border-radius: 50%;
-    }
-  
-    @keyframes moveTo {
-      0% {
-        transform: rotate(225deg);
-        opacity: 1;
-        animation-timing-function: ease-out;
-      }
-  
-      7% {
-        transform: rotate(345deg);
-        animation-timing-function: linear;
-      }
-  
-      30% {
-        transform: rotate(455deg);
-        animation-timing-function: ease-in-out;
-      }
-  
-      39% {
-        transform: rotate(690deg);
-        animation-timing-function: linear;
-      }
-  
-      70% {
-        transform: rotate(815deg);
-        opacity: 1;
-        animation-timing-function: ease-out;
-      }
-  
-      75% {
-        transform: rotate(945deg);
-        animation-timing-function: ease-out;
-      }
-  
-      76% {
-        transform: rotate(815deg);
-        opacity: 0;
-      }
-  
-      100% {
-        transform: rotate(815deg);
-        opacity: 0;
-      }
-    }
 
   //默认主页
   .total {
+    width: 100vw;
+    // height: 100vh;
+    overflow: hidden;
+
 
     //相框
     .screen {
@@ -2240,10 +2164,8 @@
       //bewater
       .bewater {
         width: 100vw;
-        background: #e74c3c;
-        // background-size: 100% 30px;
-        // transform: rotate(20deg);
         height: 100vh;
+        background: #e74c3c;
         float: left;
         position: relative;
 
@@ -2358,12 +2280,101 @@
       .youxiao {
         float: left;
         width: 100vw;
+        position: relative;
+        height: 100vh;
+        overflow-y: scroll;
 
         .aside {
           display: none;
         }
 
         .body {
+          overflow-y: scroll;
+
+          /* 动态小球 */
+          .ball {
+            height: 38px;
+            width: 38px;
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 50vh;
+            // transform: translate(-50%,-50%);
+            margin-left: -19px;
+            margin-top: -19px;
+            border-radius: 50%;
+            animation: moveTo 6s infinite;
+          }
+
+          .ball:nth-child(2) {
+            animation-delay: 150ms;
+          }
+
+          .ball:nth-child(3) {
+            animation-delay: 250ms;
+          }
+
+          .ball:nth-child(4) {
+            animation-delay: 350ms;
+          }
+
+          .ball:nth-child(5) {
+            animation-delay: 450ms;
+          }
+
+          .ball::after {
+            content: "";
+            height: 5px;
+            width: 5px;
+            background-color: chocolate;
+            position: absolute;
+            border-radius: 50%;
+          }
+
+          @keyframes moveTo {
+            0% {
+              transform: rotate(225deg);
+              opacity: 1;
+              animation-timing-function: ease-out;
+            }
+
+            7% {
+              transform: rotate(345deg);
+              animation-timing-function: linear;
+            }
+
+            30% {
+              transform: rotate(455deg);
+              animation-timing-function: ease-in-out;
+            }
+
+            39% {
+              transform: rotate(690deg);
+              animation-timing-function: linear;
+            }
+
+            70% {
+              transform: rotate(815deg);
+              opacity: 1;
+              animation-timing-function: ease-out;
+            }
+
+            75% {
+              transform: rotate(945deg);
+              animation-timing-function: ease-out;
+            }
+
+            76% {
+              transform: rotate(815deg);
+              opacity: 0;
+            }
+
+            100% {
+              transform: rotate(815deg);
+              opacity: 0;
+            }
+          }
+
           nav {
             .main {
               .icon-fenlei {
@@ -2414,7 +2425,7 @@
       // 具体内容
       .main {
         height: 70px;
-        width: 100%;
+        width: 87%;
 
         .icon-fenlei {
           display: none;
@@ -2462,9 +2473,10 @@
 
           .space2 {
             flex: 1;
-            max-width: 50px;
+            max-width: 20px;
           }
 
+          //Notes区域
           .introduce {
             width: 140px;
             // flex       :1;
@@ -2537,19 +2549,20 @@
 
           .space1 {
             flex: 1;
+            min-width: 20px;
             max-width: 180px;
           }
 
-
+          //H5C3区域
           .navigation {
             height: 100%;
-            width: 600px;
+            width: 510px;
             display: flex;
-            // padding-left: 195px;
             font-size: 16px;
+            // margin-right: 80px;
 
             li {
-              width: 67px;
+              flex:1;
               position: relative;
 
               a {
@@ -2557,7 +2570,7 @@
                 height: 25px;
                 position: absolute;
                 top: 23px;
-                width: 67px;
+                width: 100%;
 
                 position: relative;
                 transform-style: preserve-3d;
@@ -2571,7 +2584,7 @@
                 span {
                   display: block;
                   height: 25px;
-                  width: 67px;
+                  width: 100%;
                   line-height: 25px;
                   position: absolute;
                   color: #F8EFBA;
@@ -2645,9 +2658,9 @@
               }
             }
 
-            li.space {
-              flex: 1;
-            }
+            // li.space {
+            //   flex: 1;
+            // }
 
 
           }
@@ -2658,7 +2671,7 @@
 
       .search {
         position: absolute;
-        right: 50px;
+        right: 35px;
         top: 28px;
         transition: color 1s;
         align-self: center;
@@ -3754,6 +3767,8 @@
               text-indent: 3em;
               margin-top: 10px;
               margin-bottom: 10px;
+              background-color: #fd79a8;
+              border-radius: 5px;
             }
 
             img {
@@ -3765,6 +3780,8 @@
             .descBottom {
               text-indent: 3em;
               margin-top: 10px;
+              background-color: #fab1a0;
+              border-radius: 5px;
             }
           }
         }
@@ -4151,7 +4168,7 @@
                     -webkit-font-smoothing: antialiased;
                     margin-left: 10px;
                     -moz-osx-font-smoothing: grayscale;
-                }
+                  }
                 }
               }
 
@@ -6051,6 +6068,8 @@
               text-indent: 3em;
               margin-top: 10px;
               margin-bottom: 10px;
+              background-color: #fd79a8;
+              border-radius: 5px;
             }
 
             img {
@@ -6062,6 +6081,8 @@
             .descBottom {
               text-indent: 3em;
               margin-top: 10px;
+              background-color:#fab1a0;
+              border-radius: 5px;
             }
           }
         }
@@ -6449,7 +6470,7 @@
                     -webkit-font-smoothing: antialiased;
                     margin-left: 10px;
                     -moz-osx-font-smoothing: grayscale;
-                }
+                  }
                 }
               }
 

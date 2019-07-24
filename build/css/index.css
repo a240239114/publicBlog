@@ -1073,6 +1073,8 @@
     text-indent: 3em;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: #00cec9;
+    border-radius: 5px;
   }
   .blogListMain .left1 .mainContainenr ul li img {
     width: 100%;
@@ -1080,6 +1082,8 @@
   .blogListMain .left1 .mainContainenr ul li .descBottom {
     text-indent: 3em;
     margin-top: 10px;
+    background-color: #fd79a8;
+    border-radius: 5px;
   }
   .blogListMain .left1 .share {
     margin-top: 100px;
@@ -1540,75 +1544,9 @@
   }
 }
 @media (min-width: 770px) and (max-width: 1200px) {
-  /* 动态小球 */
-  .ball {
-    height: 38px;
-    width: 38px;
-    /* background-color: red; */
-    position: absolute;
-    display: none;
-    left: 50%;
-    top: 50%;
-    margin-left: -19px;
-    margin-top: -19px;
-    border-radius: 50%;
-    animation: moveTo 6s infinite;
-  }
-  .ball:nth-child(2) {
-    animation-delay: 150ms;
-  }
-  .ball:nth-child(3) {
-    animation-delay: 250ms;
-  }
-  .ball:nth-child(4) {
-    animation-delay: 350ms;
-  }
-  .ball:nth-child(5) {
-    animation-delay: 450ms;
-  }
-  .ball::after {
-    content: "";
-    height: 5px;
-    width: 5px;
-    background-color: chocolate;
-    position: absolute;
-    border-radius: 50%;
-  }
-  @keyframes moveTo {
-    0% {
-      transform: rotate(225deg);
-      opacity: 1;
-      animation-timing-function: ease-out;
-    }
-    7% {
-      transform: rotate(345deg);
-      animation-timing-function: linear;
-    }
-    30% {
-      transform: rotate(455deg);
-      animation-timing-function: ease-in-out;
-    }
-    39% {
-      transform: rotate(690deg);
-      animation-timing-function: linear;
-    }
-    70% {
-      transform: rotate(815deg);
-      opacity: 1;
-      animation-timing-function: ease-out;
-    }
-    75% {
-      transform: rotate(945deg);
-      animation-timing-function: ease-out;
-    }
-    76% {
-      transform: rotate(815deg);
-      opacity: 0;
-    }
-    100% {
-      transform: rotate(815deg);
-      opacity: 0;
-    }
+  .total {
+    width: 100vw;
+    overflow: hidden;
   }
   .total .screen {
     width: 200vw;
@@ -1618,8 +1556,8 @@
   }
   .total .screen .bewater {
     width: 100vw;
-    background: #e74c3c;
     height: 100vh;
+    background: #e74c3c;
     float: left;
     position: relative;
   }
@@ -1700,9 +1638,84 @@
   .total .screen .youxiao {
     float: left;
     width: 100vw;
+    position: relative;
+    height: 100vh;
+    overflow-y: scroll;
   }
   .total .screen .youxiao .aside {
     display: none;
+  }
+  .total .screen .youxiao .body {
+    overflow-y: scroll;
+    /* 动态小球 */
+  }
+  .total .screen .youxiao .body .ball {
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50vh;
+    margin-left: -19px;
+    margin-top: -19px;
+    border-radius: 50%;
+    animation: moveTo 6s infinite;
+  }
+  .total .screen .youxiao .body .ball:nth-child(2) {
+    animation-delay: 150ms;
+  }
+  .total .screen .youxiao .body .ball:nth-child(3) {
+    animation-delay: 250ms;
+  }
+  .total .screen .youxiao .body .ball:nth-child(4) {
+    animation-delay: 350ms;
+  }
+  .total .screen .youxiao .body .ball:nth-child(5) {
+    animation-delay: 450ms;
+  }
+  .total .screen .youxiao .body .ball::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: chocolate;
+    position: absolute;
+    border-radius: 50%;
+  }
+  @keyframes moveTo {
+    0% {
+      transform: rotate(225deg);
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    7% {
+      transform: rotate(345deg);
+      animation-timing-function: linear;
+    }
+    30% {
+      transform: rotate(455deg);
+      animation-timing-function: ease-in-out;
+    }
+    39% {
+      transform: rotate(690deg);
+      animation-timing-function: linear;
+    }
+    70% {
+      transform: rotate(815deg);
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    75% {
+      transform: rotate(945deg);
+      animation-timing-function: ease-out;
+    }
+    76% {
+      transform: rotate(815deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(815deg);
+      opacity: 0;
+    }
   }
   .total .screen .youxiao .body nav .main .icon-fenlei {
     display: none;
@@ -1732,7 +1745,7 @@
   }
   body nav .main {
     height: 70px;
-    width: 100%;
+    width: 87%;
   }
   body nav .main .icon-fenlei {
     display: none;
@@ -1770,7 +1783,7 @@
   }
   body nav .main .container .space2 {
     flex: 1;
-    max-width: 50px;
+    max-width: 20px;
   }
   body nav .main .container .introduce {
     width: 140px;
@@ -1827,16 +1840,17 @@
   }
   body nav .main .container .space1 {
     flex: 1;
+    min-width: 20px;
     max-width: 180px;
   }
   body nav .main .container .navigation {
     height: 100%;
-    width: 600px;
+    width: 510px;
     display: flex;
     font-size: 16px;
   }
   body nav .main .container .navigation li {
-    width: 67px;
+    flex: 1;
     position: relative;
   }
   body nav .main .container .navigation li a {
@@ -1844,7 +1858,7 @@
     height: 25px;
     position: absolute;
     top: 23px;
-    width: 67px;
+    width: 100%;
     position: relative;
     transform-style: preserve-3d;
     transform: rotate3d(1, 0, 0, 0deg);
@@ -1856,7 +1870,7 @@
   body nav .main .container .navigation li a span {
     display: block;
     height: 25px;
-    width: 67px;
+    width: 100%;
     line-height: 25px;
     position: absolute;
     color: #F8EFBA;
@@ -1907,12 +1921,9 @@
   body nav .main .container .navigation li:nth-child(2n) a:hover {
     transform: rotate3d(1, 0, 0, -90deg);
   }
-  body nav .main .container .navigation li.space {
-    flex: 1;
-  }
   body nav .search {
     position: absolute;
-    right: 50px;
+    right: 35px;
     top: 28px;
     transition: color 1s;
     align-self: center;
@@ -2737,6 +2748,8 @@
     text-indent: 3em;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: #fd79a8;
+    border-radius: 5px;
   }
   .blogListMain .left1 .mainContainenr ul li img {
     width: 100%;
@@ -2744,6 +2757,8 @@
   .blogListMain .left1 .mainContainenr ul li .descBottom {
     text-indent: 3em;
     margin-top: 10px;
+    background-color: #fab1a0;
+    border-radius: 5px;
   }
   .blogListMain .left1 .share {
     margin-top: 100px;
@@ -4406,6 +4421,8 @@
     text-indent: 3em;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: #fd79a8;
+    border-radius: 5px;
   }
   .blogListMain .left1 .mainContainenr ul li img {
     width: 100%;
@@ -4413,6 +4430,8 @@
   .blogListMain .left1 .mainContainenr ul li .descBottom {
     text-indent: 3em;
     margin-top: 10px;
+    background-color: #fab1a0;
+    border-radius: 5px;
   }
   .blogListMain .left1 .share {
     margin-top: 100px;

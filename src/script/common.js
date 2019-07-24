@@ -11,6 +11,7 @@ define(["jquery"], function ($) {
     var flag = false;
     $(".icon-fenlei").on('click', function () {
         $(".total1").css("transform", "translate(0)")
+        document.body.style.position='fixed';
         flag = true;
         console.log(flag);
         if (flag) {
@@ -18,12 +19,11 @@ define(["jquery"], function ($) {
             $(".total1").on('click', function () {
                 console.log('11111');
                 $(".total1").css("transform", "translate(-40vw)");
+                document.body.style.position='initial';
             })
         }
         return false;
     })
-    // $(".youxiao").css("transform", "translate(0)");
-
 
     //发起请求就让小球显示
     $(document).ajaxStart(function(){
@@ -39,5 +39,13 @@ define(["jquery"], function ($) {
 
 
     //页面加载事件
+    // var translateX = Math.abs($('.screen').css("transform").replace(/[^0-9\-,]/g,'').split(',')[4]);
+    // console.log(translateX);
+    // if(translateX == 0){
+    //   $('body').css({ 
+    //         "overflow-x":"hidden",
+    //         "overflow-y":"hidden"       
+    //   });
+    // }
     
 });

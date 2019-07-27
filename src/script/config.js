@@ -13,7 +13,9 @@ require.config({
         //本地js文件
         index:'js/index',
         blogNotes:'js/blogNotes',
-        blogInfo:'js/blogInfo'
+        blogInfo:'js/blogInfo',
+        common:'js/common',
+        blogDescNotesListInfocommon:'js/blogDescNotesListInfocommon'
     },
 
     shim: { //设置依赖关系
@@ -28,3 +30,5 @@ require.config({
         }
     }
 });
+
+require(['common']);

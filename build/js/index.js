@@ -28,7 +28,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             $(ele).on('click', function () {
                 console.log($(this).attr('data-whereInfo'));
                 var method = whereInfo;
-                
+
                 var id = $(this).attr('data-id');
                 window.location.href = 'blogListInfo?' + id + '&' + method;
             })
@@ -54,7 +54,15 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         });
     }
     //加载页面
-    function LoadPages(where, whereInfo) {
+    async function LoadPages(where, whereInfo) {
+        // var count;
+        //查询当前list总共多少条
+        var count =  await $.ajax({ url: "api/" + where,type: "get"});
+            count = Math.ceil(count.data.length/8);
+
+        console.log(count);
+
+
         //默认显示第一页
         $.ajax({
             url: "api/" + where + "/1",
@@ -75,7 +83,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                 current: 0,
                 mode: "fixed",
                 count: 5,
-                pageCount: 50,
+                pageCount:count,
                 jump: true,
                 coping: true,
                 homePage: "首页",
@@ -93,6 +101,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                                 data: res.data
                             })
                             $(".knowledgeList").html(html);
+                            console.log("res.data.length=====>" + res.data.length)
                         }
                     }).done(function () {
                         turnBlogListInfo(whereInfo);
@@ -136,7 +145,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     var flag = false;
     $(".icon-fenlei").on('click', function () {
         $(".youxiao").css("transform", "translate(0)")
-        document.body.style.position='fixed';
+        document.body.style.position = 'fixed';
         flag = true;
         console.log(flag);
         if (flag) {
@@ -144,7 +153,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             $(".youxiao").on('click', function () {
                 console.log('11111');
                 $(".youxiao").css("transform", "translate(-40vw)");
-                document.body.style.position='initial';
+                document.body.style.position = 'initial';
             })
         }
         return false;
@@ -167,14 +176,16 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     }
 
 
-    if(document.body.clientWidth <= 770 && window.location.search){
+    if (document.body.clientWidth <= 770 && window.location.search) {
         // window.location.reload();
-        $(".screen").css({"transform":"translate(0vw)"})
+        $(".screen").css({
+            "transform": "translate(0vw)"
+        })
     }
 
 
     //视口发生变化就执行
-    $(window).resize(function() {
+    $(window).resize(function () {
         window.location.reload();
     });
 

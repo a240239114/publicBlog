@@ -444,7 +444,7 @@
         float: left;
         width: 100%;
         margin-top: 25px;
-        background-color: white;
+        // background-color: white;
         padding: 20px;
 
         .knowledgeList {
@@ -1501,7 +1501,7 @@
         }
 
         .important {
-          width: 800px;
+          width: 95%;
           height: 30px;
           background-color: #aaa;
           margin: 20px auto;
@@ -2376,6 +2376,8 @@
           }
 
           nav {
+            background: #fffaf0;
+
             .main {
               .icon-fenlei {
                 display: none;
@@ -2397,6 +2399,7 @@
     height: 100vh;
     background-color: #eaebed;
     position: relative;
+    // position: relative;
     overflow: scroll;
 
 
@@ -2410,6 +2413,7 @@
     nav {
       box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
       position: relative;
+      background: #fffaf0;
 
       // 动态变化的线
       .line {
@@ -2571,14 +2575,12 @@
                 position: absolute;
                 top: 23px;
                 width: 100%;
-
                 position: relative;
                 transform-style: preserve-3d;
                 transform: rotate3d(1, 0, 0, 0deg);
                 perspective: 0px;
                 perspective-origin: 0px 0px;
                 transform-origin: center center -0px;
-
                 transition: transform 0.8s;
 
                 span {
@@ -2749,7 +2751,7 @@
         width: 100%;
         margin-top: 25px;
         padding: 20px;
-        background-color: #eaebed;
+        // background-color: #eaebed;
 
         .knowledgeList {
           //ul
@@ -2763,6 +2765,7 @@
             margin-bottom: 25px;
             background-color: #ffffff;
             position: relative;
+            border-radius: 5px;
 
             .outside {
               width: 290px;
@@ -3520,6 +3523,7 @@
       font-size: 14px;
       padding-top: 50px;
       color: #636e72;
+      position: absolute;
 
       .container {
 
@@ -3555,9 +3559,11 @@
 
   //博客主人信息
   .blogDescMain {
-    width: 100%;
+    width: 90%;
     padding: 20px;
     background-color: white;
+    margin: 25px auto;
+    border-radius: 10px;
 
     .nameAndPic {
       color: white;
@@ -3696,6 +3702,7 @@
   //知识点详细页面
   .blogListMain {
     width: 770px;
+    z-index: 1;
     // background-color: white;
     // padding         :0 15px;
     zoom: 1;
@@ -3820,7 +3827,7 @@
         }
 
         .important {
-          width: 800px;
+          width:95%;
           height: 30px;
           background-color: #aaa;
           margin: 20px auto;
@@ -4233,192 +4240,53 @@
 
 
   //Notes页面
-  .blogNotesMain {
-    // width           : 1500px;
-    // background-color: red;
-    margin: 0 auto;
-    zoom: 1;
-    width: 100%;
-
-    //清除浮动的影响
-    &::after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-
-    //表格提交区域
-    .left3 {
-      margin: 20px auto;
-      float: left;
+  .body{
+    position: relative;
+    .blogNotesMain {
+      margin: 0 auto;
+      zoom: 1;
       width: 100%;
-
-
-      .listSubmit {
-        // background: linear-gradient(#3498db 20%, #2980b9 80%);
-        background-color: rgba(10, 10, 10, 0.7);
-        border-radius: 5px;
-        padding-bottom: 10px;
-
-        .listSubmitTittle {
-          color: #e84118;
-          font-weight: bold;
-          font-size: 30px;
-          text-align: center;
-          line-height: 50px;
-          background-color: rgba(0, 0, 0, 0.7);
-          letter-spacing: 20px;
-          border-radius: 5px 5px 0 0;
-        }
-
-        .form-horizontal {
-          width: 100%;
-          // position: relative;
-          background: none;
-
-
-          .form-group {
-            display: flex;
-            margin-top: 20px;
-
-            label {
-              flex: 1;
-              font-weight: bold;
-              line-height: 30px;
-              font-size: 23px;
-              text-align: end;
-              color: white;
-            }
-
-            div {
-              flex: 8;
-
-              input::placeholder {
-                color: #aaa;
-                text-align: start;
-              }
-
-              input {
-                text-align: start;
-              }
-            }
-
-
-          }
-
-          button {
-            // align-self: center;
-            position: relative;
-            left: 78%;
-          }
-        }
-
-
+  
+      //清除浮动的影响
+      &::after {
+        content: '';
+        display: block;
+        clear: both;
       }
-
-      .infoSubmit {
-        // background: linear-gradient(#3498db 20%, #2980b9 80%);
-        background-color: rgba(10, 10, 10, 0.7);
-        margin-top: 20px;
-        border-radius: 5px;
-        overflow: hidden;
-        padding-bottom: 10px;
-
-        .listSubmitTittle {
-          color: #e84118;
-          font-weight: bold;
-          font-size: 30px;
-          text-align: center;
-          line-height: 50px;
-          background-color: rgba(0, 0, 0, 0.7);
-          letter-spacing: 20px;
-          border-radius: 5px 5px 0 0;
-        }
-
-        .form-horizontal {
-          width: 100%;
-          // position: relative;
-          overflow: hidden;
-          background: none;
-
-          .form-group {
-            display: flex;
-            margin-top: 20px;
-
-            label {
-              flex: 1;
-              font-weight: bold;
-              line-height: 30px;
-              font-size: 23px;
-              text-align: end;
-              color: white;
-            }
-
-            div {
-              flex: 8;
-
-              input::placeholder {
-                color: #aaa;
-                text-align: start;
-              }
-
-              input {
-                text-align: start;
-              }
-            }
-
-
-          }
-
-
-          .btn-success {
-            position: relative;
-            left: 78%;
-            // color:red;
-          }
-        }
-      }
-
+  
       //表格提交区域
-      .steps {
-        margin-top: 20px;
-        width: 500%;
-        //  height:465px;
-        transform: translate(0);
-        overflow: hidden;
-        transition: all 1s;
-        background-color: rgba(10, 10, 10, 0.7);
-        padding-bottom: 10px;
-
-        li {
-          width: 20%;
-          //  height: 465px;
-          float: left;
-          // background: linear-gradient(#3498db 20%, #2980b9 80%);
-
-          //标题
-          .stepsTittle {
-            color: green;
+      .left3 {
+        margin: 20px auto;
+        float: left;
+        width: 100%;
+  
+  
+        .listSubmit {
+          background-color: rgba(10, 10, 10, 0.7);
+          border-radius: 5px;
+          padding-bottom: 10px;
+  
+          .listSubmitTittle {
+            color: #e84118;
             font-weight: bold;
             font-size: 30px;
             text-align: center;
             line-height: 50px;
-            background-color: black;
-            // letter-spacing  : 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            letter-spacing: 20px;
             border-radius: 5px 5px 0 0;
           }
-
-          //表单
+  
           .form-horizontal {
             width: 100%;
             // position: relative;
-            overflow: hidden;
-
-
+            background: none;
+  
+  
             .form-group {
               display: flex;
               margin-top: 20px;
-
+  
               label {
                 flex: 1;
                 font-weight: bold;
@@ -4427,24 +4295,87 @@
                 text-align: end;
                 color: white;
               }
-
+  
               div {
                 flex: 8;
-
+  
                 input::placeholder {
                   color: #aaa;
                   text-align: start;
                 }
-
+  
                 input {
                   text-align: start;
                 }
               }
-
-
+  
+  
             }
-
-
+  
+            button {
+              // align-self: center;
+              position: relative;
+              left: 78%;
+            }
+          }
+  
+  
+        }
+  
+        .infoSubmit {
+          background-color: rgba(10, 10, 10, 0.7);
+          margin-top: 20px;
+          border-radius: 5px;
+          overflow: hidden;
+          padding-bottom: 10px;
+  
+          .listSubmitTittle {
+            color: #e84118;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            line-height: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            letter-spacing: 20px;
+            border-radius: 5px 5px 0 0;
+          }
+  
+          .form-horizontal {
+            width: 100%;
+            // position: relative;
+            overflow: hidden;
+            background: none;
+  
+            .form-group {
+              display: flex;
+              margin-top: 20px;
+  
+              label {
+                flex: 1;
+                font-weight: bold;
+                line-height: 30px;
+                font-size: 23px;
+                text-align: end;
+                color: white;
+              }
+  
+              div {
+                flex: 8;
+  
+                input::placeholder {
+                  color: #aaa;
+                  text-align: start;
+                }
+  
+                input {
+                  text-align: start;
+                }
+              }
+  
+  
+            }
+  
+  
             .btn-success {
               position: relative;
               left: 78%;
@@ -4452,12 +4383,88 @@
             }
           }
         }
-
-
+  
+        //表格提交区域
+        .steps {
+          margin-top: 20px;
+          width: 500%;
+          transform: translate(0);
+          overflow: hidden;
+          transition: all 1s;
+          background-color: rgba(10, 10, 10, 0.7);
+          padding-bottom: 10px;
+  
+          li {
+            width: 20%;
+            //  height: 465px;
+            float: left;
+            // background: linear-gradient(#3498db 20%, #2980b9 80%);
+  
+            //标题
+            .stepsTittle {
+              color: green;
+              font-weight: bold;
+              font-size: 30px;
+              text-align: center;
+              line-height: 50px;
+              background-color: black;
+              // letter-spacing  : 20px;
+              border-radius: 5px 5px 0 0;
+            }
+  
+            //表单
+            .form-horizontal {
+              width: 100%;
+              // position: relative;
+              overflow: hidden;
+  
+  
+              .form-group {
+                display: flex;
+                margin-top: 20px;
+  
+                label {
+                  flex: 1;
+                  font-weight: bold;
+                  line-height: 30px;
+                  font-size: 23px;
+                  text-align: end;
+                  color: white;
+                }
+  
+                div {
+                  flex: 8;
+  
+                  input::placeholder {
+                    color: #aaa;
+                    text-align: start;
+                  }
+  
+                  input {
+                    text-align: start;
+                  }
+                }
+  
+  
+              }
+  
+  
+              .btn-success {
+                position: relative;
+                left: 78%;
+                // color:red;
+              }
+            }
+          }
+  
+  
+        }
+  
       }
-
     }
   }
+  
+  
 
 }
 
@@ -4558,15 +4565,17 @@
   .body {
     width: 100%;
     height: 100vh;
-    background-color: #eaebed;
+    // background-color: #eaebed;
     position: relative;
     overflow: scroll;
+
 
 
     //  导航栏
     nav {
       box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
       position: relative;
+      background: floralwhite;
 
       // 动态变化的线
       .line {
@@ -4882,7 +4891,7 @@
       zoom: 1;
       // margin:0 auto;
       width: 1200px;
-      margin: 0 auto;
+      margin: 25px auto;
 
       &::after {
         content: '';
@@ -4895,7 +4904,7 @@
         float: left;
         width: 840px;
         margin-top: 25px;
-        background-color: #eaebed;
+        // background-color: #eaebed;
 
         .knowledgeList {
           width: 100%;
@@ -5686,6 +5695,8 @@
       font-size: 14px;
       padding-top: 50px;
       color: #636e72;
+      position: absolute;
+      // bottom:0;
 
       .container {
 
@@ -5722,18 +5733,22 @@
   .total {
     width: 100vw;
     overflow: hidden;
-
+    z-index: 2;
+    #leafContainer{
+      z-index: 0;
+    }
     //相框
     .screen {
       width: 200vw;
       height: 100vh;
       transform: translate(0);
       transition: all 1s ease;
+      background-color: none;
 
       //bewater
       .bewater {
         width: 100vw;
-        background: #e74c3c;
+        background: black;
         // background-size: 100% 30px;
         // transform: rotate(20deg);
         height: 100vh;
@@ -5851,6 +5866,7 @@
       .youxiao {
         float: left;
         width: 100vw;
+        background:none;
       }
     }
   }
@@ -5860,6 +5876,8 @@
     width: 1150px;
     padding: 20px;
     background-color: white;
+    margin-top:25px;
+    border-radius: 10px;
 
     .nameAndPic {
       color: white;
@@ -6054,10 +6072,62 @@
           color: black;
 
           li {
+            &:nth-child(2){
+              .step{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                border-left: 3px solid green;
+                border-bottom: 1px solid green;
+                text-indent: 1em;
+                font-weight: bold; 
+              }
+            }
+
+            &:nth-child(3){
+              .step{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                border-left: 3px solid yellow;
+                border-bottom: 1px solid yellow;
+                text-indent: 1em;
+                font-weight: bold; 
+              }
+            }
+
+
+            &:nth-child(3){
+              .step{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                border-left: 3px solid black;
+                border-bottom: 1px solid black;
+                text-indent: 1em;
+                font-weight: bold; 
+              }
+            }
+
+
+            &:nth-child(4){
+              .step{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                border-left: 3px solid burlywood;
+                border-bottom: 1px solid burlywood;
+                text-indent: 1em;
+                font-weight: bold; 
+              }
+            }
+
+
+            margin-bottom:10px;       
             .step {
               width: 100%;
-              height: 40px;
-              line-height: 40px;
+              height: 30px;
+              line-height: 30px;
               border-left: 3px solid red;
               border-bottom: 1px solid red;
               text-indent: 1em;
@@ -6065,10 +6135,11 @@
             }
 
             .descTop {
-              text-indent: 3em;
+              text-indent: 1.5em;
               margin-top: 10px;
               margin-bottom: 10px;
-              background-color: #fd79a8;
+              font: 14px Montserrat,Microsoft Yahei;
+              // background-color: #fd79a8;
               border-radius: 5px;
             }
 
@@ -6076,12 +6147,11 @@
               width: 100%;
             }
 
-            .wordpress {}
-
             .descBottom {
-              text-indent: 3em;
+              text-indent: 1.5em;
               margin-top: 10px;
-              background-color:#fab1a0;
+              font: 14px Montserrat,Microsoft Yahei;
+              // background-color:#fab1a0;
               border-radius: 5px;
             }
           }
@@ -6121,7 +6191,7 @@
         }
 
         .important {
-          width: 800px;
+          width: 95%;
           height: 30px;
           background-color: #aaa;
           margin: 20px auto;
@@ -6547,7 +6617,7 @@
 
             .col-sm-10 {
               // padding-bottom: 40px;
-              height: 66px;
+              // height: 66px;
             }
 
 
@@ -6627,7 +6697,7 @@
 
             .col-sm-10 {
               // padding-bottom: 40px;
-              height: 66px;
+              // height: 66px;
             }
 
 
@@ -6720,10 +6790,11 @@
             .form-group {
               display: flex;
               // padding-top: 40px;
+              margin-bottom: 55px;
 
               .col-sm-10 {
                 // padding-bottom: 40px;
-                height: 66px;
+                // height: -1px;
               }
 
               label {

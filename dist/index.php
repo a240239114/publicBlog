@@ -22,7 +22,7 @@
       $filename = $pathArr[0];
   }
    
-//   var_dump($pathArr);
+  //var_dump($pathArr);
   include ('views/'.$filename.'.html');
 
 ?>

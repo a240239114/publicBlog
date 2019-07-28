@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include('./views/public/style.html');?>
+    <!-- <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script> -->
     <!-- 测试 -->
     <title>你好,世界</title>
 </head>
@@ -13,6 +14,7 @@
 <body>
 
     <div class="total1">
+            <div id="leafContainer"></div>
 
         <!--770以下的 侧边栏 -->
         <?php include('./views/public/phoneAside.html');?>
@@ -27,176 +29,21 @@
             <main class="blogListMain">
                 <!-- 左边 -->
                 <div class="left1">
-                    <div class="tittle">
-                        <p> ECharts常用代码及说明整理 </p>
-                        <div>
-                            <span class="item7">
-                                <span class="iconfont icon-shizhong1"></span>
-                                2019年03月08日
-                            </span>
-                            <span class="item7">
-                                <span></span>
-                                作者:雄哥个人前端
-                            </span class="item7">
-                            <span>
-                                <span class="iconfont icon-liulan"></span>
-                                463次浏览
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="mainContainenr">
-                        <div class="tittle">
-                            在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可，大家也可以在
-                        </div>
-                        <ul>
-                            <li>
-                                <div class="step">1.为echarts对象加载数据</div>
-                                <div class="descTop">PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找些。</div>
-                                <img src="../image/rains.jpg" alt="">
-                                <div class="wordpress"></div>
-                                <div class="descBottom">有时候我们X轴的文字会很长，多个的话就会挤到一起，这时候我们需要这样设置，在xAxis对象里加：</div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="share">
-                        <p>点击快速分享:</p>
-                        <div class="icon">
-                            <a href=""><span class="iconfont icon-fenxiang-"></span></a>
-                            <a href=""><span class="iconfont icon-kongjian"></span></a>
-                            <a href=""><span class="iconfont icon-weibo"></span></a>
-                            <a href=""><span class="iconfont icon-tengxunweibo1"></span></a>
-                            <a href=""><span class="iconfont icon-renrenwang
-                                "></span></a>
-                            <a href=""><span class="iconfont icon-weixin"></span></a>
-                        </div>
-
-                        <p> 以上就是国瑞前端个人博客带来的是《ECharts常用代码及说明整理》，感谢您的观看！</p>
-                        <p>如果没有特殊的说明，本文即为国瑞前端博客原创(www.huanggr.cn)，欢迎读者转载并保留本站版权！
-                            <a href="https://www.huanggr.cn/1325.html">https://www.huanggr.cn/1325.html</a>
-                        </p>
-                        <p class="important">「专业前端博客，如果觉得我的文章对您有用，请帮助本站成长」</p>
-                        <div class="bottom">
-
-                            <div class="zan">
-                                <span class="iconfont icon-zan"></span>
-                                赞(10)
-                            </div>
-                            <div class="dashang">
-                                <div class="twoCodeMoney">
-                                    <span class="turkey">谢谢你请我吃鸡腿! *^_^*</span>
-                                    <div class="twoCode">
-                                        <div class="zhifubao">
-                                            <img src="../image/twoCode.png" alt="">
-                                            <span>支付宝</span>
-                                        </div>
-                                        <div class="weixin">
-                                            <img src="../image/twoCode.png" alt="">
-                                            <span>微信</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="white">
-                                        <div class="line">
-                                            <span class="iconfont icon-sanjiaoyou
-                                                        "></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="iconfont icon-dashanghongbao
-                                "></span>
-                                打赏
-                            </div>
-                        </div>
-
-                        <div class="biaoqian">
-                            <span class="iconfont icon-biaoqian"></span>
-                            <span>标签:</span>
-                            <span class="item8">Echarts</span>
-                            <span class="item8">Vue</span>
-                        </div>
-                    </div>
-
-                    <div class="relatedArticles">
-                        <p>
-                            <span>上一篇：</span>
-                            <a href="https://www.huanggr.cn/1336.html" rel="prev">vue程序化的事件监听器</a>
-                        </p>
-                        <p>
-                            <span>下一篇：</span><a href="https://www.huanggr.cn/1357.html"
-                                rel="next">使用Node搭建一个简单的Http服务器</a>
-                        </p>
-                        <span>相关文章:</span>
-                        <ul class="article">
-                            <li>
-                                <img class="active" src="../image/zhuanfa.png" alt="">
-                                <img class="background" src="../image/touxiang.jpeg" alt="">
-                                <div class="tittle">你真美</div>
-                            </li>
-
-                            <li>
-                                <img class="active" src="../image/zhuanfa.png" alt="">
-                                <img class="background" src="../image/touxiang.jpeg" alt="">
-                                <div class="tittle">你真美</div>
-                            </li>
-
-                            <li>
-                                <img class="active" src="../image/zhuanfa.png" alt="">
-                                <img class="background" src="../image/touxiang.jpeg" alt="">
-                                <div class="tittle">你真美</div>
-                            </li>
-
-                            <li>
-                                <img class="active" src="../image/zhuanfa.png" alt="">
-                                <img class="background" src="../image/touxiang.jpeg" alt="">
-                                <div class="tittle">你真美</div>
-                            </li>
-                        </ul>
-
-                    </div>
-
-
-                    <div class="comments">
-                        <p class="tittle1">共有
-                            <span>2</span>
-                            条评论
-                        </p>
-                        <div class="line"></div>
-                        <form action="">
-                            <textarea name="" id="" cols="30" rows="10"
-                                placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..."></textarea>
-                            <div class="message">
-                                <input type="text" placeholder="昵称[必填]">
-                                <input type="text" placeholder="邮箱[必填]">
-                                <input type="text" placeholder="网址[可不填]">
-                                <input type="submit" value="发表评论">
-                            </div>
-
-                            <ul class="commentsList1">
-                                <li>
-                                    <div class="mainxx">
-                                        <div class="head">
-                                            <img src="../image/touxiang.jpeg" style="height: 30px;width:30px;border-radius: 50%;" alt="">
-                                            <span class="name">雄哥</span>
-                                            <!-- <span class="iconfont icon--huangguan"></span> -->
-                                            <span class="huangguan"></span>
-                                            <span class="zhuti">windows7</span>
-                                            <span>|</span>
-                                            <span class="zhuti">Firefox61.0</span>
-                                        </div>
-                                        <div class="foot">
-                                            <span>2019-03-28 17:35</span>
-                                            <span class="iconfont icon-fenxiang-"></span>
-                                            <span>回复</span>
-                                        </div>
-                                    </div>
-                                    <p>我是打酱油的</p>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+                    <!-- 坑 -->
                 </div>
+
+<pre class="line-numbers">
+<code class="language-js">$.ajax({
+url:"api/"+whereInfo+"/"+id,
+type:"get",
+success:function(res){
+    console.log(res.data[0]); 
+    var html = template("ListInfoTpl",res.data[0])
+    $(".left1").html(html);
+}
+})
+</code>
+</pre>
 
                 <!-- 侧边栏  -->
                 <?php include('./views/public/aside.html');?>
@@ -210,6 +57,214 @@
 
 
     </div>
+
+    <!-- 艺术模板 -->
+    <script id="ListInfoTpl" type="art-template">
+        <div class="tittle">
+            <p> {{tittle}} </p>
+            <div>
+                <span class="item7">
+                    <span class="iconfont icon-shizhong1"></span>
+                    {{date}}
+                </span>
+                <span class="item7">
+                    <span></span>
+                    作者:雄哥个人前端
+                </span class="item7">
+                <span>
+                    <span class="iconfont icon-liulan"></span>
+                    {{looked}}次浏览
+                </span>
+            </div>
+        </div>
+
+        <div class="mainContainenr">
+            <div class="tittle">
+                {{content}}
+            </div>
+            <ul>
+                {{each steps}} 
+                <li>
+                    <div class="step">{{$value.step}}&nbsp&nbsp{{$value.tittle}}</div>
+                    <div class="descTop">{{$value.descTop}}</div>
+                    <img src="{{$value.img}}" alt="">
+
+
+<pre class="line-numbers">
+<code class="language-js">
+{{$value.wordpress}}
+$.ajax({
+    url:"api/"+whereInfo+"/"+id,
+    type:"get",
+    success:function(res){
+       console.log(res.data[0]); 
+       var html = template("ListInfoTpl",res.data[0])
+       $(".left1").html(html);
+    }
+})
+</code>
+</pre>
+
+
+
+<pre class="line-numbers">
+<code class="language-js">$.ajax({
+url:"api/"+whereInfo+"/"+id,
+type:"get",
+success:function(res){
+console.log(res.data[0]); 
+var html = template("ListInfoTpl",res.data[0])
+$(".left1").html(html);
+}
+})
+</code>
+</pre>
+
+
+
+
+
+
+                    <div class="descBottom">{{$value.descBottom}}</div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="share">
+            <p>点击快速分享:</p>
+            <div class="icon">
+                <a href=""><span class="iconfont icon-fenxiang-"></span></a>
+                <a href=""><span class="iconfont icon-kongjian"></span></a>
+                <a href=""><span class="iconfont icon-weibo"></span></a>
+                <a href=""><span class="iconfont icon-tengxunweibo1"></span></a>
+                <a href=""><span class="iconfont icon-renrenwang
+                    "></span></a>
+                <a href=""><span class="iconfont icon-weixin"></span></a>
+            </div>
+
+            <p> 以上就是国瑞前端个人博客带来的是《ECharts常用代码及说明整理》，感谢您的观看！</p>
+            <p>如果没有特殊的说明，本文即为国瑞前端博客原创(www.huanggr.cn)，欢迎读者转载并保留本站版权！
+                <a href="https://www.huanggr.cn/1325.html">https://www.huanggr.cn/1325.html</a>
+            </p>
+            <p class="important">「专业前端博客，如果觉得我的文章对您有用，请帮助本站成长」</p>
+            <div class="bottom">
+
+                <div class="zan">
+                    <span class="iconfont icon-zan"></span>
+                    赞(10)
+                </div>
+                <div class="dashang">
+                    <div class="twoCodeMoney">
+                        <span class="turkey">谢谢你请我吃鸡腿! *^_^*</span>
+                        <div class="twoCode">
+                            <div class="zhifubao">
+                                <img src="../image/twoCode.png" alt="">
+                                <span>支付宝</span>
+                            </div>
+                            <div class="weixin">
+                                <img src="../image/twoCode.png" alt="">
+                                <span>微信</span>
+                            </div>
+                        </div>
+
+                        <div class="white">
+                            <div class="line">
+                                <span class="iconfont icon-sanjiaoyou
+                                            "></span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="iconfont icon-dashanghongbao
+                    "></span>
+                    打赏
+                </div>
+            </div>
+
+            <div class="biaoqian">
+                <span class="iconfont icon-biaoqian"></span>
+                <span>标签:</span>
+                <span class="item8">Echarts</span>
+                <span class="item8">Vue</span>
+            </div>
+        </div>
+
+        <div class="relatedArticles">
+            <p>
+                <span>上一篇：</span>
+                <a href="javascript:;" rel="prev" id="lastArticle" data-id="{{lastId}}">{{lastTittle}}</a>
+            </p>
+            <span>相关文章:</span>
+            <ul class="article">
+                <li>
+                    <img class="active" src="../image/zhuanfa.png" alt="">
+                    <img class="background" src="../image/touxiang.jpeg" alt="">
+                    <div class="tittle">你真美</div>
+                </li>
+
+                <li>
+                    <img class="active" src="../image/zhuanfa.png" alt="">
+                    <img class="background" src="../image/touxiang.jpeg" alt="">
+                    <div class="tittle">你真美</div>
+                </li>
+
+                <li>
+                    <img class="active" src="../image/zhuanfa.png" alt="">
+                    <img class="background" src="../image/touxiang.jpeg" alt="">
+                    <div class="tittle">你真美</div>
+                </li>
+
+                <li>
+                    <img class="active" src="../image/zhuanfa.png" alt="">
+                    <img class="background" src="../image/touxiang.jpeg" alt="">
+                    <div class="tittle">你真美</div>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="comments">
+            <p class="tittle1">共有
+                <span>2</span>
+                条评论
+            </p>
+            <div class="line"></div>
+            <form action="">
+                <textarea name="" id="" cols="30" rows="10"
+                    placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..."></textarea>
+                <div class="message">
+                    <input type="text" placeholder="昵称[必填]">
+                    <input type="text" placeholder="邮箱[必填]">
+                    <input type="text" placeholder="网址[可不填]">
+                    <input type="submit" value="发表评论">
+                </div>
+
+                <ul class="commentsList1">
+                    <li>
+                        <div class="mainxx">
+                            <div class="head">
+                                <img src="../image/touxiang.jpeg"
+                                    style="height: 30px;width:30px;border-radius: 50%;" alt="">
+                                <span class="name">雄哥</span>
+                                <!-- <span class="iconfont icon--huangguan"></span> -->
+                                <span class="huangguan"></span>
+                                <span class="zhuti">windows7</span>
+                                <span>|</span>
+                                <span class="zhuti">Firefox61.0</span>
+                            </div>
+                            <div class="foot">
+                                <span>2019-03-28 17:35</span>
+                                <span class="iconfont icon-fenxiang-"></span>
+                                <span>回复</span>
+                            </div>
+                        </div>
+                        <p>我是打酱油的</p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </script>
 
     <?php include('./views/public/script.html');?>
     <script>

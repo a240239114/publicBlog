@@ -1,1 +1,30 @@
-define(["jquery","dependency"],function(t,n){t(".aside li").each(function(n,i){t(i).on("click",function(){var n=t(this).attr("data-where"),i=t(this).attr("data-whereinfo");window.location.href="index?"+n+"&"+i})}),t(".navigation a").each(function(n,i){t(i).on("click",function(){var n=t(this).attr("data-where"),i=t(this).attr("data-whereinfo");window.location.href="index?"+n+"&"+i})})});
+define([
+    'jquery',
+    'dependency'
+], function ($, factory) {
+    //770px以下 点击侧边栏回到主页
+    $(".aside li").each(function (index, item) {
+        $(item).on("click", function () {
+            var where = $(this).attr("data-where");
+            var whereinfo = $(this).attr("data-whereinfo");
+            window.location.href = "index?" + where + "&" + whereinfo;
+        })
+    })
+
+    //770px以上  点击li跳转到主页
+    $(".navigation a").each(function (index, item) {
+        // console.log(index,item);
+        $(item).on("click", function () {
+            // console.log($(this).attr("data-where"));
+            var where = $(this).attr("data-where");
+            var whereinfo = $(this).attr("data-whereinfo");
+            window.location.href = "index?" + where + "&" + whereinfo;
+            // console.log(item);
+            // $(".screen").css({"transform":"translate(-50%)"})
+        })
+    })
+
+
+
+    //页面加载事件
+});

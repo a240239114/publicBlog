@@ -26,8 +26,9 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         $(".knowledgeList>li").each(function (i, ele) {
             //    console.log(ele);
             $(ele).on('click', function () {
-                console.log($(this).attr('data-id'));
+                console.log($(this).attr('data-whereInfo'));
                 var method = whereInfo;
+                
                 var id = $(this).attr('data-id');
                 window.location.href = 'blogListInfo?' + id + '&' + method;
             })
@@ -59,15 +60,9 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             url: "api/" + where + "/1",
             type: "get",
             success: function (res) {
-                // console.log(res.data);
-
-                //    console.log($);
-                // console.log(template);
-                //    console.log(pagination);
                 var html = template("paginnationTpl", {
                     data: res.data
                 })
-                // console.log(html)
                 $(".knowledgeList").html(html);
             }
         }).done(function () {
@@ -94,15 +89,9 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                         url: "api/" + where + "/" + index,
                         type: "get",
                         success: function (res) {
-                            console.log(res.data);
-
-                            //    console.log($);
-                            // console.log(template);
-                            //    console.log(pagination);
                             var html = template("paginnationTpl", {
                                 data: res.data
                             })
-                            // console.log(html)
                             $(".knowledgeList").html(html);
                         }
                     }).done(function () {
@@ -121,7 +110,6 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             var whereList = $(item).attr("data-where");
             var whereinfo = $(item).attr("data-whereinfo");
             console.log(whereinfo);
-            console.log(whereList);
             $('.screen').css("transform", "translate(-50%)");
             LoadPages(whereList, whereinfo);
         })
@@ -132,21 +120,17 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         $(item).on("click", function () {
             var whereList = $(item).attr("data-where");
             var whereinfo = $(item).attr("data-whereinfo");
-            console.log(whereinfo);
-            console.log(whereList);
-            // $('.screen').css("transform", "translate(-50%)");
-            // window.location.pathname = "none";
-            // window.location.serach = "";
             LoadPages(whereList, whereinfo);
         })
     })
+
 
     //点击bewater页面,相框向左滑动
     $(".bewater").on("click", function () {
         console.log("11111");;
         $('.screen').css("transform", "translate(-50%)");
-        // $(".bewater").css({"width":0});
     })
+
 
     //770以下的适配,点击分类按钮
     var flag = false;
@@ -166,8 +150,6 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         return false;
     })
 
-
-
     //页面加载事件
     //第一次加载页面的时候显示第一页
     LoadPages('allList');
@@ -181,8 +163,6 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         })
         var where = decodeURIComponent(window.location.search).slice(1, 8);
         var whereInfo = decodeURIComponent(window.location.search).slice(9, 16);
-        // console.log(where,whereInfo);
-        // $(".total").css({"transform":"translate(43vw)"}) 
         LoadPages(where, whereInfo);
     }
 
@@ -197,7 +177,6 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     $(window).resize(function() {
         window.location.reload();
     });
-
 
 
 });

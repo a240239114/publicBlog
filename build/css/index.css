@@ -326,7 +326,6 @@
     float: left;
     width: 100%;
     margin-top: 25px;
-    background-color: white;
     padding: 20px;
   }
   .body main .left .knowledgeList {
@@ -1112,7 +1111,7 @@
     color: #81ecec;
   }
   .blogListMain .left1 .share .important {
-    width: 800px;
+    width: 95%;
     height: 30px;
     background-color: #aaa;
     margin: 20px auto;
@@ -1717,6 +1716,9 @@
       opacity: 0;
     }
   }
+  .total .screen .youxiao .body nav {
+    background: #fffaf0;
+  }
   .total .screen .youxiao .body nav .main .icon-fenlei {
     display: none;
   }
@@ -1736,6 +1738,7 @@
   body nav {
     box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
     position: relative;
+    background: #fffaf0;
   }
   body nav .line {
     height: 3px;
@@ -1983,7 +1986,6 @@
     width: 100%;
     margin-top: 25px;
     padding: 20px;
-    background-color: #eaebed;
   }
   body main .left .knowledgeList {
     width: 100%;
@@ -1996,6 +1998,7 @@
     margin-bottom: 25px;
     background-color: #ffffff;
     position: relative;
+    border-radius: 5px;
   }
   body main .left .knowledgeList li .outside {
     width: 290px;
@@ -2559,6 +2562,7 @@
     font-size: 14px;
     padding-top: 50px;
     color: #636e72;
+    position: absolute;
   }
   body footer .container {
     line-height: 30px;
@@ -2578,9 +2582,11 @@
     text-decoration: underline;
   }
   .blogDescMain {
-    width: 100%;
+    width: 90%;
     padding: 20px;
     background-color: white;
+    margin: 25px auto;
+    border-radius: 10px;
   }
   .blogDescMain .nameAndPic {
     color: white;
@@ -2690,6 +2696,7 @@
   }
   .blogListMain {
     width: 770px;
+    z-index: 1;
     zoom: 1;
   }
   .blogListMain::after {
@@ -2787,7 +2794,7 @@
     color: #81ecec;
   }
   .blogListMain .left1 .share .important {
-    width: 800px;
+    width: 95%;
     height: 30px;
     background-color: #aaa;
     margin: 20px auto;
@@ -3058,27 +3065,30 @@
   .blogListMain aside {
     width: 100%;
   }
-  .blogNotesMain {
+  .body {
+    position: relative;
+  }
+  .body .blogNotesMain {
     margin: 0 auto;
     zoom: 1;
     width: 100%;
   }
-  .blogNotesMain::after {
+  .body .blogNotesMain::after {
     content: '';
     display: block;
     clear: both;
   }
-  .blogNotesMain .left3 {
+  .body .blogNotesMain .left3 {
     margin: 20px auto;
     float: left;
     width: 100%;
   }
-  .blogNotesMain .left3 .listSubmit {
+  .body .blogNotesMain .left3 .listSubmit {
     background-color: rgba(10, 10, 10, 0.7);
     border-radius: 5px;
     padding-bottom: 10px;
   }
-  .blogNotesMain .left3 .listSubmit .listSubmitTittle {
+  .body .blogNotesMain .left3 .listSubmit .listSubmitTittle {
     color: #e84118;
     font-weight: bold;
     font-size: 30px;
@@ -3088,15 +3098,15 @@
     letter-spacing: 20px;
     border-radius: 5px 5px 0 0;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal {
+  .body .blogNotesMain .left3 .listSubmit .form-horizontal {
     width: 100%;
     background: none;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group {
+  .body .blogNotesMain .left3 .listSubmit .form-horizontal .form-group {
     display: flex;
     margin-top: 20px;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group label {
+  .body .blogNotesMain .left3 .listSubmit .form-horizontal .form-group label {
     flex: 1;
     font-weight: bold;
     line-height: 30px;
@@ -3104,28 +3114,28 @@
     text-align: end;
     color: white;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div {
+  .body .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div {
     flex: 8;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input::placeholder {
+  .body .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input::placeholder {
     color: #aaa;
     text-align: start;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input {
+  .body .blogNotesMain .left3 .listSubmit .form-horizontal .form-group div input {
     text-align: start;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal button {
+  .body .blogNotesMain .left3 .listSubmit .form-horizontal button {
     position: relative;
     left: 78%;
   }
-  .blogNotesMain .left3 .infoSubmit {
+  .body .blogNotesMain .left3 .infoSubmit {
     background-color: rgba(10, 10, 10, 0.7);
     margin-top: 20px;
     border-radius: 5px;
     overflow: hidden;
     padding-bottom: 10px;
   }
-  .blogNotesMain .left3 .infoSubmit .listSubmitTittle {
+  .body .blogNotesMain .left3 .infoSubmit .listSubmitTittle {
     color: #e84118;
     font-weight: bold;
     font-size: 30px;
@@ -3135,16 +3145,16 @@
     letter-spacing: 20px;
     border-radius: 5px 5px 0 0;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal {
+  .body .blogNotesMain .left3 .infoSubmit .form-horizontal {
     width: 100%;
     overflow: hidden;
     background: none;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group {
+  .body .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group {
     display: flex;
     margin-top: 20px;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group label {
+  .body .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group label {
     flex: 1;
     font-weight: bold;
     line-height: 30px;
@@ -3152,21 +3162,21 @@
     text-align: end;
     color: white;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div {
+  .body .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div {
     flex: 8;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input::placeholder {
+  .body .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input::placeholder {
     color: #aaa;
     text-align: start;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input {
+  .body .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group div input {
     text-align: start;
   }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .btn-success {
+  .body .blogNotesMain .left3 .infoSubmit .form-horizontal .btn-success {
     position: relative;
     left: 78%;
   }
-  .blogNotesMain .left3 .steps {
+  .body .blogNotesMain .left3 .steps {
     margin-top: 20px;
     width: 500%;
     transform: translate(0);
@@ -3175,11 +3185,11 @@
     background-color: rgba(10, 10, 10, 0.7);
     padding-bottom: 10px;
   }
-  .blogNotesMain .left3 .steps li {
+  .body .blogNotesMain .left3 .steps li {
     width: 20%;
     float: left;
   }
-  .blogNotesMain .left3 .steps li .stepsTittle {
+  .body .blogNotesMain .left3 .steps li .stepsTittle {
     color: green;
     font-weight: bold;
     font-size: 30px;
@@ -3188,15 +3198,15 @@
     background-color: black;
     border-radius: 5px 5px 0 0;
   }
-  .blogNotesMain .left3 .steps li .form-horizontal {
+  .body .blogNotesMain .left3 .steps li .form-horizontal {
     width: 100%;
     overflow: hidden;
   }
-  .blogNotesMain .left3 .steps li .form-horizontal .form-group {
+  .body .blogNotesMain .left3 .steps li .form-horizontal .form-group {
     display: flex;
     margin-top: 20px;
   }
-  .blogNotesMain .left3 .steps li .form-horizontal .form-group label {
+  .body .blogNotesMain .left3 .steps li .form-horizontal .form-group label {
     flex: 1;
     font-weight: bold;
     line-height: 30px;
@@ -3204,17 +3214,17 @@
     text-align: end;
     color: white;
   }
-  .blogNotesMain .left3 .steps li .form-horizontal .form-group div {
+  .body .blogNotesMain .left3 .steps li .form-horizontal .form-group div {
     flex: 8;
   }
-  .blogNotesMain .left3 .steps li .form-horizontal .form-group div input::placeholder {
+  .body .blogNotesMain .left3 .steps li .form-horizontal .form-group div input::placeholder {
     color: #aaa;
     text-align: start;
   }
-  .blogNotesMain .left3 .steps li .form-horizontal .form-group div input {
+  .body .blogNotesMain .left3 .steps li .form-horizontal .form-group div input {
     text-align: start;
   }
-  .blogNotesMain .left3 .steps li .form-horizontal .btn-success {
+  .body .blogNotesMain .left3 .steps li .form-horizontal .btn-success {
     position: relative;
     left: 78%;
   }
@@ -3296,13 +3306,13 @@
   .body {
     width: 100%;
     height: 100vh;
-    background-color: #eaebed;
     position: relative;
     overflow: scroll;
   }
   .body nav {
     box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
     position: relative;
+    background: floralwhite;
   }
   .body nav .line {
     height: 3px;
@@ -3534,7 +3544,7 @@
   .body main {
     zoom: 1;
     width: 1200px;
-    margin: 0 auto;
+    margin: 25px auto;
   }
   .body main::after {
     content: '';
@@ -3545,7 +3555,6 @@
     float: left;
     width: 840px;
     margin-top: 25px;
-    background-color: #eaebed;
   }
   .body main .left .knowledgeList {
     width: 100%;
@@ -4137,6 +4146,7 @@
     font-size: 14px;
     padding-top: 50px;
     color: #636e72;
+    position: absolute;
   }
   .body footer .container {
     line-height: 30px;
@@ -4158,16 +4168,21 @@
   .total {
     width: 100vw;
     overflow: hidden;
+    z-index: 2;
+  }
+  .total #leafContainer {
+    z-index: 0;
   }
   .total .screen {
     width: 200vw;
     height: 100vh;
     transform: translate(0);
     transition: all 1s ease;
+    background-color: none;
   }
   .total .screen .bewater {
     width: 100vw;
-    background: #e74c3c;
+    background: black;
     height: 100vh;
     float: left;
     position: relative;
@@ -4249,11 +4264,14 @@
   .total .screen .youxiao {
     float: left;
     width: 100vw;
+    background: none;
   }
   .blogDescMain {
     width: 1150px;
     padding: 20px;
     background-color: white;
+    margin-top: 25px;
+    border-radius: 10px;
   }
   .blogDescMain .nameAndPic {
     color: white;
@@ -4408,29 +4426,68 @@
   .blogListMain .left1 .mainContainenr ul {
     color: black;
   }
+  .blogListMain .left1 .mainContainenr ul li {
+    margin-bottom: 10px;
+  }
+  .blogListMain .left1 .mainContainenr ul li:nth-child(2) .step {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-left: 3px solid green;
+    border-bottom: 1px solid green;
+    text-indent: 1em;
+    font-weight: bold;
+  }
+  .blogListMain .left1 .mainContainenr ul li:nth-child(3) .step {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-left: 3px solid yellow;
+    border-bottom: 1px solid yellow;
+    text-indent: 1em;
+    font-weight: bold;
+  }
+  .blogListMain .left1 .mainContainenr ul li:nth-child(3) .step {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-left: 3px solid black;
+    border-bottom: 1px solid black;
+    text-indent: 1em;
+    font-weight: bold;
+  }
+  .blogListMain .left1 .mainContainenr ul li:nth-child(4) .step {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-left: 3px solid burlywood;
+    border-bottom: 1px solid burlywood;
+    text-indent: 1em;
+    font-weight: bold;
+  }
   .blogListMain .left1 .mainContainenr ul li .step {
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     border-left: 3px solid red;
     border-bottom: 1px solid red;
     text-indent: 1em;
     font-weight: bold;
   }
   .blogListMain .left1 .mainContainenr ul li .descTop {
-    text-indent: 3em;
+    text-indent: 1.5em;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #fd79a8;
+    font: 14px Montserrat,Microsoft Yahei;
     border-radius: 5px;
   }
   .blogListMain .left1 .mainContainenr ul li img {
     width: 100%;
   }
   .blogListMain .left1 .mainContainenr ul li .descBottom {
-    text-indent: 3em;
+    text-indent: 1.5em;
     margin-top: 10px;
-    background-color: #fab1a0;
+    font: 14px Montserrat,Microsoft Yahei;
     border-radius: 5px;
   }
   .blogListMain .left1 .share {
@@ -4460,7 +4517,7 @@
     color: #81ecec;
   }
   .blogListMain .left1 .share .important {
-    width: 800px;
+    width: 95%;
     height: 30px;
     background-color: #aaa;
     margin: 20px auto;
@@ -4767,9 +4824,6 @@
     display: flex;
     padding-top: 20px;
   }
-  .blogNotesMain .left3 .listSubmit .form-horizontal .form-group .col-sm-10 {
-    height: 66px;
-  }
   .blogNotesMain .left3 .listSubmit .form-horizontal .form-group label {
     flex: 1;
     font-weight: bold;
@@ -4823,9 +4877,6 @@
   .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group {
     display: flex;
     padding-top: 20px;
-  }
-  .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group .col-sm-10 {
-    height: 66px;
   }
   .blogNotesMain .left3 .infoSubmit .form-horizontal .form-group label {
     flex: 1;
@@ -4887,9 +4938,7 @@
   }
   .blogNotesMain .left3 .steps li .form-horizontal .form-group {
     display: flex;
-  }
-  .blogNotesMain .left3 .steps li .form-horizontal .form-group .col-sm-10 {
-    height: 66px;
+    margin-bottom: 55px;
   }
   .blogNotesMain .left3 .steps li .form-horizontal .form-group label {
     flex: 1;

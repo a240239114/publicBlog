@@ -1,4 +1,5 @@
 <IfModule mod_rewrite.c>
+  ErrorDocument  404  /404.html
   Options +FollowSymlinks -Multiviews
   RewriteEngine On
 

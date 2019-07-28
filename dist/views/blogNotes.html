@@ -20,6 +20,7 @@
     <div class="total1">
         <!--770以下的 侧边栏 -->
         <?php include('./views/public/phoneAside.html');?>
+        <div id="leafContainer"></div>
 
         <div class="body">
             <!-- 导航栏 -->
@@ -68,9 +69,13 @@
                             <div class="form-group">
                                 <label for="content" class="col-sm-2 control-label">content</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="content" name="content"
+                                    <!-- <input type="text" class="form-control" id="content" name="content"
                                         placeholder="content"
-                                       >
+                                       > -->
+                                       <textarea name="cs_brief"
+                                       rows="10" class="form-control input-sm"
+                                       name = "content"
+                                       id = "content"></textarea>
                                 </div>
                             </div>
 
@@ -162,6 +167,20 @@
                                            placeholder="looked">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="content" class="col-sm-2 control-label">content</label>
+                                <div class="col-sm-10">
+                                    <!-- <input type="text" class="form-control" id="content" name="content"
+                                        placeholder="content"
+                                       > -->
+                                       <textarea name="cs_brief"
+                                       rows="10" class="form-control input-sm"
+                                       name = "content"
+                                       id = "content"></textarea>
+                                </div>
+                            </div>
+
                             <button type="submit"  id="infoSubmit" class="btn btn-success pull-right">提交数据到数据库</button>
                         </form>
 
@@ -226,11 +245,15 @@
 
                                     <label for="wordpress" class="col-sm-2 control-label">wordpress</label>
                                     <div class="col-sm-10">
-                                        <input type="text" 
+                                        <!-- <input type="text" 
                                                class="form-control" 
                                                id="wordpress"
                                                name="wordpress"
-                                               placeholder="wordpress">
+                                               placeholder="wordpress"> -->
+                                               <textarea name="cs_brief"
+                                               rows="10" class="form-control input-sm"
+                                               name = "wordpress"
+                                               id = "wordpress"></textarea>
                                     </div>
                                 </div>
 

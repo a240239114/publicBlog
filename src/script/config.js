@@ -8,6 +8,7 @@ require.config({
         validate:'vendor/jquery-validation/dist/jquery.validate',
         jqueryform:'vendor/jquery-form/dist/jquery.form.min',
         template:'vendor/artTemplate/template',
+        moatext:'vendor/js/jquery.moatext',//字节跳舞
 
 
         //本地js文件
@@ -27,8 +28,12 @@ require.config({
         },
         jqueryform:{
             deps:['jquery']  
+        },
+        moatext:{
+            deps:['jquery']
         }
     }
 });
 
 require(['common']);
+

@@ -69,7 +69,7 @@ gulp.task('script', function () {
     gulp.src(app.srcPath + 'script/**/*.js')
         // .pipe($.concat('index.js'))  不需要合并
         .pipe(gulp.dest(app.devPath + 'js'))
-        .pipe($.uglify())
+        // .pipe($.uglify())
         .on('error', function(err) {
             gutil.log(gutil.colors.red('[Error]'), err.toString());
         })

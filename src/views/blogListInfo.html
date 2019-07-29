@@ -7,14 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include('./views/public/style.html');?>
     <!-- <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script> -->
-    <!-- 测试 -->
+    <!-- <!-- <link rel="stylesheet" href="./vendor/prism/prism.css"/>0 -->
+    <!-- 测试  -->
     <title>你好,世界</title>
 </head>
 
 <body>
 
     <div class="total1">
-            <div id="leafContainer"></div>
+        <div id="leafContainer"></div>
 
         <!--770以下的 侧边栏 -->
         <?php include('./views/public/phoneAside.html');?>
@@ -30,20 +31,19 @@
                 <!-- 左边 -->
                 <div class="left1">
                     <!-- 坑 -->
+
+
                 </div>
 
-<pre class="line-numbers">
-<code class="language-js">$.ajax({
-url:"api/"+whereInfo+"/"+id,
-type:"get",
-success:function(res){
-    console.log(res.data[0]); 
-    var html = template("ListInfoTpl",res.data[0])
-    $(".left1").html(html);
-}
-})
-</code>
-</pre>
+
+
+                <pre class="line-numbers">
+                    <code class="language-js">
+                    {{$value.wordpress}}
+ 
+                    </code>
+                </pre>
+
 
                 <!-- 侧边栏  -->
                 <?php include('./views/public/aside.html');?>
@@ -89,42 +89,12 @@ success:function(res){
                     <div class="descTop">{{$value.descTop}}</div>
                     <img src="{{$value.img}}" alt="">
 
-
 <pre class="line-numbers">
 <code class="language-js">
-{{$value.wordpress}}
-$.ajax({
-    url:"api/"+whereInfo+"/"+id,
-    type:"get",
-    success:function(res){
-       console.log(res.data[0]); 
-       var html = template("ListInfoTpl",res.data[0])
-       $(".left1").html(html);
-    }
-})
+{{$value.cs_brief}}
+
 </code>
 </pre>
-
-
-
-<pre class="line-numbers">
-<code class="language-js">$.ajax({
-url:"api/"+whereInfo+"/"+id,
-type:"get",
-success:function(res){
-console.log(res.data[0]); 
-var html = template("ListInfoTpl",res.data[0])
-$(".left1").html(html);
-}
-})
-</code>
-</pre>
-
-
-
-
-
-
                     <div class="descBottom">{{$value.descBottom}}</div>
                 </li>
                 {{/each}}
@@ -196,29 +166,13 @@ $(".left1").html(html);
             </p>
             <span>相关文章:</span>
             <ul class="article">
+                {{each relatedArticleList}}
                 <li>
                     <img class="active" src="../image/zhuanfa.png" alt="">
-                    <img class="background" src="../image/touxiang.jpeg" alt="">
-                    <div class="tittle">你真美</div>
+                    <img class="background" src="{{$value.img}}" alt="">
+                    <div class="tittle">{{$value.tittle}}</div>
                 </li>
-
-                <li>
-                    <img class="active" src="../image/zhuanfa.png" alt="">
-                    <img class="background" src="../image/touxiang.jpeg" alt="">
-                    <div class="tittle">你真美</div>
-                </li>
-
-                <li>
-                    <img class="active" src="../image/zhuanfa.png" alt="">
-                    <img class="background" src="../image/touxiang.jpeg" alt="">
-                    <div class="tittle">你真美</div>
-                </li>
-
-                <li>
-                    <img class="active" src="../image/zhuanfa.png" alt="">
-                    <img class="background" src="../image/touxiang.jpeg" alt="">
-                    <div class="tittle">你真美</div>
-                </li>
+                {{/each}}
             </ul>
 
         </div>
@@ -230,23 +184,24 @@ $(".left1").html(html);
                 条评论
             </p>
             <div class="line"></div>
-            <form action="">
-                <textarea name="" id="" cols="30" rows="10"
-                    placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..."></textarea>
+            <form action="" id="comments">
+                <textarea name="comments" id="" cols="30" rows="10"
+                          placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..."></textarea>
                 <div class="message">
-                    <input type="text" placeholder="昵称[必填]">
-                    <input type="text" placeholder="邮箱[必填]">
-                    <input type="text" placeholder="网址[可不填]">
-                    <input type="submit" value="发表评论">
+                    <input type="text" placeholder="昵称[必填]" name="name">
+                    <input type="text" placeholder="邮箱[必填]" name="email">
+                    <input type="text" placeholder="网址[可不填]" name="url">
+                    <input type="button" id="button" value="发表评论">
                 </div>
 
                 <ul class="commentsList1">
+                    {{each comments}}
                     <li>
                         <div class="mainxx">
                             <div class="head">
-                                <img src="../image/touxiang.jpeg"
+                                <img src="http://puv6112u1.bkt.clouddn.com/20141016202155_5ycRZ.thumb.700_0.jpeg"
                                     style="height: 30px;width:30px;border-radius: 50%;" alt="">
-                                <span class="name">雄哥</span>
+                                <span class="name">{{$value.name}}</span>
                                 <!-- <span class="iconfont icon--huangguan"></span> -->
                                 <span class="huangguan"></span>
                                 <span class="zhuti">windows7</span>
@@ -254,19 +209,22 @@ $(".left1").html(html);
                                 <span class="zhuti">Firefox61.0</span>
                             </div>
                             <div class="foot">
-                                <span>2019-03-28 17:35</span>
+                                <span>{{$value.date}}</span>
                                 <span class="iconfont icon-fenxiang-"></span>
                                 <span>回复</span>
                             </div>
                         </div>
-                        <p>我是打酱油的</p>
+                        <p>{{$value.comments}}</p>
                     </li>
+                    {{/each}}
                 </ul>
             </form>
         </div>
     </script>
 
     <?php include('./views/public/script.html');?>
+
+
     <script>
         require(['blogInfo']);
         require(['blogDescNotesListInfocommon']);

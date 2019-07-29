@@ -57,15 +57,18 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     async function LoadPages(where, whereInfo) {
         // var count;
         //查询当前list总共多少条
-        var count =  await $.ajax({ url: "api/" + where,type: "get"});
-            count = Math.ceil(count.data.length/8);
+        var count = await $.ajax({
+            url: "api/" + where,
+            type: "get"
+        });
+        count = Math.ceil(count.data.length / 8);
 
         console.log(count);
 
-
+        
         //默认显示第一页
         $.ajax({
-            url: "api/" + where + "/1",
+            url: "api/" + where + "/index/1",
             type: "get",
             success: function (res) {
                 var html = template("paginnationTpl", {
@@ -83,7 +86,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                 current: 0,
                 mode: "fixed",
                 count: 5,
-                pageCount:count,
+                pageCount: count,
                 jump: true,
                 coping: true,
                 homePage: "首页",
@@ -94,7 +97,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                     var index = api.getCurrent();
                     //根据索引获取数据
                     $.ajax({
-                        url: "api/" + where + "/" + index,
+                        url: "api/" + where + "/index/" + index,
                         type: "get",
                         success: function (res) {
                             var html = template("paginnationTpl", {
@@ -102,6 +105,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                             })
                             $(".knowledgeList").html(html);
                             console.log("res.data.length=====>" + res.data.length)
+                            console.log(res);
                         }
                     }).done(function () {
                         turnBlogListInfo(whereInfo);
@@ -136,7 +140,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
 
     //点击bewater页面,相框向左滑动
     $(".bewater").on("click", function () {
-        console.log("11111");;
+        // console.log("11111");;
         $('.screen').css("transform", "translate(-50%)");
     })
 
@@ -161,7 +165,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
 
     //页面加载事件
     //第一次加载页面的时候显示第一页
-    LoadPages('allList');
+    LoadPages('allList',"allInfo");
 
     //blogNotes页面跳转过来加载分页区域,则无需bewater,根据search加载数据
     if (window.location.search) {
@@ -189,5 +193,56 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         window.location.reload();
     });
 
+    //点击搜索按钮,收索区域出现
+    $(".search").on("click", function () {
+        // console.log('1111111');
+        $(".row").css({
+            "display": "block"
+        });
+        return false;
+    })
+
+    //点击document收索框消失
+    $(document).on("click", function () {
+        // console.log("document");
+        //收索框消失
+        $('.row').css({
+            "display": "none"
+        })
+        // return false;
+    })
+
+    //取消点击收索框的冒泡事件
+    $('.row').on("click",function(){
+        return false;
+    })
+
+    $("main").scroll(function(){
+        console.log("scroll")
+    })
+
+    // $(window).scroll(function () {
+    //     console.log("scroll");
+    // });
+
+    //点击收索框 收索框消失 执行收索功能
+    $('.input-group-btn').on('click', function () {
+        console.log('2222222');
+        //收索框消失
+        $('.row').css({
+            "display": "none"
+        })
+
+        //获取输入框的内容
+        var keywords = $(".form-control").val();
+        console.log("keywords======>" + keywords)
+
+        //加载数据
+        LoadPages(`relatedArticleList/${keywords}`)
+
+        //清空文本框
+        $(".form-control").val('')
+        return false;
+    })
 
 });

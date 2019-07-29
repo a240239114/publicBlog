@@ -12,6 +12,11 @@
   }
 }
 
+body{
+  width: 100%;
+  height: 100%;
+}
+
 
 
 @media (max-width:770px) {
@@ -459,6 +464,7 @@
             margin-bottom: 25px;
             background-color: #ffffff;
             position: relative;
+            border-radius: 5px;
 
             .outside {
               width: 290px;
@@ -1249,6 +1255,7 @@
       background: url('../image/pd-bg-04.jpg') repeat-y;
       // float           : left;
       transition: all 1s;
+      z-index: 1;
 
       ul {
         width: 100%;
@@ -2164,8 +2171,10 @@
       //bewater
       .bewater {
         width: 100vw;
+        background: white;
+        // background-size: 100% 30px;
+        // transform: rotate(20deg);
         height: 100vh;
-        background: #e74c3c;
         float: left;
         position: relative;
 
@@ -2268,7 +2277,7 @@
 
             5%,
             95% {
-              color: #c0392b;
+              color: black;
               filter: blur(0);
               text-shadow: none;
             }
@@ -4918,6 +4927,9 @@
             margin-bottom: 200px;
             opacity: 0.2;
             position: relative;
+            border-radius: 5px;
+
+
 
             .outside {
               width: 290px;
@@ -5748,7 +5760,7 @@
       //bewater
       .bewater {
         width: 100vw;
-        background: black;
+        background: white;
         // background-size: 100% 30px;
         // transform: rotate(20deg);
         height: 100vh;
@@ -5854,7 +5866,7 @@
 
             5%,
             95% {
-              color: #c0392b;
+              color: black;
               filter: blur(0);
               text-shadow: none;
             }

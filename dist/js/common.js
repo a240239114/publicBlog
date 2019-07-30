@@ -1,11 +1,4 @@
-define(["jquery","template"], function ($,template) {
-    // //点击搜索按钮,收索区域出现
-    // $(".search").on("click", function () {
-    //     console.log('1111111');
-    //     $(".row").css({
-    //         "display": "block"
-    //     });
-    // })
+define(["jquery", "template"], function ($, template) {
 
     //770px以下 点击分类按钮 分类出来
     var flag = false;
@@ -28,7 +21,6 @@ define(["jquery","template"], function ($,template) {
 
     //发起请求就让小球显示
     $(document).ajaxStart(function () {
-        // console.log('1111111111111111111111111111');
         $(".ball").css({
             "display": "block"
         });
@@ -36,7 +28,6 @@ define(["jquery","template"], function ($,template) {
 
 
     $(document).ajaxStop(function () {
-        // console.log('1111111111111111111111111111');
         $(".ball").css({
             "display": "none"
         });
@@ -52,6 +43,16 @@ define(["jquery","template"], function ($,template) {
             // console.log(html);
             $(".update>.bottom").html(html);
         }
+    }).done(function () {
+        //最近更新的页面跳转
+        $("#recentlyArticle>.item1").map(function (index, item) {
+
+            $(item).on("click", function () {
+                console.log($(item).attr("data-id"));
+                var id = $(item).attr("data-id");
+                window.location.href = `blogListInfo?${id}&allInfo`;
+            })
+        })
     })
 
 
@@ -62,24 +63,34 @@ define(["jquery","template"], function ($,template) {
         success: function (res) {
             // console.log(res.data);
             var html = template("randomTpl", {
-                data:res.data
+                data: res.data
             });
             // console.log(html);
             $("#randomArticle").html(html);
         }
-    }).done(function(){//随机事件li跳转
-        $("#randomArticle>li").map(function(index,item){
-           console.log(index,item)
-           $(item).on("click",function(){//传递id&allInfo
-            //    console.log("11111");
-               var id = $(item).attr("data-id");
-            //    console.log(id);
+    }).done(function () { //随机事件li跳转
+        $("#randomArticle>li").map(function (index, item) {
+            //    console.log(index,item)
+            $(item).on("click", function () { //传递id&allInfo
+                //    console.log("11111");
+                var id = $(item).attr("data-id");
+                //    console.log(id);
 
-               window.location.href = `blogListInfo?${id}&allInfo`
-           })
-        })  
+                window.location.href = `blogListInfo?${id}&allInfo`
+            })
+        })
     })
 
 
-
+    //精彩评论
+    $.ajax({
+        url: "api/wonderfulComments",
+        type: "get",
+        success: function (data) {
+            var html = template("wonderfulTpl", data);
+            // console.log(data);
+            // console.log(html);
+            $("#wonderfulComments").html(html);
+        }
+    })
 });

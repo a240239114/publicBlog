@@ -1,19 +1,10 @@
 define(["jquery", "template", "pagination"], function ($, template, pagination) {
 
     //发起请求就执行,li之间的间距变小
-    $(document).ajaxStart(function () {
-        $('.wrap').show();
-        // $('.wrap').show();   
-        // $(".knowledgeList li").animate({
-        //     "margin-bottom": "20px",
-        //     "opacity": 1
-        // }, 3000)
-    });
+    $(document).ajaxStart(function () {});
 
     //发起请求结束就执行,li之间的间距变小
     $(document).ajaxStop(function () {
-        $('.wrap').hide();
-        // $('.wrap').show();   
         $(".knowledgeList li").animate({
             "margin-bottom": "20px",
             "opacity": 1
@@ -53,6 +44,61 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             })
         });
     }
+
+
+    //点击删除按钮 删除allList/allInfo/xxList/xxInfo
+    function reMove() {
+        $(".icon-jiahaocu").map(function (index, item) {
+            $(item).on("click", function () {
+                console.log($(item).attr("data-where"));
+                console.log($(item).attr("data-tittle"));
+                var where = $(item).attr("data-where");
+                var tittle = $(item).attr("data-tittle");
+                console.log("api/allList/tittle/${tittle}==============>"+`api/allList/tittle/${tittle}`);
+
+                console.log("删除事件")
+                //根据tittle删除 allList
+                $.ajax({
+                    url: `api/allList/tittle/${tittle}`,
+                    type: "delete",
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+
+                //根据tittle删除 allInfo
+                $.ajax({
+                    url: `api/allInfo/tittle/${tittle}`,
+                    type: "delete",
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+
+                //根据tittle删除 whereList
+                $.ajax({
+                    url: `api/${where}List/tittle/${tittle}`,
+                    type: "delete",
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+
+                //根据tittle删除 whereInfo
+                $.ajax({
+                    url: `api/${where}Info/tittle/${tittle}`,
+                    type: "delete",
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+
+                LoadPages(`${where}List`, `${where}Info`);
+                return false;
+            })
+        })
+    }
+
     //加载页面
     async function LoadPages(where, whereInfo) {
         // var count;
@@ -61,26 +107,32 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             url: "api/" + where,
             type: "get"
         });
+        var listCount = count.data.length;
         count = Math.ceil(count.data.length / 8);
 
-        console.log(count);
+        // console.log(count);
 
-        
+
         //默认显示第一页
         $.ajax({
             url: "api/" + where + "/index/1",
+            // url: "api/"+where,
             type: "get",
             success: function (res) {
+                // console.log(res.data);
                 var html = template("paginnationTpl", {
                     data: res.data
                 })
                 $(".knowledgeList").html(html);
             }
         }).done(function () {
+            //添加跳转事件
             turnBlogListInfo(whereInfo);
+            //添加删除事件
+            reMove();
         })
 
-        //根据索引获取数据
+        //初始化分页插件
         function loadPages(pageall) {
             $(".M-box3").pagination({
                 current: 0,
@@ -104,17 +156,24 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                                 data: res.data
                             })
                             $(".knowledgeList").html(html);
-                            console.log("res.data.length=====>" + res.data.length)
-                            console.log(res);
+                            // console.log("res.data.length=====>" + res.data.length)
+                            // console.log(res);
                         }
                     }).done(function () {
                         turnBlogListInfo(whereInfo);
+                        //添加删除事件
+                        reMove();
                     })
                 }
             });
         }
 
-        loadPages();
+        // console.log(listCount);
+
+        if(listCount>=8){//初始化分页插件
+            // console.log("111111111111");
+            loadPages();
+        }
     }
 
     //给770px以上的头部导航的a添加点击事件,加载不同的数据
@@ -165,12 +224,12 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
 
     //页面加载事件
     //第一次加载页面的时候显示第一页
-    LoadPages('allList',"allInfo");
+    LoadPages('allList', "allInfo");
 
     //blogNotes页面跳转过来加载分页区域,则无需bewater,根据search加载数据
     if (window.location.search) {
         // $(".bewater").css({"width":0});
-        console.log("search");
+        // console.log("search");
         $(".screen").css({
             "transform": "translate(-50%)"
         })
@@ -213,11 +272,11 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     })
 
     //取消点击收索框的冒泡事件
-    $('.row').on("click",function(){
+    $('.row').on("click", function () {
         return false;
     })
 
-    $("main").scroll(function(){
+    $("main").scroll(function () {
         console.log("scroll")
     })
 

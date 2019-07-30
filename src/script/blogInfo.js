@@ -2,21 +2,6 @@ define([
     'jquery',
     'template'
 ], function ($, template) {
-    //发起请求就执行,li之间的间距变小
-    $(document).ajaxStart(function () {
-        $('.wrap').show();
-        // $('.wrap').show();   
-        // $(".knowledgeList li").animate({
-        //     "margin-bottom": "20px",
-        //     "opacity": 1
-        // }, 3000)
-    });
-
-    //发起请求结束就执行,li之间的间距变小
-    $(document).ajaxStop(function () {
-        $('.wrap').hide();
-    });
-
     var id = window.location.search.match(/\d+/g)[0];
     var whereInfo = window.location.search.match(/&.*/g)[0].slice(1);
     var where = window.location.search.match(/&.*/g)[0].slice(1, 4);
@@ -24,6 +9,7 @@ define([
     if(whereInfo == undefined){
         whereInfo == "allInfo"
     }
+    console.log(id);
 
     //获取数据
     $.ajax({
@@ -31,9 +17,10 @@ define([
         type: "get",
         success: function (res) {}
     }).done(function (res) {
+        console.log(res.data)
         var keywords = res.data.keywords;
 
-        //获取近期更新 
+        //获取相关文章 
         $.ajax({
             url: "api/relatedArticleList/" + keywords,
             // url:"api/relatedArticleList/111",
@@ -42,10 +29,6 @@ define([
                 var relatedArticleList = data1.data;
                 // console.log(relatedArticleList);
                 res.data.relatedArticleList = relatedArticleList;
-                // console.log(res.data);
-
-                // var html = template("ListInfoTpl", res.data)
-                // $(".left1").html(html);
             }
         })
 
@@ -81,6 +64,8 @@ define([
 
                 console.log("提交事件");
             })
+
+ 
         })
 
     })

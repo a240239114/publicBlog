@@ -28,7 +28,7 @@
                 最近更新</p>
             <div class="line"></div>
         </div>
-        <div class="bottom">
+        <div class="bottom" id="recentlyArticle">
             <!-- 坑 -->
         </div>
     </div>
@@ -308,37 +308,11 @@
             <div class="line"></div>
         </div>
 
-        <div class="bottom">
-            <div class="item4">
-                <div class="pic">
+        <div class="bottom" id="wonderfulComments">
+            <!-- 坑 -->
 
-                </div>
 
-                <div class="desc">
-                    <p>雄哥个人博客:</p>
-                    <p>李二狗</p>
-                    <a href="">
-                        <p>评论:你是不是暗恋我</p>
-                    </a>
-                </div>
-
-            </div>
-            <div class="item4">
-                <div class="pic">
-
-                </div>
-
-                <div class="desc">
-                    <p>雄哥个人博客:</p>
-                    <p>李二狗</p>
-                    <a href="">
-                        <p>评论:你是不是暗恋我</p>
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="item4">
+            <!-- <div class="item4">
                 <div class="pic">
 
                 </div>
@@ -367,6 +341,21 @@
                 </div>
 
             </div>
+
+            <div class="item4">
+                <div class="pic">
+
+                </div>
+
+                <div class="desc">
+                    <p>雄哥个人博客:</p>
+                    <p>李二狗</p>
+                    <a href="">
+                        <p>评论:你是不是暗恋我</p>
+                    </a>
+                </div>
+
+            </div> -->
         </div>
     </div>
     <div class="item server">
@@ -431,16 +420,16 @@
 <!-- 最近更新 -->
 <script id="recentlyTpl" type="art-template">
     {{each data}}
-        <div class="item1">
+        <div class="item1" data-id="{{$value._id}}">
             <div class="pic">
                 <img src="{{$value.img}}" alt="">
             </div>
             <div class="description">
-                <a href="">{{$value.tittle}}</a>
+                <a href="javascript:;">{{$value.tittle}}</a>
                 <p>{{$value.date}}</p>
             </div>
         </div>
-        {{/each}}
+   {{/each}}
 </script>
 
 <!-- 随机文章 -->
@@ -450,5 +439,26 @@
             <div class="sort" class="moatext_wave">{{$value._id}}</div>
             <p>{{$value.tittle}}</p>
         </li>
+     {{/each}}
+ </script>
+
+
+<!-- 精彩评论 -->
+<script id="wonderfulTpl" type="art-template">
+    {{each data}}
+    <div class="item4">
+        <div class="pic">
+
+        </div>
+
+        <div class="desc">
+            <p>雄哥个人博客:</p>
+            <p>{{$value.name}}</p>
+            <a href="">
+                <p>{{$value.comments}}</p>
+            </a>
+        </div>
+
+    </div>
      {{/each}}
  </script>

@@ -5,19 +5,7 @@
   list-style: none;
   // color: #666;
   // text-align: center;
-
-  a {
-    //a标签的下划线消失
-    text-decoration: none;
-  }
 }
-
-body{
-  width: 100%;
-  height: 100%;
-}
-
-
 
 @media (max-width:770px) {
 
@@ -452,6 +440,7 @@ body{
         // background-color: white;
         padding: 20px;
 
+
         .knowledgeList {
           //ul
           width: 100%;
@@ -465,6 +454,14 @@ body{
             background-color: #ffffff;
             position: relative;
             border-radius: 5px;
+
+            .icon-jiahaocu {
+              color: red;
+              position: absolute;
+              top: 2px;
+              right: 5px;
+              transform: rotateZ(45deg);
+            }
 
             .outside {
               width: 290px;
@@ -975,7 +972,10 @@ body{
                   transition: all 1s;
 
                   &:hover {
-                    text-decoration: underline;
+                    color:red;
+                    font-weight: bolder;
+                    font-size: 25px;
+                    text-decoration: none;
                   }
                 }
               }
@@ -1208,6 +1208,8 @@ body{
       font-size: 14px;
       padding-top: 50px;
       color: #636e72;
+      position: absolute;
+      bottom: 0;
 
       .container {
 
@@ -2575,7 +2577,7 @@ body{
             // margin-right: 80px;
 
             li {
-              flex:1;
+              flex: 1;
               position: relative;
 
               a {
@@ -2762,6 +2764,8 @@ body{
         padding: 20px;
         // background-color: #eaebed;
 
+
+
         .knowledgeList {
           //ul
           width: 100%;
@@ -2775,6 +2779,13 @@ body{
             background-color: #ffffff;
             position: relative;
             border-radius: 5px;
+            .icon-jiahaocu {
+              color: red;
+              position: absolute;
+              top: 2px;
+              right: 5px;
+              transform: rotateZ(45deg);
+            }
 
             .outside {
               width: 290px;
@@ -3298,7 +3309,10 @@ body{
                   transition: all 1s;
 
                   &:hover {
-                    text-decoration: underline;
+                    color:red;
+                    font-weight: bolder;
+                    font-size: 25px;
+                    text-decoration: none;
                   }
                 }
               }
@@ -3836,7 +3850,7 @@ body{
         }
 
         .important {
-          width:95%;
+          width: 95%;
           height: 30px;
           background-color: #aaa;
           margin: 20px auto;
@@ -4249,32 +4263,33 @@ body{
 
 
   //Notes页面
-  .body{
+  .body {
     position: relative;
+
     .blogNotesMain {
       margin: 0 auto;
       zoom: 1;
       width: 100%;
-  
+
       //清除浮动的影响
       &::after {
         content: '';
         display: block;
         clear: both;
       }
-  
+
       //表格提交区域
       .left3 {
         margin: 20px auto;
         float: left;
         width: 100%;
-  
-  
+
+
         .listSubmit {
           background-color: rgba(10, 10, 10, 0.7);
           border-radius: 5px;
           padding-bottom: 10px;
-  
+
           .listSubmitTittle {
             color: #e84118;
             font-weight: bold;
@@ -4285,17 +4300,17 @@ body{
             letter-spacing: 20px;
             border-radius: 5px 5px 0 0;
           }
-  
+
           .form-horizontal {
             width: 100%;
             // position: relative;
             background: none;
-  
-  
+
+
             .form-group {
               display: flex;
               margin-top: 20px;
-  
+
               label {
                 flex: 1;
                 font-weight: bold;
@@ -4304,40 +4319,40 @@ body{
                 text-align: end;
                 color: white;
               }
-  
+
               div {
                 flex: 8;
-  
+
                 input::placeholder {
                   color: #aaa;
                   text-align: start;
                 }
-  
+
                 input {
                   text-align: start;
                 }
               }
-  
-  
+
+
             }
-  
+
             button {
               // align-self: center;
               position: relative;
               left: 78%;
             }
           }
-  
-  
+
+
         }
-  
+
         .infoSubmit {
           background-color: rgba(10, 10, 10, 0.7);
           margin-top: 20px;
           border-radius: 5px;
           overflow: hidden;
           padding-bottom: 10px;
-  
+
           .listSubmitTittle {
             color: #e84118;
             font-weight: bold;
@@ -4348,17 +4363,17 @@ body{
             letter-spacing: 20px;
             border-radius: 5px 5px 0 0;
           }
-  
+
           .form-horizontal {
             width: 100%;
             // position: relative;
             overflow: hidden;
             background: none;
-  
+
             .form-group {
               display: flex;
               margin-top: 20px;
-  
+
               label {
                 flex: 1;
                 font-weight: bold;
@@ -4367,24 +4382,24 @@ body{
                 text-align: end;
                 color: white;
               }
-  
+
               div {
                 flex: 8;
-  
+
                 input::placeholder {
                   color: #aaa;
                   text-align: start;
                 }
-  
+
                 input {
                   text-align: start;
                 }
               }
-  
-  
+
+
             }
-  
-  
+
+
             .btn-success {
               position: relative;
               left: 78%;
@@ -4392,7 +4407,7 @@ body{
             }
           }
         }
-  
+
         //表格提交区域
         .steps {
           margin-top: 20px;
@@ -4402,13 +4417,13 @@ body{
           transition: all 1s;
           background-color: rgba(10, 10, 10, 0.7);
           padding-bottom: 10px;
-  
+
           li {
             width: 20%;
             //  height: 465px;
             float: left;
             // background: linear-gradient(#3498db 20%, #2980b9 80%);
-  
+
             //标题
             .stepsTittle {
               color: green;
@@ -4420,18 +4435,18 @@ body{
               // letter-spacing  : 20px;
               border-radius: 5px 5px 0 0;
             }
-  
+
             //表单
             .form-horizontal {
               width: 100%;
               // position: relative;
               overflow: hidden;
-  
-  
+
+
               .form-group {
                 display: flex;
                 margin-top: 20px;
-  
+
                 label {
                   flex: 1;
                   font-weight: bold;
@@ -4440,24 +4455,24 @@ body{
                   text-align: end;
                   color: white;
                 }
-  
+
                 div {
                   flex: 8;
-  
+
                   input::placeholder {
                     color: #aaa;
                     text-align: start;
                   }
-  
+
                   input {
                     text-align: start;
                   }
                 }
-  
-  
+
+
               }
-  
-  
+
+
               .btn-success {
                 position: relative;
                 left: 78%;
@@ -4465,19 +4480,20 @@ body{
               }
             }
           }
-  
-  
+
+
         }
-  
+
       }
     }
   }
-  
-  
+
+
 
 }
 
 @media only screen and (min-width:1200px) {
+
 
   /* 动态小球 */
   .ball {
@@ -4493,7 +4509,7 @@ body{
     margin-left: -19px;
     margin-top: -19px;
     border-radius: 50%;
-    animation: moveTo 6s infinite;
+    animation: moveTo 0.5s infinite;
   }
 
   .ball:nth-child(2) {
@@ -4516,7 +4532,7 @@ body{
     content: "";
     height: 5px;
     width: 5px;
-    background-color: chocolate;
+    background-color: #485460;
     position: absolute;
     border-radius: 50%;
   }
@@ -4844,7 +4860,8 @@ body{
 
         &:hover {
           a {
-            color: #29d;
+            color: black;
+            text-decoration: none;
           }
         }
       }
@@ -4913,7 +4930,9 @@ body{
         float: left;
         width: 840px;
         margin-top: 25px;
+
         // background-color: #eaebed;
+        // position: relative;
 
         .knowledgeList {
           width: 100%;
@@ -4928,7 +4947,13 @@ body{
             opacity: 0.2;
             position: relative;
             border-radius: 5px;
-
+            .icon-jiahaocu {
+              color: red;
+              position: absolute;
+              top: 2px;
+              right: 5px;
+              transform: rotateZ(45deg);
+            }
 
 
             .outside {
@@ -5196,7 +5221,7 @@ body{
 
                   &:hover {
                     color: #3498db;
-                    text-decoration: underline;
+                    text-decoration: none;
                   }
                 }
 
@@ -5373,7 +5398,7 @@ body{
                 background-color: #1B9CFC;
 
                 a {
-                  text-decoration: underline;
+                  text-decoration: none;
                 }
               }
 
@@ -5473,7 +5498,10 @@ body{
                   transition: all 1s;
 
                   &:hover {
-                    text-decoration: underline;
+                    color:red;
+                    font-weight: bolder;
+                    font-size: 25px;
+                    text-decoration: none;
                   }
                 }
               }
@@ -5746,9 +5774,11 @@ body{
     width: 100vw;
     overflow: hidden;
     z-index: 2;
-    #leafContainer{
+
+    #leafContainer {
       z-index: 0;
     }
+
     //相框
     .screen {
       width: 200vw;
@@ -5878,7 +5908,7 @@ body{
       .youxiao {
         float: left;
         width: 100vw;
-        background:none;
+        background: none;
       }
     }
   }
@@ -5888,7 +5918,7 @@ body{
     width: 1150px;
     padding: 20px;
     background-color: white;
-    margin-top:25px;
+    margin-top: 25px;
     border-radius: 10px;
 
     .nameAndPic {
@@ -6084,58 +6114,59 @@ body{
           color: black;
 
           li {
-            &:nth-child(2){
-              .step{
+            &:nth-child(2) {
+              .step {
                 width: 100%;
                 height: 30px;
                 line-height: 30px;
                 border-left: 3px solid green;
                 border-bottom: 1px solid green;
                 text-indent: 1em;
-                font-weight: bold; 
+                font-weight: bold;
               }
             }
 
-            &:nth-child(3){
-              .step{
+            &:nth-child(3) {
+              .step {
                 width: 100%;
                 height: 30px;
                 line-height: 30px;
                 border-left: 3px solid yellow;
                 border-bottom: 1px solid yellow;
                 text-indent: 1em;
-                font-weight: bold; 
+                font-weight: bold;
               }
             }
 
 
-            &:nth-child(3){
-              .step{
+            &:nth-child(3) {
+              .step {
                 width: 100%;
                 height: 30px;
                 line-height: 30px;
                 border-left: 3px solid black;
                 border-bottom: 1px solid black;
                 text-indent: 1em;
-                font-weight: bold; 
+                font-weight: bold;
               }
             }
 
 
-            &:nth-child(4){
-              .step{
+            &:nth-child(4) {
+              .step {
                 width: 100%;
                 height: 30px;
                 line-height: 30px;
                 border-left: 3px solid burlywood;
                 border-bottom: 1px solid burlywood;
                 text-indent: 1em;
-                font-weight: bold; 
+                font-weight: bold;
               }
             }
 
 
-            margin-bottom:10px;       
+            margin-bottom:10px;
+
             .step {
               width: 100%;
               height: 30px;
@@ -6150,7 +6181,7 @@ body{
               text-indent: 1.5em;
               margin-top: 10px;
               margin-bottom: 10px;
-              font: 14px Montserrat,Microsoft Yahei;
+              font: 14px Montserrat, Microsoft Yahei;
               // background-color: #fd79a8;
               border-radius: 5px;
             }
@@ -6162,7 +6193,7 @@ body{
             .descBottom {
               text-indent: 1.5em;
               margin-top: 10px;
-              font: 14px Montserrat,Microsoft Yahei;
+              font: 14px Montserrat, Microsoft Yahei;
               // background-color:#fab1a0;
               border-radius: 5px;
             }

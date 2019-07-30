@@ -72,6 +72,7 @@
     <script id="paginnationTpl" type="art-template">
         {{each data}}
                         <li data-id = {{$value._id}}>
+                                <span class="iconfont icon-jiahaocu" data-where={{$value.where}} data-tittle={{$value.tittle}}></span>
                                 <div class="outside">
                                     <img src="{{$value.showImg}}" alt=""  data-id = {{$value._id}}>
                                 </div>

@@ -3,16 +3,7 @@ define([
     'validate',
     'jqueryform'
 ], function ($, validate, jqueryform) {
-
-    $(document).ajaxStart(function () {
-        $('.wrap').show();
-    });
-
-    $(document).ajaxStop(function () {
-        $('.wrap').hide();
-    });
-
-    var posturl = '192.168.31.93:8000';
+   var posturl = '192.168.31.93:8000';
 
     //提交数据
     function submitData(where) {

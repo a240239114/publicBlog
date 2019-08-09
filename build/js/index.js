@@ -3,7 +3,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     //发起请求就执行,li之间的间距变小
     $(document).ajaxStart(function () {});
 
-    //发起请求结束就执行,li之间的间距变小
+    //发起请求结束就执行,li之间的间距变小,测试
     $(document).ajaxStop(function () {
         $(".knowledgeList li").animate({
             "margin-bottom": "20px",

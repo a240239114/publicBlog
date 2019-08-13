@@ -5,7 +5,7 @@
 
   //判断地址栏信息是否存在域名后的部分，存在即把默认的部分替代掉
   $path='';
-  //$_SERVER拿到的是类似js中location拿到的内容
+  //$_SERVER拿到的是类似js中location拿到的内容 test
   if (array_key_exists("PATH_INFO", $_SERVER)) {
       $path = $_SERVER["PATH_INFO"];
   }

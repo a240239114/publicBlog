@@ -2,7 +2,7 @@ define([
     'jquery',
     'template',
     'prism'
-], function ($, template) {
+], function ($, template) {//test
     var id = window.location.search.match(/\d+/g)[0];
     var whereInfo = window.location.search.match(/&.*/g)[0].slice(1);
     var where = window.location.search.match(/&.*/g)[0].split("I")[0].slice(1);

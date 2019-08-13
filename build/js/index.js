@@ -240,12 +240,16 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             $(".youxiao").on('click', function () {
                 console.log('11111');
                 $(".youxiao").css("transform", "translate(-40vw)");
-                document.body.style.position = 'initial';
 
-                $('.youxiao').css({
-                    "overflow-x": "hidden"
-                });
-                // window.location.reload();
+
+                document.body.style.position = 'initial';
+                $("body").css({
+                    "overflow-y":"auto"
+                })
+            }).on("touchmove",function(event){
+                // console.log("拖拽事件")
+                // console.log(event);
+                event.preventDefault();
             })
         }
         return false;

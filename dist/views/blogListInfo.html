@@ -149,7 +149,18 @@
         <div class="relatedArticles">
             <p>
                 <span>上一篇：</span>
-                <a href="javascript:;" rel="prev" id="lastArticle" data-id="{{lastId}}">{{lastTittle}}</a>
+
+                       
+                <a href="javascript:;" rel="prev" id="lastArticle" data-id="{{lastId}}">
+                    {{if lastTittle == undefined}}
+
+                    已经是第一篇,没有上一篇
+                    {{else}}
+                    
+                    {{lastTittle}}
+                    {{/if}}
+                </a>
+
             </p>
             <span>相关文章:</span>
             <ul class="article">

@@ -26,6 +26,11 @@ define([
     })
 
 
+    
+    //720px以下(手机端) 关于博客的跳转事件
+    $("#aboutBlog").on("click", function () {
+        window.location.href = './blogDesc'
+    })
 
-    //页面加载事件
+
 });

@@ -22,7 +22,7 @@ define(["jquery", "template"], function ($, template) {
         $('.body').css({
             "overflow-y": "hidden"
         });
-    
+
         $('.total1').css({
             "overflow-x": "hidden"
         });
@@ -34,7 +34,7 @@ define(["jquery", "template"], function ($, template) {
         $('body').css({
             "overflow-x": "hidden"
         });
-        
+
         $('body').css({
             "overflow-y": "hidden"
         });
@@ -47,7 +47,7 @@ define(["jquery", "template"], function ($, template) {
             $(".total1").on('click', function (event) {
                 event.stopPropagation();
                 window.location.reload();
-                
+
             })
         }
         return false;
@@ -176,4 +176,59 @@ define(["jquery", "template"], function ($, template) {
             $("#wonderfulComments").html(html);
         }
     })
+
+
+
+    //点击搜索按钮,收索区域出现
+    $(".search").on("click", function () {
+        // console.log('1111111');
+        $(".row").css({
+            "display": "block"
+        });
+        return false;
+    }).on("mouseenter", function () {
+        console.log("鼠标划过事件")
+        $("a").css("text-decoration", "none");
+    })
+
+
+    //为了避免主页也 执行下面代码
+    if (window.location.search.length != 0 || window.location.pathname.length == 9) {
+        //点击收索框 收索框消失 执行收索功能
+        $('.input-group-btn').on('click', function () {
+            console.log('2222222');
+
+
+            //收索框消失
+            $('.row').css({
+                "display": "none"
+            })
+
+            //获取输入框的内容
+            var keywords = $(".form-control").val();
+            //页面跳转到主页带参数
+
+            console.log("keywords======>" + keywords)
+
+
+            //清空文本框
+            $(".form-control").val('')
+
+            if (window.location.search.length != 0 || window.location.pathname.length == 9) {
+                window.location.href = `/index?keywords=${keywords}`;
+            }
+
+            return false;
+        })
+    }
+
+
+    //720px以下(手机端) 关于博客的跳转事件
+    $("#aboutBlogIndexHtml").on("click", function () {
+        window.location.href = './blogDesc'
+    })
+
+
+
+
 });

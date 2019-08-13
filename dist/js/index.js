@@ -121,6 +121,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         if (window.location.search.length == 22 && onceFlag) {
             var whereParms = window.location.href.split('?')[1].split('L')[0];
             where = whereParms + "List";
+            whereInfo = whereParms + "Info";
             onceFlag = false;
         }
 
@@ -142,6 +143,8 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                 $(".knowledgeList").html(html);
             }
         }).done(function () {
+            console.log("whereInfo=====>" + whereInfo);
+
             //添加跳转事件
             turnBlogListInfo(whereInfo);
             //添加删除事件
@@ -176,6 +179,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                             console.log(res);
                         }
                     }).done(function () {
+
                         turnBlogListInfo(whereInfo);
                         //添加删除事件
                         reMove();
@@ -208,10 +212,11 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
     //给770px以下左侧导航的li添加点击事件加载数据
     $(".aside li").each(function (index, item) {
-        $(item).on("click", function () {
+        $(item).on("click", function (event) {
             var whereList = $(item).attr("data-where");
             var whereinfo = $(item).attr("data-whereinfo");
             LoadPages(whereList, whereinfo);
+
         })
     })
 
@@ -281,7 +286,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             "display": "block"
         });
         return false;
-    }).on("mouseenter",function(){
+    }).on("mouseenter", function () {
         console.log("鼠标划过事件")
         $("a").css("text-decoration", "none");
     })
@@ -320,10 +325,25 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         console.log("keywords======>" + keywords)
 
         //加载数据
-        LoadPages(`relatedArticleList/${keywords}`)
+        LoadPages(`relatedArticleList/${keywords}`, "allInfo")
 
         //清空文本框
         $(".form-control").val('')
         return false;
     })
+
+
+    //其他页面跳转过来时的收索功能
+    if (window.location.search.split("=")[0].slice(1) == "keywords") {
+        var keywords = window.location.search.split("=")[1];
+        LoadPages(`relatedArticleList/${keywords}`, "allInfo");
+    }
+
+
+    // //720px以下(手机端) 关于博客的跳转事件
+    // $("#aboutBlogIndexHtml").on("click", function () {
+    //     window.location.href = './blogDesc'
+    // })
+
+
 });

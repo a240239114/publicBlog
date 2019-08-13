@@ -241,7 +241,11 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                 console.log('11111');
                 $(".youxiao").css("transform", "translate(-40vw)");
                 document.body.style.position = 'initial';
-                window.location.reload();
+
+                $('.youxiao').css({
+                    "overflow-x": "hidden"
+                });
+                // window.location.reload();
             })
         }
         return false;
@@ -345,6 +349,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     // $("#aboutBlogIndexHtml").on("click", function () {
     //     window.location.href = './blogDesc'
     // })
+
 
 
 });

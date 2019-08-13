@@ -229,6 +229,11 @@ define(["jquery", "template"], function ($, template) {
     })
 
 
+    //720px以下(手机端) 关于博客的跳转事件
+    $("#aboutBlog").on("click", function () {
+        console.log('1111111111111222222');
+        window.location.href = './blogDesc'
+    })
 
 
 });

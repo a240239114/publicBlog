@@ -12,6 +12,8 @@
 
 <body>
 
+
+
     <div class="total">
         <div id="leafContainer"></div>
         <div class="screen">
@@ -40,13 +42,44 @@
                 <?php include('./views/public/phoneAside.html');?>
 
 
+
+
                 <div class="body">
                     <!-- 导航栏 -->
                     <?php include('./views/public/head.html');?>
+
                     <!-- 中间内容 -->
                     <main>
                         <!-- 左边 -->
                         <div class="left">
+
+                            <!-- 轮播 -->
+                            <div class='banner-box'>
+                                <ul class='img'>
+                                    <li>
+                                        <a href="http://www.gjxbewater.cn" target="view_window"><img
+                                                src="http://puv6112u1.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720190811191916.png"
+                                                alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://boxuegu.gjxbewater.cn" target="view_window"><img
+                                                src="http://puv6112u1.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720190811192041.png"
+                                                alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://vuemall.gjxbewater.cn" target="view_window"><img
+                                                src="http://puv6112u1.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720190811191715.png"
+                                                alt="" /></a>
+                                    </li>
+                                </ul>
+                                <ul class='li'></ul>
+                                <div class='but but-left'>&lt;</div>
+                                <div class='but but-right'>&gt;</div>
+                                <div class='bar'></div>
+                            </div>
+
+
+
                             <!-- 焦点 看情况显示-->
                             <ul class="knowledgeList">
                                 <!-- 坑 -->
@@ -57,6 +90,7 @@
                                 <div class="M-box3 m-style" id="pagination"></div>
                             </div>
                         </div>
+
                         <!-- 侧边栏  -->
                         <?php include('./views/public/aside.html');?>
                     </main>
@@ -115,15 +149,14 @@
                             {{/each}}
     </script>
 
-
-
-
     <?php include('./views/public/script.html');?>
+
 
 
     <script>
         require(['index']);
     </script>
+
 </body>
 
 </html>

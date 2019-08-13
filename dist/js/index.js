@@ -1,4 +1,6 @@
-define(["jquery", "template", "pagination"], function ($, template, pagination) {
+define(["jquery", "template", "pagination", "lunbo"], function ($, template, pagination) {
+    'use strict';
+    $("a").css("text-decoration", "none");
 
     //发起请求就执行,li之间的间距变小
     $(document).ajaxStart(function () {});
@@ -54,7 +56,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                 console.log($(item).attr("data-tittle"));
                 var where = $(item).attr("data-where");
                 var tittle = $(item).attr("data-tittle");
-                console.log("api/allList/tittle/${tittle}==============>"+`api/allList/tittle/${tittle}`);
+                console.log("api/allList/tittle/${tittle}==============>" + `api/allList/tittle/${tittle}`);
 
                 console.log("删除事件")
                 //根据tittle删除 allList
@@ -99,6 +101,8 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         })
     }
 
+    var onceFlag = true;
+
     //加载页面
     async function LoadPages(where, whereInfo) {
         // var count;
@@ -110,7 +114,19 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         var listCount = count.data.length;
         count = Math.ceil(count.data.length / 8);
 
+        console.log("onceFlag======>" + onceFlag)
+
         // console.log(count);
+        //根据路由获取where
+        if (window.location.search.length == 22 && onceFlag) {
+            var whereParms = window.location.href.split('?')[1].split('L')[0];
+            where = whereParms + "List";
+            onceFlag = false;
+        }
+
+        console.log("where=====>" + where);
+
+        // $('.screen').css("transform", "translate(-50%)");
 
 
         //默认显示第一页
@@ -119,7 +135,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             // url: "api/"+where,
             type: "get",
             success: function (res) {
-                // console.log(res.data);
+                // console.log(where);
                 var html = template("paginnationTpl", {
                     data: res.data
                 })
@@ -157,7 +173,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
                             })
                             $(".knowledgeList").html(html);
                             // console.log("res.data.length=====>" + res.data.length)
-                            // console.log(res);
+                            console.log(res);
                         }
                     }).done(function () {
                         turnBlogListInfo(whereInfo);
@@ -170,7 +186,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
 
         // console.log(listCount);
 
-        if(listCount>=8){//初始化分页插件
+        if (listCount >= 8) { //初始化分页插件
             // console.log("111111111111");
             loadPages();
         }
@@ -179,9 +195,12 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     //给770px以上的头部导航的a添加点击事件,加载不同的数据
     $(".navigation a").each(function (index, item) {
         $(item).on("click", function () {
+            // window.location.href = '/';
+            console.log("向左移动")
+
             var whereList = $(item).attr("data-where");
             var whereinfo = $(item).attr("data-whereinfo");
-            console.log(whereinfo);
+            console.log(whereinfo + "=========" + whereList);
             $('.screen').css("transform", "translate(-50%)");
             LoadPages(whereList, whereinfo);
         })
@@ -226,10 +245,13 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
     //第一次加载页面的时候显示第一页
     LoadPages('allList', "allInfo");
 
+    var onceFlag = true;
+
     //blogNotes页面跳转过来加载分页区域,则无需bewater,根据search加载数据
     if (window.location.search) {
         // $(".bewater").css({"width":0});
         // console.log("search");
+        // onceFlag = false;
         $(".screen").css({
             "transform": "translate(-50%)"
         })
@@ -259,6 +281,9 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
             "display": "block"
         });
         return false;
+    }).on("mouseenter",function(){
+        console.log("鼠标划过事件")
+        $("a").css("text-decoration", "none");
     })
 
     //点击document收索框消失
@@ -280,9 +305,7 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         console.log("scroll")
     })
 
-    // $(window).scroll(function () {
-    //     console.log("scroll");
-    // });
+
 
     //点击收索框 收索框消失 执行收索功能
     $('.input-group-btn').on('click', function () {
@@ -303,5 +326,4 @@ define(["jquery", "template", "pagination"], function ($, template, pagination) 
         $(".form-control").val('')
         return false;
     })
-
 });

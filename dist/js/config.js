@@ -8,7 +8,9 @@ require.config({
         validate:'vendor/jquery-validation/dist/jquery.validate',
         jqueryform:'vendor/jquery-form/dist/jquery.form.min',
         template:'vendor/artTemplate/template',
-        moatext:'vendor/js/jquery.moatext',//字节跳舞
+        moatext:'vendor/js/jquery.moatext-min',//字节跳舞
+        prism:'vendor/prism/prism',
+        lunbo:'vendor/lunbo/js/lunbo',
 
 
         //本地js文件
@@ -30,7 +32,10 @@ require.config({
             deps:['jquery']  
         },
         moatext:{
-            deps:['jquery']
+            deps:['jquery']  
+        },
+        lunbo:{
+            deps:['jquery']  
         }
     }
 });

@@ -5,68 +5,78 @@ define([
 ], function ($, validate, jqueryform) {
    var posturl = '192.168.31.93:8000';
 
+   var infoAndListSubmitAll = true;
+
     //提交数据
     function submitData(where) {
         //listSubmit
         $("form.listSubmit").validate({
             submitHandler: function (form) { //表单验证插件,已经禁止默认刷新事件
-                var counts = 0;
+                if(infoAndListSubmitAll){
+                    var counts = 0;
+                    infoAndListSubmitAll = false;
+                    console.log("infoAndListSubmitAll=====>"+infoAndListSubmitAll);
 
-                function submitUserInfo() {
-                    if (counts >= 1) return;
-                    var data = $("form.listSubmit").serialize();
-                    var whereData = data+"&where="+where;
-                      console.log(whereData);
-       
-                    $.ajax({ //提交到allList
-                        url: "/api/allList",
-                        type: "POST",
-                        data:whereData,
-                        beforeSend: function () {
-                            // 解绑事件,用户再次点击就不会对用户的操作有任何反应
-                            $("#listSubmit").off("click");
-                            alert("数据已经提交，请耐心等待");
-                        },
-                        success: function (res) {
-                            alert(res.msg);
-                            // window.location.href = "/blogNotes?首页";
-                            // 再次绑定事件，上一次数据提交到服务器后，用户可以再次提交数据
-                            $("#listSubmit").bind("click", submitUserInfo);
-                            counts = counts + 1;
-                            //清除内容
-                            // $('form.listSubmit')[0].reset();
-                            // window.location.reload();  
-                            $("form.listSubmit input[type='text']").val("").focus();
-                        }
-                    })
-
-
-
-                    $.ajax({ //提交到whereList
-                        url: "/api/" + where + 'List',
-                        type: "POST",
-                        data:data,
-                        beforeSend: function () {
-                            // 解绑事件,用户再次点击就不会对用户的操作有任何反应
-                            $("#listSubmit").off("click");
-                            // alert("数据已经提交，请耐心等待");
-                        },
-                        success: function (res) {
-                            // alert(res.msg);
-                            // window.location.href = "/blogNotes?首页";
-                            // 再次绑定事件，上一次数据提交到服务器后，用户可以再次提交数据
-                            $("#listSubmit").bind("click", submitUserInfo);
-                            counts = counts + 1;
-                            //清除内容
-                            // $('form.listSubmit')[0].reset();
-                            // window.location.reload();  
-                            $("form.listSubmit input[type='text']").val("").focus();
-                        }
-                    })
+                    function submitUserInfo() {
+                        if (counts >= 1) return;
+                        var data = $("form.listSubmit").serialize();
+                        var whereData = data+"&where="+where;
+                        //   console.log(whereData);
+           
+                        $.ajax({ //提交到allList
+                            url: "/api/allList",
+                            type: "POST",
+                            data:whereData,
+                            beforeSend: function () {
+                                // 解绑事件,用户再次点击就不会对用户的操作有任何反应
+                                $("#listSubmit").off("click");
+                                alert("数据已经提交，请耐心等待");
+                            },
+                            success: function (res) {
+                                alert(res.msg);
+                                // window.location.href = "/blogNotes?首页";
+                                // 再次绑定事件，上一次数据提交到服务器后，用户可以再次提交数据
+                                $("#listSubmit").bind("click", submitUserInfo);
+                                counts = counts + 1;
+                                //清除内容
+                                // $('form.listSubmit')[0].reset();
+                                // window.location.reload();  
+                                $("form.listSubmit input[type='text']").val("").focus();
+                                $("form.listSubmit textarea").val("");
+                            }
+                        })
+    
+    
+    
+                        $.ajax({ //提交到whereList
+                            url: "/api/" + where + 'List',
+                            type: "POST",
+                            data:data,
+                            beforeSend: function () {
+                                // 解绑事件,用户再次点击就不会对用户的操作有任何反应
+                                $("#listSubmit").off("click");
+                                // alert("数据已经提交，请耐心等待");
+                            },
+                            success: function (res) {
+                                // alert(res.msg);
+                                // window.location.href = "/blogNotes?首页";
+                                // 再次绑定事件，上一次数据提交到服务器后，用户可以再次提交数据
+                                $("#listSubmit").bind("click", submitUserInfo);
+                                counts = counts + 1;
+                                //清除内容
+                                // $('form.listSubmit')[0].reset();
+                                // window.location.reload();  
+                                $("form.listSubmit input[type='text']").val("").focus();
+                                $("form.listSubmit textarea").val("");
+                            }
+                        })
+                    }
+    
+                    //提交按钮绑定submitUserInfo
+                    $("#listSubmit").bind("click", submitUserInfo);
+                }else{
+                    alert("请先填写完成上一个详情")
                 }
-
-                //提交按钮绑定submitUserInfo
-                $("#listSubmit").bind("click", submitUserInfo);
             },
             rules: {
                 keywords: {
@@ -133,6 +143,10 @@ define([
         $("form.infoSubmit").validate({
             submitHandler: function (form) {
                 if ($("form.step1").serialize().length != 49 && $("form.infoSubmit").serialize().length != 41) { //先判断step1和提交详情的内容都不是空
+
+                    infoAndListSubmitAll = true;
+                    console.log("infoAndListSubmitAll=====>"+infoAndListSubmitAll);
+
                     //序列化函数返回新数据
                     function transData(data) {
                         var newData = trans.serialize(data);
@@ -204,6 +218,7 @@ define([
                                 $(".steps .step5")[0].reset();
                                 // window.location.reload();  
                                 $("form.infoSubmit input[type='text']").val("").focus();
+                                $("form.listSubmit textarea").val("");
                             },
                             error: function () {
                                 console.log(steps);
@@ -236,6 +251,7 @@ define([
                                 $(".steps .step5")[0].reset();
                                 // window.location.reload();  
                                 $("form.infoSubmit input[type='text']").val("").focus();
+                                $("form.listSubmit textarea").val("");
                             },
                             error: function () {
                                 console.log(steps);

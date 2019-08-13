@@ -5,6 +5,7 @@ var $ = require('gulp-load-plugins')();
 var open = require('open');
 var livereload = require('gulp-livereload');
 var gutil = require('gulp-util');
+var watch = require('gulp-watch');
 
 //定义目录路径
 var app = {
@@ -17,14 +18,14 @@ var app = {
 };
 
 //通过第三方安装的插件，需要拷贝到 devPath prdPath中
-gulp.task('bower',function(){
+gulp.task('bower', function () {
     // 读取这个文件夹下边的所有的文件或者文件夹
     gulp.src('bower_components/**/*')
-    //读取完整后进行操作  西安拷贝到整合目录 并重命名，在拷贝到生产目录并重命名
-    .pipe(gulp.dest(app.srcPath + 'vendor'))
-    .pipe(gulp.dest(app.devPath + 'vendor'))
-    .pipe(gulp.dest(app.prdPath + 'vendor'))
-    .pipe($.connect.reload());  //文件更改后自动变异 并执行启动服务重新打开浏览器
+        //读取完整后进行操作  西安拷贝到整合目录 并重命名，在拷贝到生产目录并重命名
+        .pipe(gulp.dest(app.srcPath + 'vendor'))
+        .pipe(gulp.dest(app.devPath + 'vendor'))
+        .pipe(gulp.dest(app.prdPath + 'vendor'))
+        .pipe($.connect.reload()); //文件更改后自动变异 并执行启动服务重新打开浏览器
 });
 
 
@@ -70,7 +71,7 @@ gulp.task('script', function () {
         // .pipe($.concat('index.js'))  不需要合并
         .pipe(gulp.dest(app.devPath + 'js'))
         // .pipe($.uglify())
-        .on('error', function(err) {
+        .on('error', function (err) {
             gutil.log(gutil.colors.red('[Error]'), err.toString());
         })
         .pipe(gulp.dest(app.prdPath + 'js'))
@@ -95,7 +96,7 @@ gulp.task('clean', function () {
 })
 
 //监听任务
-gulp.task('watch',function(){
+gulp.task('watch', function () {
     //监听script
     gulp.watch(app.srcPath + 'script/**/*.js', ['script']);
     //监听html
@@ -113,7 +114,7 @@ gulp.task('watch',function(){
 })
 
 //总的方法
-gulp.task('build', ['bower','image', 'script', 'less', 'json', 'html','php','watch']);
+gulp.task('build', ['bower', 'image', 'script', 'less', 'json', 'html', 'php', 'watch']);
 
 
 

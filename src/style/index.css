@@ -5,12 +5,19 @@
   list-style: none;
 }
 @media (max-width: 770px) {
+  .wrap {
+    height: 100vh;
+    background: rgba(112, 31, 31, 0.2);
+    width: 100vw;
+    position: absolute;
+  }
   /* 动态小球 */
   .ball {
     height: 38px;
     width: 38px;
     /* background-color: red; */
     position: absolute;
+    display: none;
     left: 50%;
     top: 50%;
     margin-left: -19px;
@@ -34,7 +41,39 @@
     content: "";
     height: 5px;
     width: 5px;
-    background-color: chocolate;
+    background-color: #3498db;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(2)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(3)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #34495e;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(4)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #1abc9c;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(5)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #d35400;
     position: absolute;
     border-radius: 50%;
   }
@@ -115,12 +154,14 @@
   .body nav .main {
     height: 70px;
     width: 100%;
+    position: relative;
   }
   .body nav .main .icon-fenlei {
     color: white;
-    position: relative;
-    right: 120px;
-    top: -2px;
+    position: absolute;
+    left: 10vw;
+    top: 50%;
+    transform: translateY(-45%);
     font-size: 20px;
   }
   .body nav .main .container {
@@ -275,7 +316,7 @@
   .body .row {
     display: none;
     height: 100px;
-    width: 100vw;
+    width: 105vw;
     background-color: white;
     position: absolute;
     top: 75px;
@@ -324,6 +365,86 @@
     width: 100%;
     margin-top: 25px;
     padding: 20px;
+    position: relative;
+  }
+  .body main .left .banner-box {
+    width: 100%;
+    height: 340px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .body main .left .banner-box .img {
+    width: 840px;
+  }
+  .body main .left .banner-box .img li {
+    width: 840px;
+  }
+  .body main .left .banner-box .img li img {
+    width: 840px;
+    height: 340px;
+  }
+  .body main .left .banner-box .img {
+    width: 5000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .body main .left .banner-box .img li {
+    float: left;
+  }
+  .body main .left .banner-box .li {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+  }
+  .body main .left .banner-box .li li {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    cursor: pointer;
+  }
+  .body main .left .banner-box .but {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 38px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: '宋体';
+    cursor: pointer;
+    display: none;
+  }
+  .body main .left .banner-box:hover .but {
+    display: block;
+  }
+  .body main .left .banner-box .but-left {
+    left: 0;
+  }
+  .body main .left .banner-box .but-right {
+    right: 0;
+  }
+  .body main .left .banner-box .li .index {
+    background: #f60;
+    width: 30px;
+    border-radius: 10px;
+  }
+  .body main .left .banner-box .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    background-color: rgba(255, 102, 0, 0.5);
   }
   .body main .left .knowledgeList {
     width: 100%;
@@ -984,7 +1105,73 @@
     background-color: white;
   }
   .blogDescMain .nameAndPic {
-    display: none;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .blogDescMain .nameAndPic .background {
+    width: 100%;
+    height: 350px;
+    background: url('http://puv6112u1.bkt.clouddn.com/f6934dfd0f04b835cccf54116caa6b58.jpg');
+    background-size: 1150px 500px;
+    position: relative;
+  }
+  .blogDescMain .nameAndPic .background .container {
+    width: 230px;
+    height: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .blogDescMain .nameAndPic .background .container img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+  }
+  .blogDescMain .nameAndPic .background .container p {
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+  }
+  .blogDescMain .nameAndPic .background .container p .icon-nanxing_ {
+    color: #1B9CFC;
+  }
+  .blogDescMain .nameAndPic .background .container p .icon--huangguan {
+    color: yellow;
+  }
+  .blogDescMain .nameAndPic .background .container p .icon-vip {
+    color: red;
+  }
+  .blogDescMain .nameAndPic .background .container p span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .blogDescMain .nameAndPic .background .container p:nth-child(3) {
+    font-size: 14px;
+  }
+  .blogDescMain .nameAndPic .background .container .stars {
+    width: 80px;
+    height: 40px;
+    background-color: #f0932b;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 10px auto;
+  }
+  .blogDescMain .nameAndPic .background .num {
+    width: 320px;
+    height: 27px;
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    color: black;
+    line-height: 27px;
+    border-radius: 5px;
+  }
+  .blogDescMain .nameAndPic .background .num span {
+    display: inline-block;
+    margin-right: 10px;
   }
   .blogDescMain .desc {
     height: 40px;
@@ -1039,6 +1226,7 @@
     margin-top: 20px;
     padding: 10px 15px;
     border-radius: 8px;
+    min-height: 1000px;
   }
   .blogListMain .left1 .tittle {
     margin: 0 30px;
@@ -1554,6 +1742,78 @@
   }
 }
 @media (min-width: 770px) and (max-width: 1200px) {
+  .wrap {
+    height: 100vh;
+    background: rgba(112, 31, 31, 0.2);
+    width: 100vw;
+    position: absolute;
+  }
+  /* 动态小球 */
+  .ball {
+    height: 38px;
+    width: 38px;
+    /* background-color: red; */
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    margin-left: -19px;
+    margin-top: -19px;
+    border-radius: 50%;
+    animation: moveTo 6s infinite;
+  }
+  .ball:nth-child(2) {
+    animation-delay: 150ms;
+  }
+  .ball:nth-child(3) {
+    animation-delay: 250ms;
+  }
+  .ball:nth-child(4) {
+    animation-delay: 350ms;
+  }
+  .ball:nth-child(5) {
+    animation-delay: 450ms;
+  }
+  .ball::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #3498db;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(2)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(3)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #34495e;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(4)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #1abc9c;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(5)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #d35400;
+    position: absolute;
+    border-radius: 50%;
+  }
   .total {
     width: 100vw;
     overflow: hidden;
@@ -1957,10 +2217,10 @@
   }
   body .row .input-group {
     width: 70vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    top: -18px;
+    left: 15vw;
+    /* transform: translate(-50%,-50%); */
     margin-top: 47px;
   }
   body .row .input-group button {
@@ -1995,8 +2255,87 @@
   body main .left {
     float: left;
     width: 100%;
-    margin-top: 25px;
     padding: 20px;
+    position: relative;
+  }
+  body main .left .banner-box {
+    width: 100%;
+    height: 340px;
+    margin: 30px auto;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  body main .left .banner-box .img {
+    width: 840px;
+  }
+  body main .left .banner-box .img li {
+    width: 840px;
+  }
+  body main .left .banner-box .img li img {
+    width: 840px;
+    height: 340px;
+  }
+  body main .left .banner-box .img {
+    width: 5000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  body main .left .banner-box .img li {
+    float: left;
+  }
+  body main .left .banner-box .li {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+  }
+  body main .left .banner-box .li li {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    cursor: pointer;
+  }
+  body main .left .banner-box .but {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 38px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: '宋体';
+    cursor: pointer;
+    display: none;
+  }
+  body main .left .banner-box:hover .but {
+    display: block;
+  }
+  body main .left .banner-box .but-left {
+    left: 0;
+  }
+  body main .left .banner-box .but-right {
+    right: 0;
+  }
+  body main .left .banner-box .li .index {
+    background: #f60;
+    width: 30px;
+    border-radius: 10px;
+  }
+  body main .left .banner-box .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    background-color: rgba(255, 102, 0, 0.5);
   }
   body main .left .knowledgeList {
     width: 100%;
@@ -2616,7 +2955,7 @@
   .blogDescMain .nameAndPic .background {
     width: 100%;
     height: 350px;
-    background: url('../image/rains.jpg');
+    background: url('http://puv6112u1.bkt.clouddn.com/f6934dfd0f04b835cccf54116caa6b58.jpg');
     background-size: 1150px 500px;
     position: relative;
   }
@@ -2732,6 +3071,7 @@
     margin-top: 20px;
     padding: 10px 15px;
     border-radius: 8px;
+    min-height: 1000px;
   }
   .blogListMain .left1 .tittle {
     margin: 0 30px;
@@ -3251,6 +3591,12 @@
   }
 }
 @media only screen and (min-width: 1200px) {
+  .wrap {
+    height: 100vh;
+    background: rgba(112, 31, 31, 0.2);
+    width: 100vw;
+    position: absolute;
+  }
   /* 动态小球 */
   .ball {
     height: 38px;
@@ -3263,7 +3609,7 @@
     margin-left: -19px;
     margin-top: -19px;
     border-radius: 50%;
-    animation: moveTo 0.5s infinite;
+    animation: moveTo 6s infinite;
   }
   .ball:nth-child(2) {
     animation-delay: 150ms;
@@ -3281,7 +3627,39 @@
     content: "";
     height: 5px;
     width: 5px;
-    background-color: #485460;
+    background-color: #3498db;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(2)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(3)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #34495e;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(4)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #1abc9c;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .ball:nth-child(5)::after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: #d35400;
     position: absolute;
     border-radius: 50%;
   }
@@ -3530,7 +3908,7 @@
   .body .row {
     display: none;
     height: 100px;
-    width: 100vw;
+    width: 105vw;
     background-color: white;
     position: absolute;
     top: 75px;
@@ -3577,6 +3955,86 @@
     float: left;
     width: 840px;
     margin-top: 25px;
+    position: relative;
+  }
+  .body main .left .banner-box {
+    width: 100%;
+    height: 340px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .body main .left .banner-box .img {
+    width: 840px;
+  }
+  .body main .left .banner-box .img li {
+    width: 840px;
+  }
+  .body main .left .banner-box .img li img {
+    width: 840px;
+    height: 340px;
+  }
+  .body main .left .banner-box .img {
+    width: 5000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .body main .left .banner-box .img li {
+    float: left;
+  }
+  .body main .left .banner-box .li {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+  }
+  .body main .left .banner-box .li li {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    cursor: pointer;
+  }
+  .body main .left .banner-box .but {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 38px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: '宋体';
+    cursor: pointer;
+    display: none;
+  }
+  .body main .left .banner-box:hover .but {
+    display: block;
+  }
+  .body main .left .banner-box .but-left {
+    left: 0;
+  }
+  .body main .left .banner-box .but-right {
+    right: 0;
+  }
+  .body main .left .banner-box .li .index {
+    background: #f60;
+    width: 30px;
+    border-radius: 10px;
+  }
+  .body main .left .banner-box .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    background-color: rgba(255, 102, 0, 0.5);
   }
   .body main .left .knowledgeList {
     width: 100%;
@@ -3992,7 +4450,6 @@
     height: 60px;
     width: 60px;
     border-radius: 60px;
-    background: url(../image/touxiang.jpeg);
     background-repeat: no-repeat;
     background-size: 100%;
   }
@@ -4313,7 +4770,7 @@
   .blogDescMain .nameAndPic .background {
     width: 100%;
     height: 350px;
-    background: url('../image/rains.jpg');
+    background: url('http://puv6112u1.bkt.clouddn.com/f6934dfd0f04b835cccf54116caa6b58.jpg');
     background-size: 1150px 500px;
     position: relative;
   }
@@ -4428,6 +4885,7 @@
     margin-top: 20px;
     padding: 10px 15px;
     border-radius: 8px;
+    min-height: 1000px;
   }
   .blogListMain .left1 .tittle {
     margin: 0 30px;

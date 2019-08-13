@@ -4,7 +4,8 @@ define([
 ], function ($, factory) {
     //770px以下 点击侧边栏回到主页
     $(".aside li").each(function (index, item) {
-        $(item).on("click", function () {
+        $(item).on("click", function (event) {
+            event.stopPropagation();
             var where = $(this).attr("data-where");
             var whereinfo = $(this).attr("data-whereinfo");
             window.location.href = "index?" + where + "&" + whereinfo;

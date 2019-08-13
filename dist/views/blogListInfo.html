@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include('./views/public/style.html');?>
-    <!-- <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script> -->
-    <!-- <!-- <link rel="stylesheet" href="./vendor/prism/prism.css"/>0 -->
+    <link rel="stylesheet" href="./vendor/prism/prism.css" />
     <!-- 测试  -->
     <title>你好,世界</title>
 </head>
@@ -31,18 +30,7 @@
                 <!-- 左边 -->
                 <div class="left1">
                     <!-- 坑 -->
-
-
                 </div>
-
-
-
-                <!-- <pre class="line-numbers">
-                    <code class="language-js">
-                    {{$value.wordpress}}
- 
-                    </code>
-                </pre> -->
 
 
                 <!-- 侧边栏  -->
@@ -80,7 +68,7 @@
 
         <div class="mainContainenr">
             <div class="tittle">
-                {{content}}
+                {{cs_brief}}
             </div>
             <ul>
                 {{each steps}} 
@@ -92,7 +80,6 @@
 <pre class="line-numbers">
 <code class="language-js">
 {{$value.cs_brief}}
-
 </code>
 </pre>
                     <div class="descBottom">{{$value.descBottom}}</div>
@@ -167,9 +154,9 @@
             <span>相关文章:</span>
             <ul class="article">
                 {{each relatedArticleList}}
-                <li>
+                <li data-id="{{$value._id}}">
                     <img class="active" src="../image/zhuanfa.png" alt="">
-                    <img class="background" src="{{$value.img}}" alt="">
+                    <img class="background" src="{{$value.showImg}}" alt="">
                     <div class="tittle">{{$value.tittle}}</div>
                 </li>
                 {{/each}}
@@ -180,7 +167,7 @@
 
         <div class="comments">
             <p class="tittle1">共有
-                <span>2</span>
+                <span>{{commentsNum}}</span>
                 条评论
             </p>
             <div class="line"></div>
@@ -222,13 +209,14 @@
         </div>
     </script>
 
+
+
     <?php include('./views/public/script.html');?>
 
-
     <script>
-        require(['blogInfo']);
-        require(['blogDescNotesListInfocommon']);
+        require(['blogInfo', 'blogDescNotesListInfocommon']);
     </script>
+
 </body>
 
 </html>

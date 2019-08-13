@@ -215,7 +215,10 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         $(item).on("click", function (event) {
             var whereList = $(item).attr("data-where");
             var whereinfo = $(item).attr("data-whereinfo");
+            event.stopPropagation();
+            console.log("Aside侧边栏事件")
             LoadPages(whereList, whereinfo);
+            $(".youxiao").css("transform", "translate(-40vw)");
 
         })
     })
@@ -234,22 +237,43 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         $(".youxiao").css("transform", "translate(0)")
         document.body.style.position = 'fixed';
         flag = true;
-        console.log(flag);
+        var num = 0;
+        // console.log(flag);
         if (flag) {
-            console.log('2222');
-            $(".youxiao").on('click', function () {
-                console.log('11111');
+            // console.log('2222');
+            $(".youxiao").on('click', function (event) {
+                // console.log('11111');
+                console.log("全屏事件")
+                event.stopPropagation();
                 $(".youxiao").css("transform", "translate(-40vw)");
 
-
+              
                 document.body.style.position = 'initial';
+
                 $("body").css({
-                    "overflow-y":"auto"
+                    "overflow-y": "auto"
                 })
-            }).on("touchmove",function(event){
+
+
+                var whereList = $($(".knowledgeList li")[0]).attr("data-where")+"List";
+                var whereInfo = $($(".knowledgeList li")[0]).attr("data-where")+"Info";
+                console.log(whereList,whereInfo,num);
+                if(num == 0){
+                    console.log(whereList,whereInfo,num);
+                    //重新加载页面
+                    LoadPages(whereList, whereInfo);
+                    num = 1;
+                } 
+
+
+
+                // window.location.reload();  
+
+
+            }).on("touchmove", function (event) {
                 // console.log("拖拽事件")
                 // console.log(event);
-                event.preventDefault();
+                // event.preventDefault();
             })
         }
         return false;
@@ -283,10 +307,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     }
 
 
-    //视口发生变化就执行
-    // $(window).resize(function () {
-    //     window.location.reload();
-    // });
 
     //点击搜索按钮,收索区域出现
     $(".search").on("click", function () {

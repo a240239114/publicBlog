@@ -41,13 +41,13 @@ define(["jquery", "template"], function ($, template) {
 
 
         flag = true;
-        console.log(flag);
+        // console.log(flag);
         if (flag) {
-            console.log('2222');
+            // console.log('2222');
             $(".total1").on('click', function (event) {
                 event.stopPropagation();
                 window.location.reload();
-
+                
             })
         }
         return false;
@@ -230,8 +230,9 @@ define(["jquery", "template"], function ($, template) {
 
 
     //720px以下(手机端) 关于博客的跳转事件
-    $("#aboutBlog").on("click", function () {
-        console.log('1111111111111222222');
+    $("#aboutBlog").on("click", function (event) {
+        console.log('关于博客#aboutBlog');
+        event.stopPropagation();
         window.location.href = './blogDesc'
     })
 

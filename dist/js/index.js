@@ -275,9 +275,9 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
 
     //视口发生变化就执行
-    $(window).resize(function () {
-        window.location.reload();
-    });
+    // $(window).resize(function () {
+    //     window.location.reload();
+    // });
 
     //点击搜索按钮,收索区域出现
     $(".search").on("click", function () {

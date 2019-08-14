@@ -8,9 +8,9 @@
         <span class="iconfont icon-fenlei"></span>
         <span class="info11111">雄哥个人前端</span>
 
-        <div class="search">
+        <!-- <div class="search">
             <a href=""><span class="iconfont icon--fangdajing"></span></a>
-        </div>
+        </div> -->
 
 
         <div class="container">
@@ -46,22 +46,24 @@
 
             <div class="space1"></div>
             <ul class="navigation">
-                <li><a data-id="xx"  data-where="allList" data-whereinfo="allInfo"
+                <li><a data-id="xx" data-where="allList" data-whereinfo="allInfo"
                         href="javascript:;"><span>首页</span><span>首页</span></a></li>
-                <li><a data-id="xx"  data-where="texiaoList" data-whereinfo="texiaoInfo"
+                <li><a data-id="xx" data-where="texiaoList" data-whereinfo="texiaoInfo"
                         href="javascript:;"><span>前端特效</span><span>前端特效</span></a></li>
-                <li><a data-id="xx"  data-where="h5c3List" data-whereinfo="h5c3Info"
+                <li><a data-id="xx" data-where="h5c3List" data-whereinfo="h5c3Info"
                         href="javascript:;"><span>H5C3</span><span>H5C3</span></a></li>
-                <li><a data-id="xx"  data-where="jsList" data-whereinfo="jsInfo"
+                <li><a data-id="xx" data-where="jsList" data-whereinfo="jsInfo"
                         href="javascript:;"><span>JS教程</span><span>JS教程</span></a></li>
-                <li><a data-id="xx"  data-where="vueCliList" data-whereinfo="vueCliInfo"
+                <li><a data-id="xx" data-where="vueCliList" data-whereinfo="vueCliInfo"
                         href="javascript:;"><span>Vue-cli</span><span>Vue-cli</span></a></li>
-                <li><a data-id="xx"  data-where="es6List" data-whereinfo="es6Info"
+                <li><a data-id="xx" data-where="es6List" data-whereinfo="es6Info"
                         href="javascript:;"><span>ES6</span><span>ES6</span></a></li>
-                <li><a data-id="xx"  data-where="bugList" data-whereinfo="bugInfo"
+                <li><a data-id="xx" data-where="bugList" data-whereinfo="bugInfo"
                         href="javascript:;"><span>BUG</span><span>BUG</span></a></li>
-                <li id="aboutBlogIndexHtml"><a data-id="xx"  data-where="" data-whereinfo="" href="javascript:;"><span>关于博客</span><span>关于博客</span></a></li>
-                <li><a data-id="xx"  data-where="" data-whereinfo="" href="javascript:;"><span>音乐</span><span>音乐</span></a></li>
+                <li id="aboutBlogIndexHtml"><a data-id="xx" data-where="" data-whereinfo=""
+                        href="javascript:;"><span>关于博客</span><span>关于博客</span></a></li>
+                <li><a data-id="xx" data-where="" data-whereinfo=""
+                        href="javascript:;"><span>音乐</span><span>音乐</span></a></li>
             </ul>
         </div>
     </div>
@@ -72,7 +74,6 @@
         <a href="javascript:;"><span class="iconfont icon--fangdajing"></span></a>
     </div>
 </nav>
-
 <!-- 收索区域 -->
 <div class="row">
     <div class="col-lg-6">
@@ -89,10 +90,7 @@
 <!-- /.row -->
 
 
-
-
 <!-- 动态小球 -->
-
 <div class="wrap">
     <div class="ball"></div>
     <div class="ball"></div>
@@ -100,3 +98,63 @@
     <div class="ball"></div>
     <div class="ball"></div>
 </div>
+
+
+<!-- 音乐播放器 -->
+<div class="mp">
+    <div class="mp-box">
+        <img src="img/mplayer_error.png" alt="music cover" class="mp-cover">
+        <div class="mp-info">
+            <p class="mp-name">燕归巢</p>
+            <p class="mp-singer">许嵩</p>
+            <p><span class="mp-time-current">00:00</span>/<span class="mp-time-all">00:00</span></p>
+        </div>
+        <div class="mp-btn">
+            <button class="mp-prev" title="上一首"></button>
+            <button class="mp-pause" title="播放"></button>
+            <button class="mp-next" title="下一首"></button>
+            <button class="mp-mode" title="播放模式"></button>
+            <div class="mp-vol">
+                <button class="mp-vol-img" title="静音"></button>
+                <div class="mp-vol-range" data-range_min="0" data-range_max="100" data-cur_min="80">
+                    <div class="mp-vol-current"></div>
+                    <div class="mp-vol-circle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mp-pro">
+            <div class="mp-pro-current"></div>
+        </div>
+        <div class="mp-menu">
+            <button class="mp-list-toggle"></button>
+            <button class="mp-lrc-toggle"></button>
+        </div>
+    </div>
+    <button class="mp-toggle">
+        <span class="mp-toggle-img"></span>
+    </button>
+    <div class="mp-lrc-box">
+        <ul class="mp-lrc"></ul>
+    </div>
+    <button class="mp-lrc-close"></button>
+    <div class="mp-list-box">
+        <ul class="mp-list-title"></ul>
+        <table class="mp-list-table">
+            <thead>
+                <tr>
+                    <th>歌名</th>
+                    <th>歌手</th>
+                    <th>时长</th>
+                </tr>
+            </thead>
+            <tbody class="mp-list"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+<script src="/vendor/mplayer-master/js/mplayer.js"></script>
+<script src="/vendor/mplayer-master/js/mplayer-list.js"></script>
+<script src="/vendor/mplayer-master/js/mplayer-functions.js"></script>
+<script src="http://cdn.bootcss.com/jquery-nstslider/1.0.13/jquery.nstSlider.min.js"></script>
+<script src="/vendor/mplayer-master/js/index.js"></script>

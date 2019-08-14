@@ -1,34 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="../src/vendor/jquery/dist/jquery.min.js"></script>
-    <style>
-        .main{
-            width: 1000px;
-            height: 1000px;
-        }   
-
-        .one{
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top:0;
-            left: 0;
-            background-color: red;
-            z-index: -1;
-        }
-
-        .two{
-           width: 100%;
-           height: 100%;
-           border:2px solid green;
-        }
-    </style>
+    <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
     <div class="main">
         <div class="one"></div>
@@ -36,9 +17,24 @@
     </div>
 
     <script>
-      $(".two").on("click",function(){
-          alert("asdasd");
-      })
+        !(function (doc, win) {
+            var docEle = doc.documentElement,
+                evt = "onorientationchange" in window ? "orientationchange" : "resize",
+                fn = function () {
+                    var width = docEle.clientWidth;
+                    console.log("视口宽度====>"+width)
+                    // width = width < 320 ? 320 : width;
+                    width = width > 599 ? 599 : width;
+                    width && (docEle.style.fontSize = 100 * (width / 599) + "px");
+
+                    console.log("根元素的font-size====>"+docEle.style.fontSize)
+                };
+
+            win.addEventListener(evt, fn, false);
+            doc.addEventListener("DOMContentLoaded", fn, false);
+
+        }(document, window));
     </script>
 </body>
+
 </html>

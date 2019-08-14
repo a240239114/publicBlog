@@ -228,6 +228,15 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     $(".bewater").on("click", function () {
         // console.log("11111");;
         $('.screen').css("transform", "translate(-50%)");
+        $('.youxiao').css({
+            "overflow-x": "hidden",
+            "overflow-y": "hidden"
+        });
+
+        $('body').css({
+            "overflow-x": "hidden",
+            "overflow-y": "hidden"
+        });
     })
 
 
@@ -247,7 +256,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                 event.stopPropagation();
                 $(".youxiao").css("transform", "translate(-40vw)");
 
-              
+
                 document.body.style.position = 'initial';
 
                 $("body").css({
@@ -255,15 +264,15 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                 })
 
 
-                var whereList = $($(".knowledgeList li")[0]).attr("data-where")+"List";
-                var whereInfo = $($(".knowledgeList li")[0]).attr("data-where")+"Info";
-                console.log(whereList,whereInfo,num);
-                if(num == 0){
-                    console.log(whereList,whereInfo,num);
+                var whereList = $($(".knowledgeList li")[0]).attr("data-where") + "List";
+                var whereInfo = $($(".knowledgeList li")[0]).attr("data-where") + "Info";
+                console.log(whereList, whereInfo, num);
+                if (num == 0) {
+                    console.log(whereList, whereInfo, num);
                     //重新加载页面
                     LoadPages(whereList, whereInfo);
                     num = 1;
-                } 
+                }
 
 
 
@@ -369,10 +378,154 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     }
 
 
-    // //720px以下(手机端) 关于博客的跳转事件
-    // $("#aboutBlogIndexHtml").on("click", function () {
-    //     window.location.href = './blogDesc'
-    // })
+    //获取视口的宽度
+    var viewWidth = document.body.clientWidth;
+    var left = viewWidth - 574;
+    // console.log("viewWidth======>" + viewWidth);
+    // console.log("left======>" + left);
+    $(".mp").css({
+        left: `${left}px`
+    });
+
+
+    // console.log("滚动条事件")
+    var scrollTop = $(document).scrollTop();
+    var viewHeight = $(window).height();
+    var top = scrollTop + viewHeight * 0.85;
+    // console.log("top======>"+top);
+
+    //设置音乐盒子的Top值
+
+    $(".mp").css({
+        top: `${top}px`
+    });
+
+
+    if (viewWidth > 770 && viewWidth < 1200) {
+        var left = viewWidth - 557;
+
+        $(".mp").css({
+            left: `${left}px`
+        });
+    }
+
+    if (viewWidth <= 770) {
+
+        $(window).scroll(function () {
+            // console.log("滚动条事件")
+            var scrollTop = $(document).scrollTop();
+            var viewHeight = $(window).height();
+            var top = scrollTop + viewHeight * 0.85;
+            // console.log("top======>"+top);
+
+            //设置音乐盒子的Top值
+
+            $(".mp").css({
+                top: `${top}px`
+            });
+        })
+    }
+
+
+    if (viewWidth > 770) {
+        var count = 1;
+
+
+        $(".mp-toggle").on("click", function () {
+            console.log("播放器点击事件  count=====>" + count);
+
+            if (count % 2 != 0) { //奇数
+                $(".mp").animate({
+                    left: "100vw"
+                });
+                // numSubmit++;
+            }
+
+            if (count % 2 == 0) { //偶数
+                $(".mp").animate({
+                    left: `${left}px`
+                });
+            }
+
+
+            count++;
+        })
+
+    } else if(viewWidth<599) {
+        var count = 1;
+        // var left = -0.56*viewWidth;
+        // var left = -0.545*viewWidth;
+        var left = -0.56 * viewWidth;
+
+        console.log("leftImportant===========>" + left)
+
+
+        $(".mp").animate({
+            left: `${left}px`
+        });
+
+        $(".mp-toggle").on("click", function () {
+            console.log("播放器点击事件  count=====>" + count);
+
+            if (count % 2 != 0) { //奇数
+                $(".mp").animate({
+                    left: "40vw"
+                });
+                // numSubmit++;
+            }
+
+
+
+            if (count % 2 == 0) { //偶数
+                $(".mp").animate({
+                    left: `${left}px`
+                });
+            }
+
+
+
+
+            count++;
+        })
+    }else{
+
+        var count = 1;
+        // var left = -0.56*viewWidth;
+        // var left = -0.545*viewWidth;
+        var left = -(574-0.4*viewWidth);
+
+        console.log("leftImportant===========>" + left)
+
+
+        $(".mp").animate({
+            left: `${left}px`
+        });
+
+        $(".mp-toggle").on("click", function () {
+            console.log("播放器点击事件  count=====>" + count);
+
+            if (count % 2 != 0) { //奇数
+                $(".mp").animate({
+                    left: "40vw"
+                });
+                // numSubmit++;
+            }
+
+
+
+            if (count % 2 == 0) { //偶数
+                $(".mp").animate({
+                    left: `${left}px`
+                });
+            }
+
+
+
+
+            count++;
+        })
+
+    }
 
 
 

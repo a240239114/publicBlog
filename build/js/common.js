@@ -14,7 +14,7 @@ define(["jquery", "template"], function ($, template) {
     var flag = false;
     $(".icon-fenlei").on('click', function () {
         $(".total1").css("transform", "translate(0)")
-        // document.body.style.position = 'fixed';
+        document.body.style.position = 'fixed';
         $('.body').css({
             "overflow-x": "hidden"
         });
@@ -237,4 +237,16 @@ define(["jquery", "template"], function ($, template) {
     })
 
 
+    //收索框的焦点事件
+    $(".form-control").focus(function(){
+        console.log("焦点事件")
+
+        
+        // return false;
+
+        $(".form-control").css('box-shadow',"0px 0px 20px #1e90ff");
+    })
+
+
+    
 });

@@ -1,0 +1,384 @@
+/**
+ * @authors 0936zz (zz5840@qq.com)
+ * @date    2016-08-06 23:54
+ */
+/* 去除浏览器默认样式 && 避免Bootstrap等框架破坏布局 */
+html {
+  font-size: 100px;
+}
+.mp * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei", serif;
+}
+.mp img {
+  border: none;
+}
+.mp input {
+  outline: none;
+}
+.mp a {
+  text-decoration: none;
+  display: inline-block;
+  color: #FFF;
+}
+.mp p {
+  color: #FFF;
+}
+.mp ul {
+  list-style-type: none;
+}
+.mp button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.mp {
+  width: 5.99rem;
+  height: 1.20rem;
+  position: fixed;
+  bottom: .20rem;
+  left: -5.74rem;
+  border-radius: 0 .05rem .05rem 0;
+  background-color: #212121;
+  -webkit-transition: left .5s;
+  -moz-transition: left .5s;
+  -o-transition: left .5s;
+  transition: left .5s;
+  z-index: 99;
+}
+.mp.mp-show {
+  left: 0;
+}
+.mp.mp-show .mp-toggle-img {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.mp .mp-cover {
+  width: 1rem;
+  height: 1.00rem;
+  position: absolute;
+  top: 0.10rem;
+  left: 0.10rem;
+}
+.mp .mp-info {
+  position: absolute;
+  left: 1.2rem;
+  top: .15rem;
+  font-size: 0.14rem;
+  line-height: 1.8;
+}
+.mp .mp-lrc-box {
+  padding: 0.1rem;
+  position: absolute;
+  top: 0;
+  left: 6rem;
+  background-color: #212121;
+  border-radius: 0 0.05rem 0.05rem 0;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+}
+.mp .mp-lrc-box.mp-lrc-show {
+  opacity: 1;
+}
+.mp .mp-lrc-box.mp-lrc-show ~ .mp-lrc-close {
+  opacity: 1;
+}
+.mp .mp-lrc {
+  width: 2rem;
+  height: 1rem;
+  font-size: 0.12rem;
+  overflow: hidden;
+  color: #FFF;
+  text-align: center;
+  line-height: 2;
+}
+.mp .mp-lrc-current {
+  color: #D32F2F;
+}
+.mp .mp-lrc-close {
+  width: 0.07rem;
+  height: 0.07rem;
+  background: url("../image/mplayer_bg.png") no-repeat 0 -0.56rem;
+  background-size: 1.74rem 1.47rem;
+  position: absolute;
+  top: 0.07rem;
+  right: -2.15rem;
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+}
+.mp .mp-lrc-close:hover {
+  background-position-x: -0.07rem;
+}
+.mp .mp-menu {
+  position: absolute;
+  left: 5.1rem;
+  top: 0.1rem;
+}
+.mp .mp-list-toggle {
+  width: 0.21rem;
+  height: 0.14rem;
+  background: url("../image/mplayer_bg.png") no-repeat -0.29rem -0.9rem;
+  background-size: 1.74rem 1.47rem;
+  float: left;
+}
+.mp .mp-list-toggle:hover {
+  background-position-x: -0.5rem;
+}
+.mp .mp-lrc-toggle {
+  width: 0.14rem;
+  height: 0.14rem;
+  background: url("../image/mplayer_bg.png") no-repeat -0.29rem -0.56rem;
+  background-size: 1.74rem 1.47rem;
+  float: left;
+  margin-left: 0.15rem;
+}
+.mp .mp-lrc-toggle:hover {
+  background-position-y: -0.7rem;
+}
+.mp .mp-pro {
+  width: 4.4rem;
+  height: 0.05rem;
+  border: 0.01rem solid #D32F2F;
+  position: absolute;
+  bottom: 0.15rem;
+  left: 1.20rem;
+  cursor: pointer;
+}
+.mp .mp-pro-current {
+  width: 0;
+  height: 100%;
+  background-color: #D32F2F;
+}
+.mp .mp-btn {
+  position: absolute;
+  top: 0.36rem;
+  left: 2.30rem;
+  height: 0.45rem;
+}
+.mp .mp-prev,
+.mp .mp-next {
+  width: 0.24rem;
+  height: 0.28rem;
+  background: url("../image/mplayer_bg.png") no-repeat;
+  background-size: 1.74rem 1.47rem;
+  float: left;
+  margin-top: 0.085rem;
+}
+.mp .mp-prev:hover,
+.mp .mp-next:hover {
+  background-position-y: -0.28rem;
+}
+.mp .mp-prev {
+  background-position: 0 0;
+  margin-right: .30rem;
+}
+.mp .mp-next {
+  background-position: -0.24rem 0;
+  margin-right: .20rem;
+}
+.mp .mp-pause {
+  width: 0.38rem;
+  height: .45rem;
+  margin-right: .30rem;
+  float: left;
+  background: url("../image/mplayer_bg.png") no-repeat -0.86rem 0;
+  background-size: 1.74rem 1.47rem;
+}
+.mp .mp-pause:hover {
+  background-position-y: -0.45rem;
+}
+.mp .mp-play {
+  background-position: -0.48rem 0;
+}
+.mp .mp-mode {
+  width: 0.26rem;
+  height: 21px;
+  background: url("../image/mplayer_bg.png") no-repeat 0 -105px;
+  margin-right: 20px;
+  float: left;
+  margin-top: 12px;
+}
+.mp .mp-mode:hover {
+  background-position-y: -1.26rem;
+}
+.mp .mp-mode-0 {
+  background-position-x: 0;
+}
+.mp .mp-mode-1 {
+  background-position-x: -0.26rem;
+}
+.mp .mp-mode-2 {
+  background-position-x: -0.52rem;
+}
+.mp .mp-mode-3 {
+  background-position-x: -0.78rem;
+}
+.mp .mp-vol {
+  display: inline-block;
+  float: left;
+}
+.mp .mp-vol-img {
+  width: 0.29rem;
+  height: .21rem;
+  background: url("../image/mplayer_bg.png") no-repeat 0 -0.63rem;
+  background-size: 1.74rem 1.47rem;
+  margin-top: .12rem;
+  float: left;
+}
+.mp .mp-vol-img:hover {
+  background-position-y: -0.84rem;
+}
+.mp .mp-mute {
+  background-position: -1.2rem -1.26rem;
+}
+.mp .mp-mute:hover {
+  background-position: -1.49rem -1.26rem;
+}
+.mp .mp-vol-range {
+  width: 0.7rem;
+  height: 0.05rem;
+  background: #FFF;
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0.20rem 0 0 0.08rem;
+}
+.mp .mp-vol-current {
+  width: 0;
+  height: 100%;
+  background: #D32F2F;
+}
+.mp .mp-vol-circle {
+  width: 0.09rem;
+  height: 0.09rem;
+  position: absolute;
+  top: -0.02rem;
+  border-radius: 0.05rem;
+  background: #D32F2F;
+  cursor: pointer;
+}
+.mp .mp-vol-circle:hover {
+  background-color: #F44336;
+}
+.mp .mp-vol-circle.mp-disabled {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.mp .mp-vol-circle.mp-disabled:hover {
+  background-color: #D32F2F;
+}
+.mp .mp-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 1.20rem;
+  width: 0.25rem;
+  background: url("../image/mplayer_bg.png") no-repeat -1.24rem 0;
+  background-size: 1.74rem 1.47rem;
+}
+.mp .mp-toggle-img {
+  width: 0.12rem;
+  height: 0.21rem;
+  display: inline-block;
+  background: url("../image/mplayer_bg.png") no-repeat -1.04rem -1.26rem;
+  background-size: 1.74rem 1.47rem;
+  position: absolute;
+  top: 0.50rem;
+  left: 0.06rem;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  transition: transform .5s;
+}
+.mp .mp-list-box {
+  position: absolute;
+  bottom: 1.20rem;
+  left: 0;
+  width: 5.74rem;
+  height: 0;
+  overflow: hidden;
+  background-color: #212121;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+  -o-transition: height .5s;
+  transition: height .5s;
+}
+.mp .mp-list-box.mp-list-show {
+  height: 4.00rem;
+}
+.mp .mp-list-title {
+  height: .40rem;
+  font-size: .18rem;
+  color: #FFF;
+  line-height: .40rem;
+  width: 100%;
+  background: #212121;
+}
+.mp .mp-list-title li {
+  float: left;
+  padding: 0 .20rem;
+  cursor: pointer;
+}
+.mp .mp-list-title-current {
+  background: #727272;
+  position: relative;
+}
+.mp .mp-list-title-current:before {
+  content: "";
+  position: absolute;
+  top: .40rem;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 0.06rem dashed transparent;
+  border-top: 0.06rem solid #727272;
+  margin-left: -0.06rem;
+}
+.mp .mp-list-table {
+  max-height: 30.40rem;
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin: 0.10rem 0;
+  overflow: auto;
+}
+.mp .mp-list-table th {
+  font-weight: normal;
+  text-align: left;
+}
+.mp .mp-list-table th,
+.mp .mp-list-table td {
+  text-indent: 0.10rem;
+}
+.mp .mp-list-table tr {
+  height: 0.20rem;
+  font-size: 0.14rem;
+  color: #FFF;
+  line-height: 2;
+  padding: 0 0.10rem;
+}
+.mp .mp-list-table tbody tr {
+  cursor: pointer;
+}
+.mp .mp-list-table tbody tr.mp-list-current,
+.mp .mp-list-table tbody tr:hover {
+  background: #727272;
+}

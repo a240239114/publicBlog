@@ -6,6 +6,10 @@
 html {
   font-size: 100px;
 }
+.mp {
+  font-size: 7px;
+  -webkit-text-size-adjust: none;
+}
 .mp * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -192,7 +196,7 @@ html {
   margin-right: .20rem;
 }
 .mp .mp-pause {
-  width: 0.38rem;
+  width: 0.37rem;
   height: .45rem;
   margin-right: .30rem;
   float: left;
@@ -206,15 +210,13 @@ html {
   background-position: -0.48rem 0;
 }
 .mp .mp-mode {
-  width: 0.26rem;
-  height: 21px;
-  background: url("../image/mplayer_bg.png") no-repeat 0 -105px;
-  margin-right: 20px;
+  width: 0.25rem;
+  height: 0.21rem;
+  background: url("../image/mplayer_bg.png") no-repeat 0 -1.056rem;
+  background-size: 1.74rem 1.47rem;
+  margin-right: 0.20rem;
   float: left;
-  margin-top: 12px;
-}
-.mp .mp-mode:hover {
-  background-position-y: -1.26rem;
+  margin-top: 0.12rem;
 }
 .mp .mp-mode-0 {
   background-position-x: 0;
@@ -234,7 +236,7 @@ html {
 }
 .mp .mp-vol-img {
   width: 0.29rem;
-  height: .21rem;
+  height: .22rem;
   background: url("../image/mplayer_bg.png") no-repeat 0 -0.63rem;
   background-size: 1.74rem 1.47rem;
   margin-top: .12rem;

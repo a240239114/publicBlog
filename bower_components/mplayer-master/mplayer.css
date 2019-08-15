@@ -6,10 +6,6 @@
 html {
   font-size: 100px;
 }
-.mp {
-  font-size: 7px;
-  -webkit-text-size-adjust: none;
-}
 .mp * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -43,17 +39,16 @@ html {
 }
 .mp {
   width: 5.99rem;
-  height: 1.20rem;
+  height: 120px;
   position: fixed;
-  bottom: .20rem;
+  bottom: 20px;
   left: -5.74rem;
-  border-radius: 0 .05rem .05rem 0;
+  border-radius: 0 5px 5px 0;
   background-color: #212121;
   -webkit-transition: left .5s;
   -moz-transition: left .5s;
   -o-transition: left .5s;
   transition: left .5s;
-  z-index: 99;
 }
 .mp.mp-show {
   left: 0;
@@ -67,10 +62,10 @@ html {
 }
 .mp .mp-cover {
   width: 1rem;
-  height: 1.00rem;
+  height: 100px;
   position: absolute;
-  top: 0.10rem;
-  left: 0.10rem;
+  top: 10px;
+  left: 10px;
 }
 .mp .mp-info {
   position: absolute;
@@ -85,7 +80,7 @@ html {
   top: 0;
   left: 6rem;
   background-color: #212121;
-  border-radius: 0 0.05rem 0.05rem 0;
+  border-radius: 0 5px 5px 0;
   overflow: hidden;
   opacity: 0;
   -webkit-transition: opacity .5s;
@@ -114,7 +109,7 @@ html {
 .mp .mp-lrc-close {
   width: 0.07rem;
   height: 0.07rem;
-  background: url("../image/mplayer_bg.png") no-repeat 0 -0.56rem;
+  background: url("../img/mplayer_bg.png") no-repeat 0 -0.56rem;
   background-size: 1.74rem 1.47rem;
   position: absolute;
   top: 0.07rem;
@@ -136,31 +131,31 @@ html {
 .mp .mp-list-toggle {
   width: 0.21rem;
   height: 0.14rem;
-  background: url("../image/mplayer_bg.png") no-repeat -0.29rem -0.9rem;
+  background: url("../img/mplayer_bg.png") no-repeat -0.29rem -90px;
   background-size: 1.74rem 1.47rem;
   float: left;
 }
 .mp .mp-list-toggle:hover {
-  background-position-x: -0.5rem;
+  background-position-x: -50px;
 }
 .mp .mp-lrc-toggle {
   width: 0.14rem;
-  height: 0.14rem;
-  background: url("../image/mplayer_bg.png") no-repeat -0.29rem -0.56rem;
+  height: 14px;
+  background: url("../img/mplayer_bg.png") no-repeat -29px -56px;
   background-size: 1.74rem 1.47rem;
   float: left;
-  margin-left: 0.15rem;
+  margin-left: 15px;
 }
 .mp .mp-lrc-toggle:hover {
-  background-position-y: -0.7rem;
+  background-position-y: -70px;
 }
 .mp .mp-pro {
   width: 4.4rem;
-  height: 0.05rem;
-  border: 0.01rem solid #D32F2F;
+  height: 5px;
+  border: 1px solid #D32F2F;
   position: absolute;
-  bottom: 0.15rem;
-  left: 1.20rem;
+  bottom: 15px;
+  left: 120px;
   cursor: pointer;
 }
 .mp .mp-pro-current {
@@ -170,49 +165,49 @@ html {
 }
 .mp .mp-btn {
   position: absolute;
-  top: 0.36rem;
-  left: 2.30rem;
-  height: 0.45rem;
+  top: 36px;
+  left: 230px;
+  height: 45px;
 }
 .mp .mp-prev,
 .mp .mp-next {
-  width: 0.24rem;
-  height: 0.28rem;
-  background: url("../image/mplayer_bg.png") no-repeat;
+  width: 24px;
+  height: 28px;
+  background: url("../img/mplayer_bg.png") no-repeat;
   background-size: 1.74rem 1.47rem;
   float: left;
-  margin-top: 0.085rem;
+  margin-top: 8.5px;
 }
 .mp .mp-prev:hover,
 .mp .mp-next:hover {
-  background-position-y: -0.28rem;
+  background-position-y: -28px;
 }
 .mp .mp-prev {
   background-position: 0 0;
-  margin-right: .30rem;
+  margin-right: 30px;
 }
 .mp .mp-next {
-  background-position: -0.24rem 0;
-  margin-right: .20rem;
+  background-position: -24px 0;
+  margin-right: 20px;
 }
 .mp .mp-pause {
-  width: 0.37rem;
-  height: .45rem;
-  margin-right: .30rem;
+  width: 0.38rem;
+  height: 45px;
+  margin-right: 30px;
   float: left;
-  background: url("../image/mplayer_bg.png") no-repeat -0.86rem 0;
+  background: url("../img/mplayer_bg.png") no-repeat -86px 0;
   background-size: 1.74rem 1.47rem;
 }
 .mp .mp-pause:hover {
-  background-position-y: -0.45rem;
+  background-position-y: -45px;
 }
 .mp .mp-play {
-  background-position: -0.48rem 0;
+  background-position: -48px 0;
 }
 .mp .mp-mode {
-  width: 0.25rem;
+  width: 0.26rem;
   height: 0.21rem;
-  background: url("../image/mplayer_bg.png") no-repeat 0 -1.056rem;
+  background: url("../img/mplayer_bg.png") no-repeat 0 -1.05rem;
   background-size: 1.74rem 1.47rem;
   margin-right: 0.20rem;
   float: left;
@@ -222,13 +217,13 @@ html {
   background-position-x: 0;
 }
 .mp .mp-mode-1 {
-  background-position-x: -0.26rem;
+  background-position-x: -26px;
 }
 .mp .mp-mode-2 {
-  background-position-x: -0.52rem;
+  background-position-x: -52px;
 }
 .mp .mp-mode-3 {
-  background-position-x: -0.78rem;
+  background-position-x: -78px;
 }
 .mp .mp-vol {
   display: inline-block;
@@ -236,29 +231,29 @@ html {
 }
 .mp .mp-vol-img {
   width: 0.29rem;
-  height: .22rem;
-  background: url("../image/mplayer_bg.png") no-repeat 0 -0.63rem;
+  height: 21px;
+  background: url("../img/mplayer_bg.png") no-repeat 0 -63px;
   background-size: 1.74rem 1.47rem;
-  margin-top: .12rem;
+  margin-top: 12px;
   float: left;
 }
 .mp .mp-vol-img:hover {
-  background-position-y: -0.84rem;
+  background-position-y: -84px;
 }
 .mp .mp-mute {
-  background-position: -1.2rem -1.26rem;
+  background-position: -120px -126px;
 }
 .mp .mp-mute:hover {
-  background-position: -1.49rem -1.26rem;
+  background-position: -149px -126px;
 }
 .mp .mp-vol-range {
   width: 0.7rem;
-  height: 0.05rem;
+  height: 5px;
   background: #FFF;
   display: inline-block;
   float: left;
   position: relative;
-  margin: 0.20rem 0 0 0.08rem;
+  margin: 20px 0 0 8px;
 }
 .mp .mp-vol-current {
   width: 0;
@@ -267,10 +262,10 @@ html {
 }
 .mp .mp-vol-circle {
   width: 0.09rem;
-  height: 0.09rem;
+  height: 9px;
   position: absolute;
-  top: -0.02rem;
-  border-radius: 0.05rem;
+  top: -2px;
+  border-radius: 5px;
   background: #D32F2F;
   cursor: pointer;
 }
@@ -291,20 +286,23 @@ html {
   position: absolute;
   right: 0;
   top: 0;
-  height: 1.20rem;
+  height: 120px;
   width: 0.25rem;
-  background: url("../image/mplayer_bg.png") no-repeat -1.24rem 0;
+  background: url("../img/mplayer_bg.png") no-repeat -124px 0;
   background-size: 1.74rem 1.47rem;
 }
+.mp .mp-toggle:hover {
+  background-position-x: -149px;
+}
 .mp .mp-toggle-img {
-  width: 0.12rem;
-  height: 0.21rem;
+  width: 12px;
+  height: 21px;
   display: inline-block;
-  background: url("../image/mplayer_bg.png") no-repeat -1.04rem -1.26rem;
+  background: url("../img/mplayer_bg.png") no-repeat -104px -126px;
   background-size: 1.74rem 1.47rem;
   position: absolute;
-  top: 0.50rem;
-  left: 0.06rem;
+  top: 50px;
+  left: 6px;
   -webkit-transition: -webkit-transform 0.5s;
   -moz-transition: -moz-transform 0.5s;
   -o-transition: -o-transform 0.5s;
@@ -312,7 +310,7 @@ html {
 }
 .mp .mp-list-box {
   position: absolute;
-  bottom: 1.20rem;
+  bottom: 120px;
   left: 0;
   width: 5.74rem;
   height: 0;
@@ -324,19 +322,19 @@ html {
   transition: height .5s;
 }
 .mp .mp-list-box.mp-list-show {
-  height: 4.00rem;
+  height: 400px;
 }
 .mp .mp-list-title {
-  height: .40rem;
-  font-size: .18rem;
+  height: 40px;
+  font-size: 18px;
   color: #FFF;
-  line-height: .40rem;
+  line-height: 40px;
   width: 100%;
   background: #212121;
 }
 .mp .mp-list-title li {
   float: left;
-  padding: 0 .20rem;
+  padding: 0 20px;
   cursor: pointer;
 }
 .mp .mp-list-title-current {
@@ -346,20 +344,20 @@ html {
 .mp .mp-list-title-current:before {
   content: "";
   position: absolute;
-  top: .40rem;
+  top: 40px;
   left: 50%;
   width: 0;
   height: 0;
-  border: 0.06rem dashed transparent;
-  border-top: 0.06rem solid #727272;
-  margin-left: -0.06rem;
+  border: 6px dashed transparent;
+  border-top: 6px solid #727272;
+  margin-left: -6px;
 }
 .mp .mp-list-table {
-  max-height: 30.40rem;
+  max-height: 340px;
   width: 100%;
   border-collapse: collapse;
   border: none;
-  margin: 0.10rem 0;
+  margin: 10px 0;
   overflow: auto;
 }
 .mp .mp-list-table th {
@@ -368,14 +366,14 @@ html {
 }
 .mp .mp-list-table th,
 .mp .mp-list-table td {
-  text-indent: 0.10rem;
+  text-indent: 10px;
 }
 .mp .mp-list-table tr {
-  height: 0.20rem;
-  font-size: 0.14rem;
+  height: 20px;
+  font-size: 14px;
   color: #FFF;
   line-height: 2;
-  padding: 0 0.10rem;
+  padding: 0 10px;
 }
 .mp .mp-list-table tbody tr {
   cursor: pointer;

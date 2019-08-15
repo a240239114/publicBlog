@@ -66,6 +66,17 @@ setEffects(player);
 			width && (docEle.style.fontSize = 100 * (width / 599) + "px");
 
 			console.log("根元素的font-size====>"+docEle.style.fontSize)
+			var proportion =   parseInt(docEle.style.fontSize) / 100;
+			console.log("proportion======>"+proportion)
+
+			if(docEle.clientWidth<599){
+				$(".mp-info").css({"transform":`scale(${proportion},${proportion})`})
+				$(".mp-info").css({"position":"absolute"})
+				$(".mp-info").css({"left":"0.98rem"})
+				$(".mp-info").css({"top":"-0.15rem"})
+			}
+
+			// window.location.reload()
 		};
 
 	win.addEventListener(evt, fn, false);

@@ -7,6 +7,7 @@
  @mp-gray : #727272;
  @mp-main-color : #D32F2F;
  @mp-hover : #F44336;
+//  body{-webkit-text-size-adjust:none} 
  
  
  /* 去除浏览器默认样式 && 避免Bootstrap等框架破坏布局 */
@@ -23,7 +24,7 @@
 		 padding: 0;
 		 font-family: "Microsoft YaHei", serif;
 	 }
- 
+	 font-size:7px;-webkit-text-size-adjust:none;
 	 img {
 		 border: none;
 	 }
@@ -201,7 +202,7 @@
 		 margin-right: .20rem;
 	 }
 	 .mp-pause {
-		 width: 0.38rem;
+		 width: 0.37rem;
 		 height: .45rem;
 		 margin-right: .30rem;
 		 float: left;
@@ -215,15 +216,16 @@
 		 background-position: -.48rem 0;
 	 }
 	 .mp-mode {
-		width: 0.26rem;
-		height: 21px;
-		background: url(@mp-background-url) no-repeat 0 -105px;
-		margin-right: 20px;
+		width: 0.25rem;
+		height: 0.21rem;
+		background: url(@mp-background-url) no-repeat 0 -1.056rem;
+		background-size: 1.74rem 1.47rem;
+		margin-right: 0.20rem;
 		float: left;
-		margin-top: 12px;
-		 &:hover {
-			 background-position-y: -1.26rem;
-		 }
+		margin-top: 0.12rem;
+		//  &:hover {
+		// 	 background-position-y: -1.26rem;
+		//  }
 	 }
 	 .mp-mode-0 {
 		 background-position-x: 0;
@@ -243,7 +245,7 @@
 	 }
 	 .mp-vol-img {
 		 width: 0.29rem;
-		 height: .21rem;
+		 height: .22rem;
 		 background: url(@mp-background-url) no-repeat 0 -.63rem;
 		 background-size: 1.74rem 1.47rem;
 		 margin-top: .12rem;

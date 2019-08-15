@@ -136,7 +136,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             // url: "api/"+where,
             type: "get",
             success: function (res) {
-                // console.log(where);
+                console.log("res.data===========>"+res.data);
                 var html = template("paginnationTpl", {
                     data: res.data
                 })
@@ -240,6 +240,8 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             "overflow-x": "hidden",
             "overflow-y": "hidden"
         });
+
+
     })
 
 
@@ -475,6 +477,17 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                     left: "40vw"
                 });
                 // numSubmit++;
+
+
+                $('.youxiao').css({
+                    "overflow-x": "hidden",
+                    // "overflow-y": "hidden"
+                });
+        
+                $('body').css({
+                    "overflow-x": "hidden",
+                    // "overflow-y": "hidden"
+                });
             }
 
 
@@ -530,6 +543,17 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
     }
 
+    //点击关于博客让删除按钮消失
+    $(".top:contains('关于博客')").on("click",function(event){
+        // console.log("我是博客")
+        event.stopPropagation();
+        $(".icon-jiahaocu").css({"display":"block"})
+    })
 
+
+    $(".body").on("click",function(){
+        // console.log("我是博客")
+        $(".icon-jiahaocu").css({"display":"none"})
+    })
 
 });

@@ -46,8 +46,7 @@ define(["jquery", "template"], function ($, template) {
             // console.log('2222');
             $(".total1").on('click', function (event) {
                 event.stopPropagation();
-                window.location.reload();
-                
+                window.location.reload();         
             })
         }
         return false;
@@ -247,6 +246,17 @@ define(["jquery", "template"], function ($, template) {
         $(".form-control").css('box-shadow',"0px 0px 20px #1e90ff");
     })
 
-
+    //音乐播放器outlineBug
+    $(".mp-btn button").each(function(index,item){
+        $(item).css({"outline":"none"});
+    })
+    $(".mp-toggle").css({"outline":"none"});
+    $(".mp-menu button").css({"outline":"none"});
+    $(".mp-lrc-close").css({"outline":"none"});
+    
+    $(window).resize(function(){
+        // console.log("11111")
+        window.location.reload();
+    });
     
 });

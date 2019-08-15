@@ -219,7 +219,10 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             console.log("Aside侧边栏事件")
             LoadPages(whereList, whereinfo);
             $(".youxiao").css("transform", "translate(-40vw)");
-
+            document.body.style.position = 'initial';
+            $("body").css({
+                "overflow-y": "auto"
+            })
         })
     })
 
@@ -451,7 +454,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             count++;
         })
 
-    } else if(viewWidth<599) {
+    } else if (viewWidth < 599) {
         var count = 1;
         // var left = -0.56*viewWidth;
         // var left = -0.545*viewWidth;
@@ -487,12 +490,12 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
             count++;
         })
-    }else{
+    } else {
 
         var count = 1;
         // var left = -0.56*viewWidth;
         // var left = -0.545*viewWidth;
-        var left = -(574-0.4*viewWidth);
+        var left = -(574 - 0.4 * viewWidth);
 
         console.log("leftImportant===========>" + left)
 

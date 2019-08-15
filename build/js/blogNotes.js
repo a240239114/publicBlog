@@ -176,6 +176,7 @@ define([
                     $(".steps .form-horizontal").each(function (i, item) {
                         // console.log(item);
                         if ($(item).serialize().length == 50) return
+                        console.log(" $(item).serialize()=======>"+ $(item).serializeArray());
                         //把序列化后的step存放在steps数组中
                         steps.push(transData($(item).serializeArray()));
                     })

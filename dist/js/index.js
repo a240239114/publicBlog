@@ -295,7 +295,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
     //页面加载事件
     //第一次加载页面的时候显示第一页
-    LoadPages('allList', "allInfo");
+    // LoadPages('allList', "allInfo");
 
     var onceFlag = true;
 

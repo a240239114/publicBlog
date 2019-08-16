@@ -46,7 +46,7 @@ define(["jquery", "template"], function ($, template) {
             // console.log('2222');
             $(".total1").on('click', function (event) {
                 event.stopPropagation();
-                window.location.reload();         
+                window.location.reload();
             })
         }
         return false;
@@ -236,27 +236,46 @@ define(["jquery", "template"], function ($, template) {
     })
 
 
-    //收索框的焦点事件
-    $(".form-control").focus(function(){
-        console.log("焦点事件")
-
-        
-        // return false;
-
-        $(".form-control").css('box-shadow',"0px 0px 20px #1e90ff");
+    $(".form-control").each(function (index, item) {
+        //收索框的焦点事件
+        $(item).focus(function () {
+            console.log("焦点事件")
+            $(".form-control").css('box-shadow', "0px 0px 0px #1e90ff");
+            // return false;
+            $(this).css('box-shadow', "0px 0px 20px #1e90ff");
+        })
     })
+
 
     //音乐播放器outlineBug
-    $(".mp-btn button").each(function(index,item){
-        $(item).css({"outline":"none"});
+    $(".mp-btn button").each(function (index, item) {
+        $(item).css({
+            "outline": "none"
+        });
     })
-    $(".mp-toggle").css({"outline":"none"});
-    $(".mp-menu button").css({"outline":"none"});
-    $(".mp-lrc-close").css({"outline":"none"});
-    
-    $(window).resize(function(){
+    $(".mp-toggle").css({
+        "outline": "none"
+    });
+    $(".mp-menu button").css({
+        "outline": "none"
+    });
+    $(".mp-lrc-close").css({
+        "outline": "none"
+    });
+
+    $(window).resize(function () {
         // console.log("11111")
         window.location.reload();
     });
-    
+
+
+    $("textarea").css({"height":"200px"});
+    $(".btn-success").css('box-shadow', "0px 0px 0px #1e90ff");
+    $($("textarea").toArray()[0]).css({"margin-bottom":"20px"});
+    $($(".btn-success").toArray()[1]).css({"margin-top":"40px"});
+    $($(".btn-success").toArray()[2]).css({"margin-top":"-30px"});
+    $(".form-group").css({"margin-top":"0px"});
+    $(".form-group").css({"margin-bottom":"25px"});
+    $(".blogIntroduce p").css({"margin-bottom":"20px"});
+    $("dl, ol, ul").css({"margin-bottom":"0px"});
 });

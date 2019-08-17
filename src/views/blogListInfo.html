@@ -76,12 +76,13 @@
                     <div class="step">{{$value.step}}&nbsp&nbsp{{$value.tittle}}</div>
                     <div class="descTop">{{$value.descTop}}</div>
                     <img src="{{$value.img}}" alt="">
-
+{{if $value.cs_brief != ''}}
 <pre class="line-numbers">
 <code class="language-js">
 {{$value.cs_brief}}
 </code>
 </pre>
+{{/if}}
                     <div class="descBottom">{{$value.descBottom}}</div>
                 </li>
                 {{/each}}

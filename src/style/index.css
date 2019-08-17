@@ -3,12 +3,13 @@
  * @authors 0936zz (zz5840@qq.com)
  * @date    2016-08-06 23:54
  */
-body {
-  -webkit-text-size-adjust: none;
-}
 /* 去除浏览器默认样式 && 避免Bootstrap等框架破坏布局 */
 html {
   font-size: 100px;
+}
+.mp {
+  font-size: 7px;
+  -webkit-text-size-adjust: none;
 }
 .mp * {
   -webkit-box-sizing: content-box;
@@ -403,6 +404,13 @@ nav .container .introduce {
 }
 .left .knowledgeList {
   font-size: 18px;
+}
+.left .knowledgeList p {
+  margin-bottom: 0px;
+}
+.left .knowledgeList .info {
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 .body .row .input-group button {
   background-color: #1890ff;

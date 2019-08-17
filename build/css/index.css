@@ -405,6 +405,13 @@ nav .container .introduce {
 .left .knowledgeList {
   font-size: 18px;
 }
+.left .knowledgeList p {
+  margin-bottom: 0px;
+}
+.left .knowledgeList .info {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
 .body .row .input-group button {
   background-color: #1890ff;
   border-radius: 3px 9px 9px 3px;

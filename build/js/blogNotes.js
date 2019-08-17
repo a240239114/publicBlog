@@ -19,7 +19,7 @@ define([
             var image = 'http://puv6112u1.bkt.clouddn.com/vue.jpg';
             $(".form-group #showImg").val(image);
         } else if(where == "es6") {
-            var image = 'http://puv6112u1.bkt.clouddn.com/es6.jpg';
+            var image = 'http://puv6112u1.bkt.clouddn.com/config.jpg';
             $(".form-group #showImg").val(image);
         } else if(where == "bug") {
             var image = 'http://puv6112u1.bkt.clouddn.com/bug.jpg';
@@ -450,14 +450,14 @@ define([
                     number: true
                 },
                 tittle: {
-                    required: true,
-                    minlength: 5
+                    required: true
+                    // minlength: 5
                 },
                 descTop: {
                     minlength: 2
                 },
                 img: {
-                    required: true,
+                    // required: true,
                     url: true
                 },
                 wordpress: {
@@ -473,14 +473,14 @@ define([
                     number: "请输入数字"
                 },
                 tittle: {
-                    required: "请输入tittle",
-                    minlength: "标题必需由五个字符组成"
+                    required: "请输入tittle"
+                    // minlength: "标题必需由五个字符组成"
                 },
                 descTop: {
                     minlength: "关键字必需由两个字母组成"
                 },
                 img: {
-                    required: "请输入img",
+                    // required: "请输入img",
                     url: "请输入正确的图片地址"
                 },
                 wordpress: {
@@ -516,20 +516,20 @@ define([
             },
             rules: {
                 step: {
-                    required: true,
+                    // required: true,
                     number: true
                 },
                 tittle: {
-                    minlength: 5
+                    // minlength: 5
                 },
                 descTop: {
-                    minlength: 2
+                    // minlength: 2
                 },
                 img: {
                     url: true
                 },
                 wordpress: {
-                    minlength: 20
+                    // minlength: 20
                 },
                 descBottom: {
                     minlength: 2
@@ -537,23 +537,23 @@ define([
             },
             messages: {
                 step: {
-                    required: "请输入步骤",
+                    // required: "请输入步骤",
                     number: "请输入数字"
                 },
                 tittle: {
-                    minlength: "标题必需由五个字符组成"
+                    // minlength: "标题必需由五个字符组成"
                 },
                 descTop: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 img: {
                     url: "请输入正确的图片地址"
                 },
                 wordpress: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 descBottom: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 }
             }
         });
@@ -590,19 +590,19 @@ define([
                     number: true
                 },
                 tittle: {
-                    minlength: 5
+                    // minlength: 5
                 },
                 descTop: {
-                    minlength: 2
+                    // minlength: 2
                 },
                 img: {
                     url: true
                 },
                 wordpress: {
-                    minlength: 20
+                    // minlength: 20
                 },
                 descBottom: {
-                    minlength: 2
+                    // minlength: 2
                 }
             },
             messages: {
@@ -610,19 +610,19 @@ define([
                     number: "请输入数字"
                 },
                 tittle: {
-                    minlength: "标题必需由五个字符组成"
+                    // minlength: "标题必需由五个字符组成"
                 },
                 descTop: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 img: {
                     url: "请输入正确的图片地址"
                 },
                 wordpress: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 descBottom: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 }
             }
         });
@@ -660,19 +660,19 @@ define([
                     number: true
                 },
                 tittle: {
-                    minlength: 5
+                    // minlength: 5
                 },
                 descTop: {
-                    minlength: 2
+                    // minlength: 2
                 },
                 img: {
                     url: true
                 },
                 wordpress: {
-                    minlength: 20
+                    // minlength: 20
                 },
                 descBottom: {
-                    minlength: 2
+                    // minlength: 2
                 }
             },
             messages: {
@@ -680,19 +680,19 @@ define([
                     number: "请输入数字"
                 },
                 tittle: {
-                    minlength: "标题必需由五个字符组成"
+                    // minlength: "标题必需由五个字符组成"
                 },
                 descTop: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 img: {
                     url: "请输入正确的图片地址"
                 },
                 wordpress: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 descBottom: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 }
             }
         });
@@ -730,19 +730,19 @@ define([
                     number: true
                 },
                 tittle: {
-                    minlength: 5
+                    // minlength: 5
                 },
                 descTop: {
-                    minlength: 2
+                    // minlength: 2
                 },
                 img: {
                     url: true
                 },
                 wordpress: {
-                    minlength: 20
+                    // minlength: 20
                 },
                 descBottom: {
-                    minlength: 2
+                    // minlength: 2
                 }
             },
             messages: {
@@ -750,19 +750,19 @@ define([
                     number: "请输入数字"
                 },
                 tittle: {
-                    minlength: "标题必需由五个字符组成"
+                    // minlength: "标题必需由五个字符组成"
                 },
                 descTop: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 img: {
                     url: "请输入正确的图片地址"
                 },
                 wordpress: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 },
                 descBottom: {
-                    minlength: "关键字必需由两个字母组成"
+                    // minlength: "关键字必需由两个字母组成"
                 }
             }
         });

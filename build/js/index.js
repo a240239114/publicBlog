@@ -1,6 +1,7 @@
 define(["jquery", "template", "pagination", "lunbo"], function ($, template, pagination) {
     'use strict';
     $("a").css("text-decoration", "none");
+    // $(".desc .info").css({"margin-bottom":"0px"});
 
 
     //发起请求就执行,li之间的间距变小

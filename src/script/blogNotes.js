@@ -331,6 +331,7 @@ define([
 
 
                                 $("#infoSubmit").off("click");
+                                window.location.reload();
                             },
                             error: function () {
                                 // console.log(steps);

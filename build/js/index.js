@@ -49,22 +49,27 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
 
     //点击删除按钮 删除allList/allInfo/xxList/xxInfo
-    function reMove() {
+    function reMove(whereList,whereInfo) {
         $(".icon-jiahaocu").map(function (index, item) {
             $(item).on("click", function () {
-                console.log($(item).attr("data-where"));
-                console.log($(item).attr("data-tittle"));
+                // console.log($(item).attr("data-where"));
+                // console.log($(item).attr("data-tittle"));
                 var where = $(item).attr("data-where");
                 var tittle = $(item).attr("data-tittle");
-                console.log("api/allList/tittle/${tittle}==============>" + `api/allList/tittle/${tittle}`);
+                // console.log("api/allList/tittle/${tittle}==============>" + `api/allList/tittle/${tittle}`);
 
-                console.log("删除事件")
+
+                console.log(tittle)
+
+                console.log(whereList,whereInfo);
+
+                // console.log("删除事件")
                 //根据tittle删除 allList
                 $.ajax({
                     url: `api/allList/tittle/${tittle}`,
                     type: "delete",
                     success: function (res) {
-                        console.log(res);
+                        console.log("删除allList");
                     }
                 })
 
@@ -73,29 +78,31 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                     url: `api/allInfo/tittle/${tittle}`,
                     type: "delete",
                     success: function (res) {
-                        console.log(res);
+                        console.log("删除allInfo");
                     }
                 })
 
                 //根据tittle删除 whereList
                 $.ajax({
-                    url: `api/${where}List/tittle/${tittle}`,
+                    url: `api/${whereList}/tittle/${tittle}`,
                     type: "delete",
                     success: function (res) {
-                        console.log(res);
+                        console.log("删除whereList");
                     }
                 })
 
                 //根据tittle删除 whereInfo
                 $.ajax({
-                    url: `api/${where}Info/tittle/${tittle}`,
+                    url: `api/${whereInfo}/tittle/${tittle}`,
                     type: "delete",
                     success: function (res) {
-                        console.log(res);
+                        console.log("删除WhereInfo");
                     }
                 })
 
-                LoadPages(`${where}List`, `${where}Info`);
+   
+
+                LoadPages(whereList,whereInfo);
                 return false;
             })
         })
@@ -136,7 +143,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             // url: "api/"+where,
             type: "get",
             success: function (res) {
-                console.log("res.data===========>"+res.data);
+                console.log("res.data===========>" + res.data);
                 var html = template("paginnationTpl", {
                     data: res.data
                 })
@@ -148,7 +155,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             //添加跳转事件
             turnBlogListInfo(whereInfo);
             //添加删除事件
-            reMove();
+            reMove(where,whereInfo);
         })
 
         //初始化分页插件
@@ -182,7 +189,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
                         turnBlogListInfo(whereInfo);
                         //添加删除事件
-                        reMove();
+                        reMove(where,whereInfo);
                     })
                 }
             });
@@ -195,6 +202,12 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             loadPages();
         }
     }
+
+
+    //页面加载事件
+    //第一次加载页面的时候显示第一页
+    LoadPages('allList', "allInfo");
+
 
     //给770px以上的头部导航的a添加点击事件,加载不同的数据
     $(".navigation a").each(function (index, item) {
@@ -293,9 +306,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         return false;
     })
 
-    //页面加载事件
-    //第一次加载页面的时候显示第一页
-    // LoadPages('allList', "allInfo");
 
     var onceFlag = true;
 
@@ -483,7 +493,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                     "overflow-x": "hidden",
                     // "overflow-y": "hidden"
                 });
-        
+
                 $('body').css({
                     "overflow-x": "hidden",
                     // "overflow-y": "hidden"
@@ -544,16 +554,20 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     }
 
     //点击关于博客让删除按钮消失
-    $(".top:contains('关于博客')").on("click",function(event){
+    $(".top:contains('关于博客')").on("click", function (event) {
         // console.log("我是博客")
         event.stopPropagation();
-        $(".icon-jiahaocu").css({"display":"block"})
+        $(".icon-jiahaocu").css({
+            "display": "block"
+        })
     })
 
 
-    $(".body").on("click",function(){
+    $(".body").on("click", function () {
         // console.log("我是博客")
-        $(".icon-jiahaocu").css({"display":"none"})
+        $(".icon-jiahaocu").css({
+            "display": "none"
+        })
     })
 
 });

@@ -65,8 +65,8 @@ define([
         $("form.listSubmit").validate({
             submitHandler: function (form) { //表单验证插件,已经禁止默认刷新事件
                 console.log("提交前")
-                // console.log(ListCount == InfoCount)
-                // console.log(ListCount - 1 == InfoCount)
+                console.log(ListCount == InfoCount)
+                console.log(ListCount - 1 == InfoCount)
 
                 if (ListCount == InfoCount) {
                     // ListCount++;
@@ -243,7 +243,7 @@ define([
                     $(".steps .form-horizontal").each(function (i, item) {
                         // console.log(item);
                         if ($(item).serialize().length == 51) return
-                        // console.log(" $(item).serialize()=======>" + $(item).serializeArray());
+                        console.log(" $(item).serialize()=======>" + $(item).serializeArray());
                         //把序列化后的step存放在steps数组中
                         steps.push(transData($(item).serializeArray()));
                     })
@@ -257,67 +257,89 @@ define([
                         var Data = transData($("form.infoSubmit").serializeArray());
                         //添加steps属性
                         Data.steps = steps;
-                        // console.log(Data);
+                        console.log(Data);
                         var whereData = Data;
                         whereData.where = where;
-                        // console.log(whereData);
+                        console.log(whereData);
+
+                        $.ajax({ //提交到allInfo
+                            url: "/api/allInfo",
+                            type: "POST",
+                            data: whereData,
+                            beforeSend: function () {
+                                // 解绑事件,用户再次点击就不会对用户的操作有任何反应
+                                // $("#infoSubmit").off("click");
+                                // alert("数据已经提交，请耐心等待");
+                            },
+                            success: function (res) {
+                                InfoCount++;
+                                console.log("InfoCount in allInfo ajax=======>"+InfoCount)
+
+                                console.log(ListCount == InfoCount)
+                                console.log(ListCount - 1 == InfoCount)
+                                // alert(res.msg);
+                                // window.location.href = "/blogNotes?首页";
+                                // 再次绑定事件，上一次数据提交到服务器后，用户可以再次提交数据
+                                // $("#infoSubmit").bind("click", submitUserInfo);
+                                // counts = counts + 1;
+                                //清除内容
+                                $('form.infoSubmit')[0].reset();
+                                $(".steps .step1")[0].reset();
+                                $(".steps .step2")[0].reset();
+                                $(".steps .step3")[0].reset();
+                                $(".steps .step4")[0].reset();
+                                $(".steps .step5")[0].reset();
+                                // window.location.reload();  
+                                $("form.infoSubmit input[type='text']").val("").focus();
+                                $("form.listSubmit textarea").val("");
 
 
-
-                        var p1 = new Promise(function (resolve, reject) {
-                            console.log(whereData);
-                            $.ajax({ //提交到allInfo
-                                url: "/api/allInfo",
-                                type: "POST",
-                                data: whereData,
-                                success:function(res){
-                                    resolve(res);
-                                }
-                            })
-                        })
-
-
-                        var p2 = new Promise(function (resolve, reject) {
-                            console.log(where,Data);
-                            $.ajax({ //提交到where
-                                url: "/api/" + where + "Info",
-                                type: "POST",
-                                data: Data,
-                                success:function(res){
-                                    resolve(res);
-                                }
-                            })
-                        })
-
-
-                        Promise.all([p1, p2]).then(res => {
-                            InfoCount++;
-
-                            var [res1, res2] = res;
-                            console.log(res1, res2);
-
-
-                            //清除内容
-                            $('form.infoSubmit')[0].reset();
-                            $(".steps .step1")[0].reset();
-                            $(".steps .step2")[0].reset();
-                            $(".steps .step3")[0].reset();
-                            $(".steps .step4")[0].reset();
-                            $(".steps .step5")[0].reset();
-                            // window.location.reload();  
-                            $("form.infoSubmit input[type='text']").val("").focus();
-                            $("form.listSubmit textarea").val("");
-
-
-                            $("#infoSubmit").off("click");
-                            
-                            if (location.href.indexOf("#reloaded") == -1) {
-                                location.href = location.href + "#reloaded";
-                                location.reload();
+                                $("#infoSubmit").off("click");
+                            },
+                            error: function () {
+                                // console.log(steps);
+                                console.log("allInfo失败")
                             }
-
-                            // console.log("详情都提交完成")
                         })
+
+
+
+                        $.ajax({ //提交到where
+                            url: "/api/" + where + "Info",
+                            type: "POST",
+                            data: Data,
+                            beforeSend: function () {
+                                // 解绑事件,用户再次点击就不会对用户的操作有任何反应
+                                // $("#infoSubmit").off("click");
+                            },
+                            success: function (res) {
+                                // alert(res.msg);
+                                // window.location.href = "/blogNotes?首页";
+                                // 再次绑定事件，上一次数据提交到服务器后，用户可以再次提交数据
+                                // $("#infoSubmit").bind("click", submitUserInfo);
+                                // counts = counts + 1;
+                                //清除内容
+                                $('form.infoSubmit')[0].reset();
+                                $(".steps .step1")[0].reset();
+                                $(".steps .step2")[0].reset();
+                                $(".steps .step3")[0].reset();
+                                $(".steps .step4")[0].reset();
+                                $(".steps .step5")[0].reset();
+                                $("form.infoSubmit input[type='text']").val("").focus();
+                                $("form.listSubmit textarea").val("");
+
+
+
+                                $("#infoSubmit").off("click");
+                                window.location.reload();
+                            },
+                            error: function () {
+                                // console.log(steps);
+                                console.log("whereInfo失败")
+                            }
+                        })
+
+
 
                     }
 

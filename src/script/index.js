@@ -51,13 +51,18 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     //点击删除按钮 删除allList/allInfo/xxList/xxInfo
     function reMove(whereList,whereInfo) {
         $(".icon-jiahaocu").map(function (index, item) {
-            $(item).on("click", function () {
+            $(item).on("click", function (event) {
+                event.stopPropagation();
                 // console.log($(item).attr("data-where"));
                 // console.log($(item).attr("data-tittle"));
-                var where = $(item).attr("data-where");
+                var whereData = $(item).attr("data-where");
                 var tittle = $(item).attr("data-tittle");
                 // console.log("api/allList/tittle/${tittle}==============>" + `api/allList/tittle/${tittle}`);
 
+                 if( whereData.length != 0){
+                    whereList = whereData+"List";
+                    whereInfo = whereData+"Info";
+                 }
 
                 console.log(tittle)
 

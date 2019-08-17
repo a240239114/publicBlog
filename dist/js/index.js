@@ -129,8 +129,15 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         var listCount = count.data.length;
         count = Math.ceil(count.data.length / 8);
 
+        console.log("listCount=====>"+listCount)
 
-        // console.log(count);
+        if(listCount<8){
+            $("#pagination").css({"display":"none"})
+        }else{
+            loadPages(where,whereInfo);
+        }
+
+
         //根据路由获取where
         if (window.location.search.length == 22 && onceFlag) {
             var whereParms = window.location.href.split('?')[1].split('L')[0];
@@ -139,10 +146,8 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             onceFlag = false;
         }
 
-        // console.log("where=====>" + where);
-
-        // $('.screen').css("transform", "translate(-50%)");
-
+       
+   
 
         //默认显示第一页
         $.ajax({
@@ -150,7 +155,9 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             // url: "api/"+where,
             type: "get",
             success: function (res) {
-                // console.log("res.data===========>" + res.data);
+                console.log("where======>"+where);
+                console.log("whereInfo======>"+whereInfo);
+                console.log("res.data===========>" + res.data);
                 var html = template("paginnationTpl", {
                     data: res.data
                 })
@@ -204,10 +211,10 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
         // console.log(listCount);
 
-        if (listCount >= 8) { //初始化分页插件
-            // console.log("111111111111");
-            loadPages();
-        }
+        // if (listCount >= 8) { //初始化分页插件
+        //     // console.log("111111111111");
+        //     loadPages();
+        // }
     }
 
 

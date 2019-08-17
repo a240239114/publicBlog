@@ -2,6 +2,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     'use strict';
     $("a").css("text-decoration", "none");
 
+
     //发起请求就执行,li之间的间距变小
     $(document).ajaxStart(function () {});
 
@@ -49,7 +50,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
 
     //点击删除按钮 删除allList/allInfo/xxList/xxInfo
-    function reMove(whereList,whereInfo) {
+    function reMove(whereList, whereInfo) {
         $(".icon-jiahaocu").map(function (index, item) {
             $(item).on("click", function (event) {
                 event.stopPropagation();
@@ -59,14 +60,15 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                 var tittle = $(item).attr("data-tittle");
                 // console.log("api/allList/tittle/${tittle}==============>" + `api/allList/tittle/${tittle}`);
 
-                 if( whereData.length != 0){
-                    whereList = whereData+"List";
-                    whereInfo = whereData+"Info";
-                 }
 
-                console.log(tittle)
+                if (whereData.length != 0) {
+                    whereList = whereData + "List";
+                    whereInfo = whereData + "Info";
+                }
 
-                console.log(whereList,whereInfo);
+                // console.log(tittle)
+
+                // console.log(whereList,whereInfo);
 
                 // console.log("删除事件")
                 //根据tittle删除 allList
@@ -105,9 +107,9 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                     }
                 })
 
-   
 
-                LoadPages(whereList,whereInfo);
+
+                LoadPages(whereList, whereInfo);
                 return false;
             })
         })
@@ -126,7 +128,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         var listCount = count.data.length;
         count = Math.ceil(count.data.length / 8);
 
-        console.log("onceFlag======>" + onceFlag)
 
         // console.log(count);
         //根据路由获取where
@@ -137,7 +138,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             onceFlag = false;
         }
 
-        console.log("where=====>" + where);
+        // console.log("where=====>" + where);
 
         // $('.screen').css("transform", "translate(-50%)");
 
@@ -148,19 +149,19 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             // url: "api/"+where,
             type: "get",
             success: function (res) {
-                console.log("res.data===========>" + res.data);
+                // console.log("res.data===========>" + res.data);
                 var html = template("paginnationTpl", {
                     data: res.data
                 })
                 $(".knowledgeList").html(html);
             }
         }).done(function () {
-            console.log("whereInfo=====>" + whereInfo);
+            // console.log("whereInfo=====>" + whereInfo);
 
             //添加跳转事件
             turnBlogListInfo(whereInfo);
             //添加删除事件
-            reMove(where,whereInfo);
+            reMove(where, whereInfo);
         })
 
         //初始化分页插件
@@ -188,13 +189,13 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
                             })
                             $(".knowledgeList").html(html);
                             // console.log("res.data.length=====>" + res.data.length)
-                            console.log(res);
+                            // console.log(res);
                         }
                     }).done(function () {
 
                         turnBlogListInfo(whereInfo);
                         //添加删除事件
-                        reMove(where,whereInfo);
+                        reMove(where, whereInfo);
                     })
                 }
             });
@@ -218,11 +219,11 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     $(".navigation a").each(function (index, item) {
         $(item).on("click", function () {
             // window.location.href = '/';
-            console.log("向左移动")
+            // console.log("向左移动")
 
             var whereList = $(item).attr("data-where");
             var whereinfo = $(item).attr("data-whereinfo");
-            console.log(whereinfo + "=========" + whereList);
+            // console.log(whereinfo + "=========" + whereList);
             $('.screen').css("transform", "translate(-50%)");
             LoadPages(whereList, whereinfo);
         })
@@ -234,7 +235,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             var whereList = $(item).attr("data-where");
             var whereinfo = $(item).attr("data-whereinfo");
             event.stopPropagation();
-            console.log("Aside侧边栏事件")
+            // console.log("Aside侧边栏事件")
             LoadPages(whereList, whereinfo);
             $(".youxiao").css("transform", "translate(-40vw)");
             document.body.style.position = 'initial';
@@ -275,7 +276,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             // console.log('2222');
             $(".youxiao").on('click', function (event) {
                 // console.log('11111');
-                console.log("全屏事件")
+                // console.log("全屏事件")
                 event.stopPropagation();
                 $(".youxiao").css("transform", "translate(-40vw)");
 
@@ -289,9 +290,9 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
                 var whereList = $($(".knowledgeList li")[0]).attr("data-where") + "List";
                 var whereInfo = $($(".knowledgeList li")[0]).attr("data-where") + "Info";
-                console.log(whereList, whereInfo, num);
+                // console.log(whereList, whereInfo, num);
                 if (num == 0) {
-                    console.log(whereList, whereInfo, num);
+                    // console.log(whereList, whereInfo, num);
                     //重新加载页面
                     LoadPages(whereList, whereInfo);
                     num = 1;
@@ -318,7 +319,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     if (window.location.search) {
         // $(".bewater").css({"width":0});
         // console.log("search");
-        // onceFlag = false;
         $(".screen").css({
             "transform": "translate(-50%)"
         })
@@ -345,7 +345,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         });
         return false;
     }).on("mouseenter", function () {
-        console.log("鼠标划过事件")
+        // console.log("鼠标划过事件")
         $("a").css("text-decoration", "none");
     })
 
@@ -365,14 +365,14 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     })
 
     $("main").scroll(function () {
-        console.log("scroll")
+        // console.log("scroll")
     })
 
 
 
     //点击收索框 收索框消失 执行收索功能
     $('.input-group-btn').on('click', function () {
-        console.log('2222222');
+        // console.log('2222222');
         //收索框消失
         $('.row').css({
             "display": "none"
@@ -380,7 +380,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
         //获取输入框的内容
         var keywords = $(".form-control").val();
-        console.log("keywords======>" + keywords)
+        // console.log("keywords======>" + keywords)
 
         //加载数据
         LoadPages(`relatedArticleList/${keywords}`, "allInfo")
@@ -477,7 +477,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         // var left = -0.545*viewWidth;
         var left = -0.56 * viewWidth;
 
-        console.log("leftImportant===========>" + left)
+        // console.log("leftImportant===========>" + left)
 
 
         $(".mp").animate({
@@ -485,7 +485,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         });
 
         $(".mp-toggle").on("click", function () {
-            console.log("播放器点击事件  count=====>" + count);
+            // console.log("播放器点击事件  count=====>" + count);
 
             if (count % 2 != 0) { //奇数
                 $(".mp").animate({
@@ -525,7 +525,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         // var left = -0.545*viewWidth;
         var left = -(574 - 0.4 * viewWidth);
 
-        console.log("leftImportant===========>" + left)
+        // console.log("leftImportant===========>" + left)
 
 
         $(".mp").animate({
@@ -533,7 +533,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         });
 
         $(".mp-toggle").on("click", function () {
-            console.log("播放器点击事件  count=====>" + count);
+            // console.log("播放器点击事件  count=====>" + count);
 
             if (count % 2 != 0) { //奇数
                 $(".mp").animate({

@@ -60,14 +60,14 @@ setEffects(player);
 		evt = "onorientationchange" in window ? "orientationchange" : "resize",
 		fn = function () {
 			var width = docEle.clientWidth;
-			console.log("视口宽度====>"+width)
+			// console.log("视口宽度====>"+width)
 			// width = width < 320 ? 320 : width;
 			width = width > 599 ? 599 : width;
 			width && (docEle.style.fontSize = 100 * (width / 599) + "px");
 
-			console.log("根元素的font-size====>"+docEle.style.fontSize)
+			// console.log("根元素的font-size====>"+docEle.style.fontSize)
 			var proportion =   parseInt(docEle.style.fontSize) / 100;
-			console.log("proportion======>"+proportion)
+			// console.log("proportion======>"+proportion)
 
 			if(docEle.clientWidth<599){
 				$(".mp-info").css({"transform":`scale(${proportion},${proportion})`})

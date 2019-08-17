@@ -3,12 +3,22 @@ define([
     'validate',
     'jqueryform'
 ], function ($, validate, jqueryform) {
-    var posturl = '192.168.31.93:8000';
-
-    var infoAndListSubmitAll = true;
 
     //提交数据
     async function submitData(where) {
+
+        const date = new Date();
+        const current_date = date.getDate();
+        const current_month = date.getMonth() + 1;
+        const current_year = date.getFullYear();
+        var dateNow = current_year+'-'+current_month+'-'+current_date;
+        console.log("dateNow==========>"+dateNow);
+
+        $("#date").val(dateNow);
+        $(".form-group #date").val(dateNow);
+    
+        $("#date").val(dateNow);
+        $(".form-group #date").val(dateNow);
 
 
 
@@ -71,7 +81,7 @@ define([
                 if (ListCount == InfoCount) {
                     // ListCount++;
                     var counts = 0;
-                    infoAndListSubmitAll = false;
+                    // infoAndListSubmitAll = false;
                     // console.log("infoAndListSubmitAll=====>" + infoAndListSubmitAll);
 
                     function submitUserInfo() {

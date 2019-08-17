@@ -6,6 +6,28 @@ define([
 
     //提交数据
     async function submitData(where) {
+         if(where == 'texiao'){
+             var image = 'http://puv6112u1.bkt.clouddn.com/%E6%8F%92%E4%BB%B6.jpg';
+             $(".form-group #showImg").val(image);
+         } else if(where == "H5C3") {
+            var image = 'http://puv6112u1.bkt.clouddn.com/h5c3.jpg';
+            $(".form-group #showImg").val(image);
+        } else if(where == "js") {
+            var image = 'http://puv6112u1.bkt.clouddn.com/js.jpg';
+            $(".form-group #showImg").val(image);
+        } else if(where == "vueCli") {
+            var image = 'http://puv6112u1.bkt.clouddn.com/vue.jpg';
+            $(".form-group #showImg").val(image);
+        } else if(where == "es6") {
+            var image = 'http://puv6112u1.bkt.clouddn.com/es6.jpg';
+            $(".form-group #showImg").val(image);
+        } else if(where == "bug") {
+            var image = 'http://puv6112u1.bkt.clouddn.com/bug.jpg';
+            $(".form-group #showImg").val(image);
+        }
+
+        // console.log(image);
+
 
         const date = new Date();
         const current_date = date.getDate();

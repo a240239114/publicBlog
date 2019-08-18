@@ -129,12 +129,14 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         var listCount = count.data.length;
         count = Math.ceil(count.data.length / 8);
 
-        console.log("listCount=====>"+listCount)
+        console.log("listCount=====>" + listCount)
 
-        if(listCount<8){
-            $("#pagination").css({"display":"none"})
-        }else{
-            loadPages(where,whereInfo);
+        if (listCount < 8) {
+            $("#pagination").css({
+                "display": "none"
+            })
+        } else {
+            loadPages(where, whereInfo);
         }
 
 
@@ -146,8 +148,8 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             onceFlag = false;
         }
 
-       
-   
+
+
 
         //默认显示第一页
         $.ajax({
@@ -155,8 +157,8 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             // url: "api/"+where,
             type: "get",
             success: function (res) {
-                console.log("where======>"+where);
-                console.log("whereInfo======>"+whereInfo);
+                console.log("where======>" + where);
+                console.log("whereInfo======>" + whereInfo);
                 console.log("res.data===========>" + res.data);
                 var html = template("paginnationTpl", {
                     data: res.data
@@ -216,11 +218,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         //     loadPages();
         // }
     }
-
-
-    //页面加载事件
-    //第一次加载页面的时候显示第一页
-    LoadPages('allList', "allInfo");
 
 
     //给770px以上的头部导航的a添加点击事件,加载不同的数据
@@ -324,16 +321,22 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     var onceFlag = true;
 
     //blogNotes页面跳转过来加载分页区域,则无需bewater,根据search加载数据
-    if (window.location.search) {
+    if (window.location.search != "") {
         // $(".bewater").css({"width":0});
         // console.log("search");
         $(".screen").css({
             "transform": "translate(-50%)"
         })
-        var where = decodeURIComponent(window.location.search).slice(1, 8);
-        var whereInfo = decodeURIComponent(window.location.search).slice(9, 16);
+        var where = window.location.search.split("&")[0].slice(1);
+        var whereInfo = window.location.search.split("&")[1];
         LoadPages(where, whereInfo);
+    } else {
+        //页面加载事件
+        //第一次加载页面的时候显示第一页
+        LoadPages('allList', "allInfo");
     }
+
+
 
 
     if (document.body.clientWidth <= 770 && window.location.search) {

@@ -24,6 +24,9 @@ define([
         } else if(where == "bug") {
             var image = 'http://publicblogsource.gjxbewater.cn/bug.jpg';
             $(".form-group #showImg").val(image);
+        }else if(where == "point") {
+            var image = 'http://publicblogsource.gjxbewater.cn/point.jpg';
+            $(".form-group #showImg").val(image);
         }
 
         // console.log(image);
@@ -79,18 +82,20 @@ define([
 
 
         var ListCount = await $.ajax({
-            url: `/api/${where}List/count/count`,
+            url: `/api/allList/count/count`,
             type: "get"
         });
         ListCount = ListCount.data;
 
 
         var InfoCount = await $.ajax({
-            url: `/api/${where}Info/count/count`,
+            url: `/api/allInfo/count/count`,
             type: "get"
         });
         InfoCount = InfoCount.data;
 
+        // console.log("ListCount====>"+ListCount)
+        // console.log("InfoCount====>"+InfoCount)
 
 
         //listSubmit
@@ -238,7 +243,7 @@ define([
             }
         });
 
-        console.log("ListCount - 1 == InfoCount======>"+(ListCount - 1 == InfoCount))
+        // console.log("ListCount - 1 == InfoCount======>"+(ListCount - 1 == InfoCount))
 
         //infoSubmit
         $("form.infoSubmit").validate({
@@ -790,7 +795,9 @@ define([
         submitData('es6');
     } else if (type == "BUG") {
         submitData('bug');
-    } else { //回到主页
+    } else if (type == "point") {
+        submitData('point');
+    }else { //回到主页
         window.location.href = "./index";
     }
 

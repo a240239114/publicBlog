@@ -7,22 +7,22 @@ define([
     //提交数据
     async function submitData(where) {
          if(where == 'texiao'){
-             var image = 'http://puv6112u1.bkt.clouddn.com/%E6%8F%92%E4%BB%B6.jpg';
+             var image = 'http://publicblogsource.gjxbewater.cn/%E6%8F%92%E4%BB%B6.jpg';
              $(".form-group #showImg").val(image);
          } else if(where == "H5C3") {
-            var image = 'http://puv6112u1.bkt.clouddn.com/h5c3.jpg';
+            var image = 'http://publicblogsource.gjxbewater.cn/h5c3.jpg';
             $(".form-group #showImg").val(image);
         } else if(where == "js") {
-            var image = 'http://puv6112u1.bkt.clouddn.com/js.jpg';
+            var image = 'http://publicblogsource.gjxbewater.cn/js.jpg';
             $(".form-group #showImg").val(image);
         } else if(where == "vueCli") {
-            var image = 'http://puv6112u1.bkt.clouddn.com/vue.jpg';
+            var image = 'http://publicblogsource.gjxbewater.cn/vue.jpg';
             $(".form-group #showImg").val(image);
         } else if(where == "es6") {
-            var image = 'http://puv6112u1.bkt.clouddn.com/config.jpg';
+            var image = 'http://publicblogsource.gjxbewater.cn/config.jpg';
             $(".form-group #showImg").val(image);
         } else if(where == "bug") {
-            var image = 'http://puv6112u1.bkt.clouddn.com/bug.jpg';
+            var image = 'http://publicblogsource.gjxbewater.cn/bug.jpg';
             $(".form-group #showImg").val(image);
         }
 
@@ -237,6 +237,8 @@ define([
                 }
             }
         });
+
+        console.log("ListCount - 1 == InfoCount======>"+(ListCount - 1 == InfoCount))
 
         //infoSubmit
         $("form.infoSubmit").validate({

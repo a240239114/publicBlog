@@ -10,6 +10,8 @@ define([
     console.log("whereInfo=====>"+whereInfo);
     console.log("where=====>"+where)
 
+    $(".blogListMain").css({"width":"1420px"})
+
     if (whereInfo == undefined) {
         whereInfo == "allInfo"
     }

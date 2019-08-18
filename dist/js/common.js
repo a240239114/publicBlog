@@ -10,6 +10,7 @@ define(["jquery", "template"], function ($, template) {
     });
 
 
+
     //770px以下 点击分类按钮 分类出来
     var flag = false;
     $(".icon-fenlei").on('click', function () {

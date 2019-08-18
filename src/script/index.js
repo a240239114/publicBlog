@@ -405,7 +405,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     //其他页面跳转过来时的收索功能
     if (window.location.search.split("=")[0].slice(1) == "keywords") {
         var keywords = window.location.search.split("=")[1];
-        LoadPages(`relatedArticleList/${keywords}`, "allInfo");
+        LoadPages(`relatedArticleList/${keywords}`,"allInfo");
     }
 
 

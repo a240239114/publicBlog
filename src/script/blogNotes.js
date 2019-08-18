@@ -18,6 +18,7 @@ define([
         } else if(where == "vueCli") {
             var image = 'http://publicblogsource.gjxbewater.cn/vue.jpg';
             $(".form-group #showImg").val(image);
+            $($(".steps #tittle")[0]).val("Code");
         } else if(where == "es6") {
             var image = 'http://publicblogsource.gjxbewater.cn/config.jpg';
             $(".form-group #showImg").val(image);
@@ -87,6 +88,7 @@ define([
         });
         ListCount = ListCount.data;
 
+        
 
         var InfoCount = await $.ajax({
             url: `/api/allInfo/count/count`,
@@ -94,8 +96,10 @@ define([
         });
         InfoCount = InfoCount.data;
 
-        // console.log("ListCount====>"+ListCount)
-        // console.log("InfoCount====>"+InfoCount)
+        // ListCount = 1;
+        // InfoCount = 0;
+        console.log("ListCount====>"+ListCount)
+        console.log("InfoCount====>"+InfoCount)
 
 
         //listSubmit

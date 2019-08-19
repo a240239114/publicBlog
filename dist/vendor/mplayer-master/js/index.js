@@ -72,8 +72,8 @@ setEffects(player);
 			if(docEle.clientWidth<599){
 				$(".mp-info").css({"transform":`scale(${proportion},${proportion})`})
 				$(".mp-info").css({"position":"absolute"})
-				$(".mp-info").css({"left":"0.98rem"})
-				$(".mp-info").css({"top":"-0.15rem"})
+				$(".mp-info").css({"left":"1.1rem"})
+				$(".mp-info").css({"top":"0.06rem"})
 			}
 
 			// window.location.reload()

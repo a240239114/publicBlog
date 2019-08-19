@@ -402,10 +402,20 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     })
 
 
+   //enter执行收索功能
+    $(document).keydown(function (event) {
+        if (event.keyCode == 13) {
+            $('.input-group-btn').click();
+            console.log("enter事件")
+        }
+    });
+
+
+
     //其他页面跳转过来时的收索功能
     if (window.location.search.split("=")[0].slice(1) == "keywords") {
         var keywords = window.location.search.split("=")[1];
-        LoadPages(`relatedArticleList/${keywords}`,"allInfo");
+        LoadPages(`relatedArticleList/${keywords}`, "allInfo");
     }
 
 

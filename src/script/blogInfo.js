@@ -85,6 +85,9 @@ define([
                 }
             }).done(function () {
 
+                $(".left1 p").css({"margin-bottom":"0px"});
+                $(".step").css({"margin-top":"20px"});
+
                 //提交评论
                 $("#button").on("click", function () {
 
@@ -117,6 +120,8 @@ define([
 
 
     LoadPages(whereInfo, id);
+
+
 
 
 });

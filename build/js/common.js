@@ -264,19 +264,39 @@ define(["jquery", "template"], function ($, template) {
         "outline": "none"
     });
 
-    $(window).resize(function () {
-        // console.log("11111")
-        window.location.reload();
+
+    if ($(window).width() > 770) { //test
+        console.log("视口变化刷新")
+        $(window).resize(function () {
+            window.location.reload();
+        });
+
+    }
+
+
+    $("textarea").css({
+        "height": "200px"
     });
-
-
-    $("textarea").css({"height":"200px"});
     $(".btn-success").css('box-shadow', "0px 0px 0px #1e90ff");
-    $($("textarea").toArray()[0]).css({"margin-bottom":"20px"});
-    $($(".btn-success").toArray()[1]).css({"margin-top":"40px"});
-    $($(".btn-success").toArray()[2]).css({"margin-top":"-30px"});
-    $(".form-group").css({"margin-top":"0px"});
-    $(".form-group").css({"margin-bottom":"25px"});
-    $(".blogIntroduce p").css({"margin-bottom":"20px"});
-    $("dl, ol, ul").css({"margin-bottom":"0px"});
+    $($("textarea").toArray()[0]).css({
+        "margin-bottom": "20px"
+    });
+    $($(".btn-success").toArray()[1]).css({
+        "margin-top": "40px"
+    });
+    $($(".btn-success").toArray()[2]).css({
+        "margin-top": "-30px"
+    });
+    $(".form-group").css({
+        "margin-top": "0px"
+    });
+    $(".form-group").css({
+        "margin-bottom": "25px"
+    });
+    $(".blogIntroduce p").css({
+        "margin-bottom": "20px"
+    });
+    $("dl, ol, ul").css({
+        "margin-bottom": "0px"
+    });
 });

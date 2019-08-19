@@ -1842,7 +1842,7 @@ nav .container .introduce {
   .blogListMain .left1 .share .bottom {
     width: 200px;
     height: 50px;
-    margin: 20px auto;
+    margin: 30px auto;
     display: flex;
     position: relative;
   }
@@ -1967,9 +1967,11 @@ nav .container .introduce {
     justify-content: space-around;
   }
   .blogListMain .left1 .relatedArticles .article li {
-    width: 22%;
+    width: 88%;
     position: relative;
+    margin-bottom: 15px;
     transition: all 3s;
+    border-radius: 37px;
     font-size: 14px;
   }
   .blogListMain .left1 .relatedArticles .article li .active {

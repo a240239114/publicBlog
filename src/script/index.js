@@ -337,8 +337,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     }
 
 
-
-
     if (document.body.clientWidth <= 770 && window.location.search) {
         // window.location.reload();
         $(".screen").css({
@@ -583,9 +581,9 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     $(".top:contains('关于博客')").on("click", function (event) {
         // console.log("我是博客")
         event.stopPropagation();
-        $(".icon-jiahaocu").css({
-            "display": "block"
-        })
+        // $(".icon-jiahaocu").css({
+        //     "display": "block"
+        // })
     })
 
 

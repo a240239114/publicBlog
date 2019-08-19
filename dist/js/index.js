@@ -4,6 +4,23 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     // $(".desc .info").css({"margin-bottom":"0px"});
 
 
+
+    $.get('../getIp.php', function (xhr) {
+        // alert(xhr['ip']);
+        var userIp = xhr['ip'];
+
+        console.log("userIp != '192.168.31.93'========>" + (userIp != '192.168.31.93'));
+
+        if (userIp != '192.168.31.93') {
+            $(".introduce").css({
+                "display": "none"
+            })
+        }
+    }, 'json');
+
+
+
+
     //发起请求就执行,li之间的间距变小
     $(document).ajaxStart(function () {});
 
@@ -266,6 +283,15 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         });
 
 
+
+        $(".body").css({
+            "overflow-y": "hidden"
+        })
+        $(".youxiao").css({
+            "overflow-y": "auto"
+        })
+
+
     })
 
 
@@ -400,7 +426,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     })
 
 
-   //enter执行收索功能
+    //enter执行收索功能
     $(document).keydown(function (event) {
         if (event.keyCode == 13) {
             $('.input-group-btn').click();
@@ -440,13 +466,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     });
 
 
-    if (viewWidth > 770 && viewWidth < 1200) {
-        var left = viewWidth - 557;
-
-        $(".mp").css({
-            left: `${left}px`
-        });
-    }
 
     if (viewWidth <= 770) {
 
@@ -593,5 +612,26 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             "display": "none"
         })
     })
+
+
+    console.log(viewWidth)
+    if (viewWidth > 770 && viewWidth < 1200) {
+        var left = viewWidth - 557;
+        $(".mp").css({
+            left: `${left}px`
+        });
+    }
+
+
+    $(".body").css({
+        "overflow-y": "hidden"
+    })
+    $(".youxiao").css({
+        "overflow-y": "auto"
+    })
+
+
+
+
 
 });

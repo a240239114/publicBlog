@@ -6,9 +6,9 @@ define([
     var id = window.location.search.match(/\d+/g)[0];
     var whereInfo = window.location.search.match(/&.*/g)[0].slice(1);
     var where = window.location.search.match(/&.*/g)[0].split("I")[0].slice(1);
-    console.log("id=====>"+id);
-    console.log("whereInfo=====>"+whereInfo);
-    console.log("where=====>"+where)
+    // console.log("id=====>"+id);
+    // console.log("whereInfo=====>"+whereInfo);
+    // console.log("where=====>"+where)
 
     var viewWidth = $(window).width();
     if(viewWidth>1200){

@@ -196,7 +196,7 @@ define(["jquery", "template"], function ($, template) {
     if (window.location.search.length != 0 || window.location.pathname.length == 9) {
         //点击收索框 收索框消失 执行收索功能
         $('.input-group-btn').on('click', function () {
-            console.log('2222222');
+            // console.log('2222222');
 
 
             //收索框消失
@@ -208,10 +208,10 @@ define(["jquery", "template"], function ($, template) {
             var keywords = $(".form-control").val();
             //页面跳转到主页带参数
 
-            console.log("keywords======>" + keywords)
+            // console.log("keywords======>" + keywords)
 
 
-            //清空文本框
+            //清空文本框asdasd
             $(".form-control").val('')
 
             if (window.location.search.length != 0 || window.location.pathname.length == 9) {
@@ -220,6 +220,14 @@ define(["jquery", "template"], function ($, template) {
 
             return false;
         })
+
+        //enter执行收索功能
+        $(document).keydown(function (event) {
+            if (event.keyCode == 13) {
+                $('.input-group-btn').click();
+                console.log("enter事件")
+            }
+        });
     }
 
 
@@ -299,4 +307,5 @@ define(["jquery", "template"], function ($, template) {
     $("dl, ol, ul").css({
         "margin-bottom": "0px"
     });
+
 });

@@ -2,6 +2,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     'use strict';
     $("a").css("text-decoration", "none");
     // $(".desc .info").css({"margin-bottom":"0px"});
+    var viewWidth = document.body.clientWidth;
 
 
 
@@ -281,18 +282,34 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             "overflow-x": "hidden",
             "overflow-y": "hidden"
         });
-
-
-
-        $(".body").css({
-            "overflow-y": "hidden"
-        })
-        $(".youxiao").css({
-            "overflow-y": "auto"
-        })
-
-
     })
+
+    if(viewWidth>770 && viewWidth<1200){
+        $(".bewater").on("click", function () {
+            // console.log("11111");;
+            $('.screen').css("transform", "translate(-50%)");
+            $('.youxiao').css({
+                "overflow-x": "hidden",
+                "overflow-y": "hidden"
+            });
+    
+            $('body').css({
+                "overflow-x": "hidden",
+                "overflow-y": "hidden"
+            });
+    
+    
+    
+            $(".body").css({
+                "overflow-y": "hidden"
+            })
+            $(".youxiao").css({
+                "overflow-y": "auto"
+            })
+    
+    
+        })
+    }
 
 
     //770以下的适配,点击分类按钮
@@ -444,7 +461,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
 
 
     //获取视口的宽度
-    var viewWidth = document.body.clientWidth;
+    
     var left = viewWidth - 574;
     // console.log("viewWidth======>" + viewWidth);
     // console.log("left======>" + left);

@@ -10,6 +10,8 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
         // alert(xhr['ip']);
         var userIp = xhr['ip'];
 
+        console.log(userIp);
+
         console.log("userIp != '192.168.31.93'========>" + (userIp != '192.168.31.93'));
 
         if (userIp != '192.168.31.93') {

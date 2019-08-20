@@ -3,6 +3,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     $("a").css("text-decoration", "none");
     // $(".desc .info").css({"margin-bottom":"0px"});
     var viewWidth = document.body.clientWidth;
+    $(".body").css({"overflow-y":"auto"});
 
 
     //发起请求就执行,li之间的间距变小
@@ -232,6 +233,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             // console.log(whereinfo + "=========" + whereList);
             $('.screen').css("transform", "translate(-50%)");
             LoadPages(whereList, whereinfo);
+            $(".body").css({"overflow-y":"auto"});
         })
     })
 
@@ -625,9 +627,7 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     }
 
 
-    $(".body").css({
-        "overflow-y": "hidden"
-    })
+
     $(".youxiao").css({
         "overflow-y": "auto"
     })

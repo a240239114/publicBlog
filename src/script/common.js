@@ -63,7 +63,7 @@ define(["jquery", "template"], function ($, template) {
         $(".ball").css({
             "display": "block"
         });
-        document.body.style.position = 'fixed';
+        // document.body.style.position = 'fixed';
     })
 
 
@@ -75,7 +75,7 @@ define(["jquery", "template"], function ($, template) {
             "display": "none"
         });
 
-        document.body.style.position = 'initial';
+        // document.body.style.position = 'initial';
     })
 
 

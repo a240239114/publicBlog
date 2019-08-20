@@ -265,6 +265,8 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
             "overflow-x": "hidden",
             "overflow-y": "hidden"
         });
+
+        $(".body").css({"overflow-y":"auto"});
     })
 
     if(viewWidth>770 && viewWidth<1200){

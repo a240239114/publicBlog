@@ -5,25 +5,6 @@ define(["jquery", "template", "pagination", "lunbo"], function ($, template, pag
     var viewWidth = document.body.clientWidth;
 
 
-
-    $.get('../getIp.php', function (xhr) {
-        // alert(xhr['ip']);
-        var userIp = xhr['ip'];
-
-        console.log(userIp);
-
-        console.log("userIp != '192.168.31.93'========>" + (userIp != '192.168.31.93'));
-
-        if (userIp != '192.168.31.93') {
-            $(".introduce").css({
-                "display": "none"
-            })
-        }
-    }, 'json');
-
-
-
-
     //发起请求就执行,li之间的间距变小
     $(document).ajaxStart(function () {});
 

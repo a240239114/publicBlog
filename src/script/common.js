@@ -63,11 +63,7 @@ define(["jquery", "template"], function ($, template) {
         $(".ball").css({
             "display": "block"
         });
-
-        //禁用滚动条
-        $(".body").css({
-            "overflow-y": "hidden"
-        });
+        document.body.style.position = 'fixed';
     })
 
 
@@ -79,11 +75,7 @@ define(["jquery", "template"], function ($, template) {
             "display": "none"
         });
 
-        //开启滚动条
-        $(".body").css({
-            "overflow-y": "auto"
-        });
-
+        document.body.style.position = 'initial';
     })
 
 

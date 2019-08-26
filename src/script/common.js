@@ -203,24 +203,31 @@ define(["jquery", "template"], function ($, template) {
             // console.log("keywords======>" + keywords)
 
 
-            //清空文本框asdasd
-            $(".form-control").val('')
 
-            if (window.location.search.length != 0 || window.location.pathname.length == 9) {
+
+            if ((window.location.search.length != 0 || window.location.pathname.length == 9) && keywords != '') {
+
+                //清空文本框asdasd
+                $(".form-control").val('')
                 window.location.href = `/index?keywords=${keywords}`;
             }
 
             return false;
         })
 
-        //enter执行收索功能
-        $(document).keydown(function (event) {
-            if (event.keyCode == 13) {
-                $('.input-group-btn').click();
-                console.log("enter事件")
-            }
-        });
+
     }
+
+
+
+    //enter执行收索功能
+    $(document).keydown(function (event) {
+        // var keywords = $(".form-control").val();
+        if (event.keyCode == 13) {
+            $('.input-group-btn').click();
+            console.log("enter事件")
+        }
+    });
 
 
     //720px以下(手机端) 关于博客的跳转事件

@@ -1,119 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="../src/vendor/jquery/dist/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="./index.css"> -->
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="../src/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="./index.js"></script>
+    </head>
 
-<body>
-
-
-    <script>
-        var p1 = new Promise(function (resolve, reject) {
-            $.ajax({
-                url: "http://publicBlogjiekou.gjxbewater.cn:8080/allInfo",
-                type: "GET",
-                success: function (res) {
-                    resolve(res);
-                }
-            })
-        })
-
-
-        var p2 = new Promise(function (resolve, reject) {
-            $.ajax({
-                url: "http://publicBlogjiekou.gjxbewater.cn:8080/allList",
-                type: "GET",
-                success: function (res) {
-                    resolve(res);
-                }
-            })
-        })
-
-
-        Promise.all([p1, p2]).then(res => {
-            var [res1, res2] = res;
-            console.log(res1, res2);
-
-            if (location.href.indexOf("#reloaded") == -1) {
-                location.href = location.href + "#reloaded";
-                location.reload();
-            }
-
-            // return Promise.resolve("三次回调");
-        })
-        // .then(res => {
-        //     if (location.href.indexOf("#reloaded") == -1) {
-        //         location.href = location.href + "#reloaded";
-        //         location.reload();
-        //     }
-        //     console.log(res)
-        // })
-    </script>
-
-
-
- <script>
-                        var p1 = new Promise(function (resolve, reject) {
-                            console.log(whereData);
-                            $.ajax({ //提交到allInfo
-                                url: "/api/allInfo",
-                                type: "POST",
-                                data: whereData,
-                                success:function(res){
-                                    resolve(res);
-                                }
-                            })
-                        })
-
-
-                        var p2 = new Promise(function (resolve, reject) {
-                            console.log(where,Data);
-                            $.ajax({ //提交到where
-                                url: "/api/" + where + "Info",
-                                type: "POST",
-                                data: Data,
-                                success:function(res){
-                                    resolve(res);
-                                }
-                            })
-                        })
-
-
-                        Promise.all([p1, p2]).then(res => {
-                            InfoCount++;
-
-                            var [res1, res2] = res;
-                            console.log(res1, res2);
-
-
-                            //清除内容
-                            $('form.infoSubmit')[0].reset();
-                            $(".steps .step1")[0].reset();
-                            $(".steps .step2")[0].reset();
-                            $(".steps .step3")[0].reset();
-                            $(".steps .step4")[0].reset();
-                            $(".steps .step5")[0].reset();
-                            // window.location.reload();  
-                            $("form.infoSubmit input[type='text']").val("").focus();
-                            $("form.listSubmit textarea").val("");
-
-
-                            $("#infoSubmit").off("click");
-                            
-                            if (location.href.indexOf("#reloaded") == -1) {
-                                location.href = location.href + "#reloaded";
-                                location.reload();
-                            }
-
-                            // console.log("详情都提交完成")
-                        })
- </script>
-</body>
+    <body>
+       
+    </body>
 
 </html>

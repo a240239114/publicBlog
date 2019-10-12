@@ -1,4 +1,4 @@
-define(["jquery", "template"], function ($, template) {
+define(["jquery", "template"], function($, template) {
     // console.log('22222');
     //静止.body .total1左右滑动
     $('.body').css({
@@ -13,7 +13,7 @@ define(["jquery", "template"], function ($, template) {
 
     //770px以下 点击分类按钮 分类出来
     var flag = false;
-    $(".icon-fenlei").on('click', function () {
+    $(".icon-fenlei").on('click', function() {
         $(".total1").css("transform", "translate(0)")
         document.body.style.position = 'fixed';
         $('.body').css({
@@ -45,7 +45,7 @@ define(["jquery", "template"], function ($, template) {
         // console.log(flag);
         if (flag) {
             // console.log('2222');
-            $(".total1").on('click', function (event) {
+            $(".total1").on('click', function(event) {
                 event.stopPropagation();
                 window.location.reload();
             })
@@ -55,7 +55,7 @@ define(["jquery", "template"], function ($, template) {
 
 
     //发起请求就让小球显示
-    $(document).ajaxStart(function () {
+    $(document).ajaxStart(function() {
         $(".wrap").css({
             "display": "block"
         });
@@ -67,7 +67,7 @@ define(["jquery", "template"], function ($, template) {
     })
 
 
-    $(document).ajaxStop(function () {
+    $(document).ajaxStop(function() {
         $(".ball").css({
             "display": "none"
         });
@@ -83,16 +83,16 @@ define(["jquery", "template"], function ($, template) {
     $.ajax({
         url: "api/recentlyList",
         type: "get",
-        success: function (data) {
+        success: function(data) {
             var html = template("recentlyTpl", data);
             // console.log("最近更新=====>"+data);
             $(".update>.bottom").html(html);
         }
-    }).done(function () {
+    }).done(function() {
         //最近更新的页面跳转
-        $("#recentlyArticle>.item1").map(function (index, item) {
+        $("#recentlyArticle>.item1").map(function(index, item) {
 
-            $(item).on("click", function () {
+            $(item).on("click", function() {
                 console.log($(item).attr("data-id"));
                 var id = $(item).attr("data-id");
                 window.location.href = `blogListInfo?${id}&allInfo`;
@@ -105,7 +105,7 @@ define(["jquery", "template"], function ($, template) {
     $.ajax({
         url: "api/randomList",
         type: "get",
-        success: function (res) {
+        success: function(res) {
             // console.log(res.data);
             var html = template("randomTpl", {
                 data: res.data
@@ -113,7 +113,7 @@ define(["jquery", "template"], function ($, template) {
             // console.log(html);
             $("#randomArticle").html(html);
         }
-    }).done(function () { //随机事件li跳转  
+    }).done(function() { //随机事件li跳转  
         $(".moatext_wave").moatext({
             effects: ["lens", "wave", "opacity"],
             values: {
@@ -130,21 +130,21 @@ define(["jquery", "template"], function ($, template) {
             easing: "swing"
         });
 
-        $("#randomArticle p").mouseenter(function () {
+        $("#randomArticle p").mouseenter(function() {
             $(this).css({
                 "color": "blue"
             })
         })
 
-        $("#randomArticle p").mouseleave(function () {
+        $("#randomArticle p").mouseleave(function() {
             $(this).css({
                 "color": "black"
             })
         })
 
-        $("#randomArticle>li").map(function (index, item) {
+        $("#randomArticle>li").map(function(index, item) {
             //    console.log(index,item)
-            $(item).on("click", function () { //传递id&allInfo
+            $(item).on("click", function() { //传递id&allInfo
                 //    console.log("11111");
                 var id = $(item).attr("data-id");
                 //    console.log(id);
@@ -159,7 +159,7 @@ define(["jquery", "template"], function ($, template) {
     $.ajax({
         url: "api/wonderfulComments",
         type: "get",
-        success: function (data) {
+        success: function(data) {
             // console.log("data.url=====>"+data.data.url);
             var html = template("wonderfulTpl", data);
 
@@ -172,13 +172,13 @@ define(["jquery", "template"], function ($, template) {
 
 
     //点击搜索按钮,收索区域出现
-    $(".search").on("click", function () {
+    $(".search").on("click", function() {
         // console.log('1111111');
         $(".row").css({
             "display": "block"
         });
         return false;
-    }).on("mouseenter", function () {
+    }).on("mouseenter", function() {
         console.log("鼠标划过事件")
         $("a").css("text-decoration", "none");
     })
@@ -187,7 +187,7 @@ define(["jquery", "template"], function ($, template) {
     //为了避免主页也 执行下面代码
     if (window.location.search.length != 0 || window.location.pathname.length == 9) {
         //点击收索框 收索框消失 执行收索功能
-        $('.input-group-btn').on('click', function () {
+        $('.input-group-btn').on('click', function() {
             // console.log('2222222');
 
 
@@ -221,7 +221,7 @@ define(["jquery", "template"], function ($, template) {
 
 
     //enter执行收索功能
-    $(document).keydown(function (event) {
+    $(document).keydown(function(event) {
         // var keywords = $(".form-control").val();
         if (event.keyCode == 13) {
             $('.input-group-btn').click();
@@ -231,22 +231,22 @@ define(["jquery", "template"], function ($, template) {
 
 
     //720px以下(手机端) 关于博客的跳转事件
-    $("#aboutBlogIndexHtml").on("click", function () {
+    $("#aboutBlogIndexHtml").on("click", function() {
         window.location.href = './blogDesc'
     })
 
 
     //720px以下(手机端) 关于博客的跳转事件
-    $("#aboutBlog").on("click", function (event) {
+    $("#aboutBlog").on("click", function(event) {
         console.log('关于博客#aboutBlog');
         event.stopPropagation();
         window.location.href = './blogDesc'
     })
 
 
-    $(".form-control").each(function (index, item) {
+    $(".form-control").each(function(index, item) {
         //收索框的焦点事件
-        $(item).focus(function () {
+        $(item).focus(function() {
             console.log("焦点事件")
             $(".form-control").css('box-shadow', "0px 0px 0px #1e90ff");
             // return false;
@@ -256,7 +256,7 @@ define(["jquery", "template"], function ($, template) {
 
 
     //音乐播放器outlineBug
-    $(".mp-btn button").each(function (index, item) {
+    $(".mp-btn button").each(function(index, item) {
         $(item).css({
             "outline": "none"
         });
@@ -274,27 +274,28 @@ define(["jquery", "template"], function ($, template) {
 
     if ($(window).width() > 770) { //test
         console.log("视口变化刷新")
-        $(window).resize(function () {
+        $(window).resize(function() {
             window.location.reload();
         });
 
     }
 
 
-    $.get('../getIp.php', function (xhr) {
-        // alert(xhr['ip']);
-        var userIp = xhr['ip'];
+    //让notes消失
+    // $.get('../getIp.php', function (xhr) {
+    //     // alert(xhr['ip']);
+    //     var userIp = xhr['ip'];
 
-        console.log(userIp);
+    //     // console.log(userIp);
 
-        console.log("userIp != '192.168.31.93'========>" + (userIp != '192.168.31.93'));
+    //     // console.log("userIp != '192.168.31.93'========>" + (userIp != '192.168.31.93'));
 
-        if (userIp != '192.168.31.93') {
-            $(".introduce").css({
-                "display": "none"
-            })
-        }
-    }, 'json');
+    //     if (userIp != '192.168.31.93') {
+    //         $(".introduce").css({
+    //             "display": "none"
+    //         })
+    //     }
+    // }, 'json');
 
 
     $("textarea").css({

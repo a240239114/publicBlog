@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./vendor/prism/prism.css" />
     <meta name="keywords" content="雄哥,博客,大前端,小白,程序员,自学,管敬雄,小雄,小弟弟">
     <!-- 测试  -->
-    <title>你好,世界</title>
+    <title>文章详情...</title>
 </head>
 
 <body>
@@ -53,16 +53,13 @@
             <p> {{tittle}} </p>
             <div>
                 <span class="item7">
-                    <span class="iconfont icon-shizhong1"></span>
-                    {{date}}
+                    <span class="iconfont icon-shizhong1"></span> {{date}}
                 </span>
                 <span class="item7">
-                    <span></span>
-                    作者:雄哥个人前端
+                    <span></span> 作者:雄哥个人前端
                 </span class="item7">
                 <span>
-                    <span class="iconfont icon-liulan"></span>
-                    {{looked}}次浏览
+                    <span class="iconfont icon-liulan"></span> {{looked}}次浏览
                 </span>
             </div>
         </div>
@@ -72,18 +69,16 @@
                 {{cs_brief}}
             </div>
             <ul>
-                {{each steps}} 
+                {{each steps}}
                 <li>
                     <div class="step">{{$value.step}}&nbsp&nbsp{{$value.tittle}}</div>
                     <div class="descTop">{{$value.descTop}}</div>
-                    <img src="{{$value.img}}" alt="">
-{{if $value.cs_brief != ''}}
-<pre class="line-numbers">
+                    <img src="{{$value.img}}" alt=""> {{if $value.cs_brief != ''}}
+                    <pre class="line-numbers">
 <code class="language-js">
 {{$value.cs_brief}}
 </code>
-</pre>
-{{/if}}
+</pre> {{/if}}
                     <div class="descBottom">{{$value.descBottom}}</div>
                 </li>
                 {{/each}}
@@ -110,8 +105,7 @@
             <div class="bottom">
 
                 <div class="zan">
-                    <span class="iconfont icon-zan"></span>
-                    赞(10)
+                    <span class="iconfont icon-zan"></span> 赞(10)
                 </div>
                 <div class="dashang">
                     <div class="twoCodeMoney">
@@ -135,8 +129,7 @@
                         </div>
                     </div>
                     <span class="iconfont icon-dashanghongbao
-                    "></span>
-                    打赏
+                    "></span> 打赏
                 </div>
             </div>
 
@@ -152,7 +145,7 @@
             <p>
                 <span>上一篇：</span>
 
-                       
+
                 <a href="javascript:;" rel="prev" id="lastArticle" data-id="{{lastId}}">
                     {{if lastTittle == undefined}}
 
@@ -180,13 +173,11 @@
 
         <div class="comments">
             <p class="tittle1">共有
-                <span>{{commentsNum}}</span>
-                条评论
+                <span>{{commentsNum}}</span> 条评论
             </p>
             <div class="line"></div>
             <form action="" id="comments">
-                <textarea name="comments" id="" cols="30" rows="10"
-                          placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..."></textarea>
+                <textarea name="comments" id="" cols="30" rows="10" placeholder="当你的才华还撑不起你的野心时,那你就应该静下心来评论下..."></textarea>
                 <div class="message">
                     <input type="text" placeholder="昵称[必填]" name="name">
                     <input type="text" placeholder="邮箱[必填]" name="email">
@@ -199,8 +190,7 @@
                     <li>
                         <div class="mainxx">
                             <div class="head">
-                                <img src="http://puv6112u1.bkt.clouddn.com/20141016202155_5ycRZ.thumb.700_0.jpeg"
-                                    style="height: 30px;width:30px;border-radius: 50%;" alt="">
+                                <img src="http://puv6112u1.bkt.clouddn.com/20141016202155_5ycRZ.thumb.700_0.jpeg" style="height: 30px;width:30px;border-radius: 50%;" alt="">
                                 <span class="name">{{$value.name}}</span>
                                 <!-- <span class="iconfont icon--huangguan"></span> -->
                                 <span class="huangguan"></span>
